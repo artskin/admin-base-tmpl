@@ -1,0 +1,60 @@
+{
+  "name": "aurora-cli",
+  "version": "0.1.0",
+  "private": true,
+  "author": "amu <guliqiang@sensetime.com>",
+  "scripts": {
+    "serve": "npx vue-cli-service serve",
+    "build": "npx vue-cli-service build",
+    "lint": "npx vue-cli-service lint"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "element-ui": "^2.13.1",
+    "js-cookie": "^2.2.1",
+    "nprogress": "^0.2.0",
+    "path-to-regexp": "^6.1.0",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-i18n": "^8.17.5",
+    "vue-property-decorator": "^8.4.2",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.4.0",
+    "vuex-class": "^0.3.2",
+    "vuex-module-decorators": "^0.17.0"
+  },
+  "devDependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/node": "^13.13.5",
+    "@types/nprogress": "^0.2.0",
+    "@types/webpack-env": "^1.15.2",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-typescript": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^6.2.2",
+    "eslint-plugin-vue": "^5.2.3",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "style-resources-loader": "^1.2.1",
+    "typescript": "^3.9.2",
+    "vue-cli-plugin-element": "^1.0.1",
+    "vue-cli-plugin-style-resources-loader": "^0.1.3",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.43.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
