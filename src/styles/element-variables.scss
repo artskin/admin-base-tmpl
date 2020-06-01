@@ -17,4 +17,29 @@ $--table-border:1px solid #dfe6ec;
 $--font-path: '~element-ui/lib/theme-chalk/fonts';
 
 // Apply overrided variables in Element UI
-// @import '~element-ui/packages/theme-chalk/src/index';
+//@import '~element-ui/packages/theme-chalk/src/index';
+
+/*按需引入用到的组件的scss文件和基础scss文件*/
+@import "~element-ui/packages/theme-chalk/src/base.scss";
+@import "~element-ui/packages/theme-chalk/src/rate.scss";
+@import "~element-ui/packages/theme-chalk/src/button.scss";
+@import "~element-ui/packages/theme-chalk/src/input.scss";
+@import "~element-ui/packages/theme-chalk/src/row.scss";
+
+@import "~element-ui/packages/theme-chalk/src/form.scss";
+@import "~element-ui/packages/theme-chalk/src/form-item.scss";
+
+@import "~element-ui/packages/theme-chalk/src/dropdown.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown-menu.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown-item.scss";
+@import "~element-ui/packages/theme-chalk/src/scrollbar.scss";
+
+@import "~element-ui/packages/theme-chalk/src/menu.scss";
+@import "~element-ui/packages/theme-chalk/src/submenu.scss";
+@import "~element-ui/packages/theme-chalk/src/menu-item.scss";
+@import "~element-ui/packages/theme-chalk/src/menu-item-group.scss";
+
+/**面包屑*/
+@import "~element-ui/packages/theme-chalk/src/breadcrumb.scss";
+@import "~element-ui/packages/theme-chalk/src/breadcrumb-item.scss";
+

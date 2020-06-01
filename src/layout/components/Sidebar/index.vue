@@ -1,5 +1,6 @@
 <template>
-  <el-scrollbar wrap-class="scrollbar-wrapper">
+<div>
+  <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
     <h1>Logo</h1>
     <el-menu
       :collapse="isCollapse"
@@ -18,7 +19,7 @@
         :is-collapse="isCollapse"
       />
     </el-menu>
-  </el-scrollbar>
+</div>
 </template>
 
 <script lang="ts">

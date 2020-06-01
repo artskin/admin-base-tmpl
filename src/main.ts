@@ -5,14 +5,8 @@ import Vue from 'vue'
 // Vue.use(ElementUI)
 
 //按需引入
-import { Button,Dropdown,DropdownMenu,DropdownItem,Form,FormItem,Input } from 'element-ui';
-Vue.use(Button)
-Vue.use(Dropdown)
-Vue.use(DropdownMenu)
-Vue.use(DropdownItem)
-Vue.use(Form)
-Vue.use(FormItem)
-Vue.use(Input)
+import elementUI from '@/utils/need-element-ui'
+Vue.use(elementUI)
 
 
 //import '@/styles/element-variables.scss'
