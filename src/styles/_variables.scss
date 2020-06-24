@@ -1,14 +1,52 @@
+// default
+// $blue: #007bff;
+// $indigo: #6610f2;
+// $purple: #6f42c1;
+// $pink: #e83e8c;
+// $red: #dc3545;
+// $orange: #fd7e14;
+// $yellow: #ffc107;
+// $green: #28a745;
+// $teal: #20c997;
+// $cyan: #17a2b8;
+// $white: #fff;
+// $gray: #6c757d;
+// $gray-dark: #343a40;
+// $primary: #009da0;
+// $secondary: #868e96;
+// $success: #0cc27e;
+// $info: #1cbcd8;
+// $warning: #ff8d60;
+// $danger: #ff586b;
+// $light: #f8f9fa;
+// $dark: #343a40;
+// $tiffany: #4AB7BD;
+
 /* Variables */
 
 // Base color
-$blue:#324157;
-$light-blue:#3A71A8;
-$red:#C03639;
-$pink: #E65D6E;
-$green: #30B08F;
+$blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$orange: #fd7e14;
+$yellow: #ffc107;
+$green: #28a745;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$gray: #6c757d;
+$gray-dark: #343a40;
+$primary: #515E7B;
+$secondary: #868e96;
+$success: #31D500;
+$info: #1cbcd8;
+$warning: #DF9812;
+$danger: #E6455F;
+$light: #f8f9fa;
+$dark: #343a40;
 $tiffany: #4AB7BD;
-$yellow:#FEC171;
-$panGreen: #30B08F;
 
 // Sidebar
 $sideBarWidth: 210px;
@@ -24,7 +62,6 @@ $lightGray: #eee;
 $darkGray:#889aa4;
 $loginBg: #2d3a4b;
 $loginCursorColor: #fff;
-
 // The :export directive is the magic sauce for webpack
 // https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
 :export {

@@ -2,7 +2,8 @@
 
 // Override Element UI variables
 $--color-primary: #1890ff;
-$--color-primary: #339966;
+
+//$--color-primary:var(--color-primary);
 $--color-success: #13ce66;
 $--color-warning: #FFBA00;
 $--color-danger: #ff4949;
@@ -20,18 +21,18 @@ $--font-path: '~element-ui/lib/theme-chalk/fonts';
 //@import '~element-ui/packages/theme-chalk/src/index';
 
 /*按需引入用到的组件的scss文件和基础scss文件*/
-@import "~element-ui/packages/theme-chalk/src/base.scss";
+//@import "~element-ui/packages/theme-chalk/src/base.scss";
 @import "~element-ui/packages/theme-chalk/src/rate.scss";
-@import "~element-ui/packages/theme-chalk/src/button.scss";
+//@import "~element-ui/packages/theme-chalk/src/button.scss";
 @import "~element-ui/packages/theme-chalk/src/input.scss";
 @import "~element-ui/packages/theme-chalk/src/row.scss";
 
 @import "~element-ui/packages/theme-chalk/src/form.scss";
 @import "~element-ui/packages/theme-chalk/src/form-item.scss";
 
-@import "~element-ui/packages/theme-chalk/src/dropdown.scss";
-@import "~element-ui/packages/theme-chalk/src/dropdown-menu.scss";
-@import "~element-ui/packages/theme-chalk/src/dropdown-item.scss";
+@import "~element-ui/packages/theme-chalk/src/dropdown.scss";//包含button.scss？
+// @import "~element-ui/packages/theme-chalk/src/dropdown-menu.scss";//这两个为空
+// @import "~element-ui/packages/theme-chalk/src/dropdown-item.scss";
 @import "~element-ui/packages/theme-chalk/src/scrollbar.scss";
 
 @import "~element-ui/packages/theme-chalk/src/menu.scss";

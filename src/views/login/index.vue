@@ -186,7 +186,7 @@ export default class extends Vue {
     position: relative;
     .title {
       font-size: 26px;
-      color: $lightGray;
+      color: var(--light);
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
@@ -211,7 +211,7 @@ export default class extends Vue {
       background: transparent;
       border: 0px;
       border-radius: 0px;
-      color: $lightGray;
+      color: var(--light);
       caret-color: $loginCursorColor;
       -webkit-appearance: none;
       &:-webkit-autofill {
@@ -238,16 +238,19 @@ export default class extends Vue {
     }
   }
   .set-language{
-    color: $lightGray;
+    color: var(--light);
     display: block;
   }
+}
+.el-button--primary{
+  @include buttonCreat(--primary,--primary)
 }
 
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
 @supports (-webkit-mask: none) and (not (cater-color: $loginCursorColor)) {
   .login-container .el-input {
     input { color: $loginCursorColor; }
-    input::first-line { color: $lightGray; }
+    input::first-line { color: var(--lightGray); }
   }
 }
 </style>
