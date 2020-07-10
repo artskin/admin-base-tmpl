@@ -71,12 +71,12 @@ import { AppModule } from '@/store/modules/app';
 import LangSelect from '@/components/LangSelect/index.vue';
 
 @Component({
-  name: 'Login',
+  //name: 'Login',//会覆盖class的Name
   components: {
     LangSelect
   }
 })
-export default class extends Vue {
+export default class Login extends Vue {
   private validateUsername = (rule: any, value: string, callback: Function) => {
     if (!isValidUsername(value)) {
       callback(new Error('Please enter the correct user name'))
@@ -173,6 +173,9 @@ export default class extends Vue {
       return acc
     }, {} as Dictionary<string>)
   }
+}
+export let route = {
+  redirect: "xx"
 }
 </script>
 

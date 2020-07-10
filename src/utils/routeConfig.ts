@@ -11,6 +11,12 @@ export default {
       sort: 3,
     },
   },
+  Login: {
+    meta: {
+      title: '登录',
+      sort: 0,
+    },
+  },
   Wjl: {
     meta: {
       title: '温景林',

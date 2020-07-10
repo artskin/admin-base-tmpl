@@ -6,8 +6,7 @@
       </slot>
     </div>
     <el-dropdown-menu slot="dropdown">
-      <el-dropdown-item :disabled="language==='zh'" command="zh">中文</el-dropdown-item>
-      <el-dropdown-item :disabled="language==='en'" command="en">English</el-dropdown-item>
+      <el-dropdown-item v-for="(item,index) in langList" :key="index" :disabled="language===item" :command="item">{{$t('lang')[item]}}</el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
 </template>
@@ -21,6 +20,7 @@ import { AppModule } from '@/store/modules/app';
 export default class LangSelect extends Vue {
   @Prop({default:"14px"}) size!:string
   levelList: RouteRecord[] = [];
+  langList:Array<string> =[]
   get language() {
     return AppModule.language;
   }
@@ -29,6 +29,7 @@ export default class LangSelect extends Vue {
   }
   mounted(){
     document.documentElement.setAttribute('lang',this.language);
+    this.langList = Object.keys(this.$i18n.messages)
   }
 
   handleSetLanguage(lang:string) {

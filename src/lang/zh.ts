@@ -1,4 +1,8 @@
 export default {
+  "lang":{
+    "zh":"中文",
+    "en":"English",
+  },
   "switchLang":"语言切换",
   "login":{
     "title":"登录 Aurora",

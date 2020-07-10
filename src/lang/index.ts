@@ -16,10 +16,9 @@ const messages = {
     ...cnLocale
   }
 }
-console.log(AppModule.language)
+//console.log(AppModule.language)
 const i18n = new VueI18n({
   locale: Cookies.get('language') || AppModule.language,
   messages
 });
-
 export default i18n

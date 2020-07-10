@@ -20,32 +20,34 @@ Mock 数据部分，可以通过 [mock-data](http://gitlab.sz.sensetime.com/fe/m
 ### 安装依赖
 
 ```bash
-yarn install
+npm install
 ```
 
 ### 启动本地开发环境（带热启动）
 
 ```bash
-yarn serve
+npm run serve
 ```
 
 ### 构建生产环境 (带压缩)
 
 ```bash
-yarn build
+npm run build
 ```
 
 ### 代码格式检查以及自动修复
 
 ```bash
-yarn lint
+npm run lint
 ```
 
 ### ToDo 
 
+
+- [x] 国际化切换：支持图片或其他资源同时切换（添加示例）
+- [x] elementUI按需引入，并更改主题
 - [ ] 添加一键换肤
-- [ ] 国际化切换：支持图片或其他资源同时切换（添加示例）
-- [ ] elementUI按需引入，并更改主题
+- [ ] 路由根据目录自动生成
 
 ### 自定义 Vue 配置
 

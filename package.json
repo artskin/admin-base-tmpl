@@ -5,8 +5,9 @@
   "author": "amu <guliqiang@sensetime.com>",
   "scripts": {
     "serve": "npx vue-cli-service serve",
+    "dev"  : "npx vue-cli-service serve",
     "build": "npx vue-cli-service build",
-    "lint": "npx vue-cli-service lint"
+    "lint" : "npx vue-cli-service lint"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -36,6 +37,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
     "babel-plugin-component": "^1.1.1",
+    "core-js": "^3.6.5",
     "eslint": "^6.2.2",
     "eslint-plugin-vue": "^5.2.3",
     "sass": "^1.26.5",

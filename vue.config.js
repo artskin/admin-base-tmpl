@@ -1,6 +1,7 @@
 const path = require('path')
 const name = 'Aurora template'
 
+const RouterWebpackPlugin = require('./plugins/router.webpack.plugin')
 //接口服务器地址
 let crossHost = 'http://localhost:9528';
 
@@ -39,8 +40,17 @@ module.exports = {
     }
   },
   chainWebpack(config) {
+    //console.log(config)
     // Provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
+    // api.configureWebpack(webpackConfig => {
+    //   creatRouter.creatRouter(false)
+    // })
+    //creatRouter.creatRouter(false)
     config.set('name', name)
+  },
+  configureWebpack: config => {
+    //自动生成路由插件
+    config.plugins.push(new RouterWebpackPlugin())
   }
 }

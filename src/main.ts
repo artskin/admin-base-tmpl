@@ -15,10 +15,11 @@ import '@/styles/index.scss'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/router'
-import '@/permission'
+import '@/router/permission'
 
 
 import i18n from '@/lang/index'
+console.log(i18n.messages)
 
 Vue.config.productionTip = false
 

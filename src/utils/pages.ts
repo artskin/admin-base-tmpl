@@ -7,76 +7,85 @@
     3. 扩展到了三级路由 
 */
 interface roterItem {
-  name:""
-  path:""
+  name:string
+  path:string
   component:Function
-  father:""
+  father?:string
+}
+interface pagerType {
+  path: string,
+  component: Function,
+  meta: { hidden: true,title: 'Login' }
 }
 
 import routeConfig from '@/utils/routeConfig'
+//console.log(routeConfig)
 let files = require.context('../views', true, /\.vue$/);
-let jsfile = require.context('../views')
-console.log(jsfile)
-const pages = {}
+//let jsfile = require.context('../views')
+//console.log(jsfile)
+const pages:any = {}
 let routeArr:Array<roterItem> = []
-// files.keys().forEach((key) => {
-//   //console.log(key)
-//   pages[key.replace(/(\.\/|\.vue)/g, '')] = files(key).default
-//   pages[key.replace(/(\.\/|\.vue)/g, '')].filePath = key
-//     .split('/')
-//     .slice(1)
-//     .join('/')
-// })
-
+files.keys().forEach((key) => {
+  let currentKey = key.replace(/(\.\/|\.vue)/g, '')
+  //console.log(key,'|',files(key))
+  pages[currentKey] = files(key).default
+  //pages[currentKey].name = files(key).default.extendOptions.name
+  pages[currentKey].filePath = key.split('/').slice(1).join('/')
+})
+console.log(pages)
 // 
-// let threeLevelRoute = {}
-// let twoLevelRoute = {}
-// let oneLevelRoute = {}
-// for (let key in pages) {
-//   let nameArr = key.split('/')
-//   if (nameArr.length == 2) {
-//     let obj:roterItem = {
-//       name: pages[key].name,
-//       path: `/${pages[key].name}`,
-//       component: () => import(`@/views/${pages[key].filePath}`),
-//     }
-//     if (routeConfig[pages[key].name]) {
-//       obj.meta = routeConfig[pages[key].name].meta
-//       obj.redirect = routeConfig[pages[key].name].redirect
-//     }
-//     oneLevelRoute[nameArr[0]] = obj
-//   } else if (nameArr.length == 3) {
-//     let obj:roterItem = {
-//       name: pages[key].name,
-//       path: pages[key].name,
-//       component: () => import(`@/views/${pages[key].filePath}`),
-//       father: nameArr[0],
-//     }
-//     if (routeConfig[pages[key].name]) {
-//       obj.meta = routeConfig[pages[key].name].meta
-//       obj.redirect = routeConfig[pages[key].name].redirect
-//     }
-//     if (!twoLevelRoute[nameArr[1]]) {
-//       twoLevelRoute[nameArr[1]] = []
-//     }
-//     twoLevelRoute[nameArr[1]] = obj
-//   } else if (nameArr.length == 4) {
-//     let obj = {
-//       name: pages[key].name,
-//       path: pages[key].name,
-//       component: () => import(`@/views/${pages[key].filePath}`),
-//       father: nameArr[1],
-//     }
-//     if (routeConfig[pages[key].name]) {
-//       obj.meta = routeConfig[pages[key].name].meta
-//       obj.redirect = routeConfig[pages[key].name].redirect
-//     }
-//     if (!threeLevelRoute[nameArr[2]]) {
-//       threeLevelRoute[nameArr[2]] = []
-//     }
-//     threeLevelRoute[nameArr[2]] = obj
-//   }
-// }
+let threeLevelRoute = {}
+let twoLevelRoute = {}
+let oneLevelRoute = {}
+for (let key in pages) {
+  console.log(pages[key].name,pages[key].filePath)
+  let nameArr = key.split('/')
+  if (nameArr.length == 2) {
+    let obj:roterItem = {
+      name: pages[key].name,
+      path: `/${pages[key].name}`,
+      component: () => import(`@/views/${pages[key].filePath}`),
+    }
+    //console.log(obj)
+    //console.log(routeConfig[pages[key].name])
+    // if (routeConfig[pages[key].name]) {
+    //   obj.meta = routeConfig[pages[key].name].meta
+    //   obj.redirect = routeConfig[pages[key].name].redirect
+    // }
+    // oneLevelRoute[nameArr[0]] = obj
+  }
+  // else if (nameArr.length == 3) {
+  //   let obj:roterItem = {
+  //     name: pages[key].name,
+  //     path: pages[key].name,
+  //     component: () => import(`@/views/${pages[key].filePath}`),
+  //     father: nameArr[0],
+  //   }
+  //   if (routeConfig[pages[key].name]) {
+  //     obj.meta = routeConfig[pages[key].name].meta
+  //     obj.redirect = routeConfig[pages[key].name].redirect
+  //   }
+  //   if (!twoLevelRoute[nameArr[1]]) {
+  //     twoLevelRoute[nameArr[1]] = []
+  //   }
+  //   twoLevelRoute[nameArr[1]] = obj
+  // } else if (nameArr.length == 4) {
+  //   let obj = {
+  //     name: pages[key].name,
+  //     path: pages[key].name,
+  //     component: () => import(`@/views/${pages[key].filePath}`),
+  //     father: nameArr[1],
+  //   }
+  //   if (routeConfig[pages[key].name]) {
+  //     obj.meta = routeConfig[pages[key].name].meta
+  //     obj.redirect = routeConfig[pages[key].name].redirect
+  //   }
+  //   if (!threeLevelRoute[nameArr[2]]) {
+  //     threeLevelRoute[nameArr[2]] = []
+  //   }
+  //   threeLevelRoute[nameArr[2]] = obj
+  // }
+}
 
 // // 向二级路由组装children
 // for (let key in threeLevelRoute) {
@@ -110,5 +119,5 @@ let routeArr:Array<roterItem> = []
 //     }
 //   }
 // })
-
+//console.log(routeArr)
 export default routeArr
