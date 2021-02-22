@@ -22,7 +22,7 @@ import { isExternal } from '@/utils/validate'
 @Component({
   name: 'SidebarItemLink'
 })
-export default class extends Vue {
+export default class SidebarItemLink extends Vue {
   @Prop({ required: true }) private to!: string
 
   private isExternal = isExternal

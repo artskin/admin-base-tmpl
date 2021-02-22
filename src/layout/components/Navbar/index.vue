@@ -59,7 +59,7 @@ import Hamburger from '@/components/Hamburger/index.vue'
     Hamburger
   }
 })
-export default class extends Vue {
+export default class Navbar extends Vue {
   get sidebar() {
     return AppModule.sidebar
   }

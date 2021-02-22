@@ -15,7 +15,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'AppMain'
 })
-export default class extends Vue {}
+export default class AppMain extends Vue {}
 </script>
 
 <style lang="scss" scoped>

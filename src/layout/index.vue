@@ -24,14 +24,13 @@ import { AppMain, Navbar, Sidebar } from './components'
 import ResizeMixin from './mixin/resize'
 
 @Component({
-  name: 'Layout',
   components: {
     AppMain,
     Navbar,
     Sidebar
   }
 })
-export default class extends mixins(ResizeMixin) {
+export default class Layout extends mixins(ResizeMixin) {
   get classObj() {
     return {
       hideSidebar: !this.sidebar.opened,
@@ -49,7 +48,7 @@ export default class extends mixins(ResizeMixin) {
 
 <style lang="scss" scoped>
 .app-wrapper {
-  @include clearfix;
+  //@include clearfix;
   position: relative;
   height: 100%;
   width: 100%;
@@ -68,13 +67,13 @@ export default class extends mixins(ResizeMixin) {
 .main-container {
   min-height: 100%;
   transition: margin-left .28s;
-  margin-left: $sideBarWidth;
+  margin-left: var(--sideBarWidth);
   position: relative;
 }
 
 .sidebar-container {
   transition: width 0.28s;
-  width: $sideBarWidth !important;
+  width: var(--sideBarWidth) !important;
   height: 100%;
   position: fixed;
   font-size: 0px;
@@ -103,7 +102,7 @@ export default class extends mixins(ResizeMixin) {
 
   .sidebar-container {
     transition: transform .28s;
-    width: $sideBarWidth !important;
+    width: var(--sideBarWidth) !important;
   }
 
   &.openSidebar {
@@ -115,7 +114,7 @@ export default class extends mixins(ResizeMixin) {
     .sidebar-container {
       pointer-events: none;
       transition-duration: 0.3s;
-      transform: translate3d(-$sideBarWidth, 0, 0);
+      transform: translate3d(-var(--sideBarWidth), 0, 0);
     }
   }
 }

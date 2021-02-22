@@ -29,7 +29,7 @@ import { RouteRecord, Route } from 'vue-router'
 @Component({
   name: 'Breadcrumb'
 })
-export default class extends Vue {
+export default class Breadcrumb extends Vue {
   private breadcrumbs: RouteRecord[] = [];
 
   @Watch('$route')
@@ -68,6 +68,7 @@ export default class extends Vue {
   private pathCompile(path: string) {
     // To solve this problem https://github.com/PanJiaChen/vue-element-admin/issues/561
     const { params } = this.$route
+    //const toPath = pathToRegexp.compile(path)
     const toPath = pathToRegexp.compile(path)
     return toPath(params)
   }

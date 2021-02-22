@@ -2,13 +2,15 @@
 
 
 ## 总览
+基于vite2.0，重新搭建开发环境（之前是webpack，vue-cli4.x版本）
+
+由于之前项目的包袱，所以项目代码还是vue2+typescript
 
 这是一个 vue vuex typescript admin 搭建的基础管理后台。
 包含了 Element UI & Axios & Permission control & 国际化切换及配置，等后台必要的基础功能模块。
 
-基于webpack4.x，vue-cli4.x版本
 
-Mock 数据部分，可以通过 [mock-data](http://gitlab.sz.sensetime.com/fe/mock-data.git)启动服务，通过vue.config.js配置proxy跨域方式或绝对路径访问。
+Mock 数据部分，可以通过 [mock-data]()启动服务，通过vue.config.js配置proxy跨域方式或绝对路径访问。
 
 ### 功能列表
 

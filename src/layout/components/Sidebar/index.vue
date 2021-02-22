@@ -34,7 +34,7 @@ import variables from '@/styles/_variables.scss'
     SidebarItem
   }
 })
-export default class extends Vue {
+export default class SideBar extends Vue {
   get sidebar() {
     return AppModule.sidebar
   }

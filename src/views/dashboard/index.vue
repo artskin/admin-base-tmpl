@@ -20,7 +20,7 @@ import { UserModule } from '@/store/modules/user'
 @Component({
   name: 'Dashboard'
 })
-export default class extends Vue {
+export default class Dashboard extends Vue {
   get name() {
     return UserModule.name
   }

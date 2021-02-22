@@ -1,7 +1,9 @@
 //按需引入
-import { Button,Dropdown,DropdownMenu,DropdownItem,Form,FormItem,Input,Message,Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem,Alert,Tree,Table,TableColumn,Loading,Tag,Select,Checkbox,CheckboxGroup,Option,Col,DatePicker,Radio,RadioGroup,Switch,TimePicker} from 'element-ui';
+import * as ElementUI from 'element-ui';
+console.log(ElementUI)
+const { Button,Dropdown,DropdownMenu,DropdownItem,Form,FormItem,Input,Message,Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem,Alert,Tree,Table,TableColumn,Loading,Tag,Select,Checkbox,CheckboxGroup,Option,Col,DatePicker,Radio,RadioGroup,Switch,TimePicker} = ElementUI
 const components = [Button,Dropdown,DropdownMenu,DropdownItem,Form,FormItem,Input,Message,Menu,MenuItem,Submenu,Breadcrumb,BreadcrumbItem,Alert,Tree,Table,TableColumn,Tag,Select,Checkbox,CheckboxGroup,Option,Col,DatePicker,Radio,RadioGroup,Switch,TimePicker]
-
+console.log(ElementUI)
 const install = (Vue:any, opts = {})=> {
   components.forEach(component => {
     //console.log(component)

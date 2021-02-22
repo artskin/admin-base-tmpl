@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Layout from '@/layout/index.vue'
+import Layout from '../layout/index.vue'
 // import routes from './routes.js'
 // console.log(routes)
 Vue.use(Router)
@@ -24,7 +24,7 @@ export default new Router({
       return { x: 0, y: 0 }
     }
   },
-  base: process.env.BASE_URL,
+  base: '',
   routes: [
     {
       path: '/login',

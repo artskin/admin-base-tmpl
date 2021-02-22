@@ -1,7 +1,7 @@
 import { Vue } from 'vue-property-decorator';
 import Cookies from 'js-cookie';
 import VueI18n from 'vue-i18n';
-import { AppModule } from '@/store/modules/app';
+import { AppModule } from '../store/modules/app';
 
 Vue.use(VueI18n)
 

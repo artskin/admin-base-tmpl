@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import path from 'path'
+import { normalizePath } from 'vite'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { Route, RouteConfig } from 'vue-router'
 import { isExternal } from '@/utils/validate'
@@ -62,7 +62,7 @@ import SidebarItemLink from './SidebarItemLink.vue'
     SidebarItemLink
   }
 })
-export default class extends Vue {
+export default class SidebarItem extends Vue {
   @Prop({ required: true }) private item!: RouteConfig
   @Prop({ default: false }) private isCollapse!: boolean
   @Prop({ default: true }) private isFirstLevel!: boolean
@@ -105,24 +105,24 @@ export default class extends Vue {
     if (isExternal(this.basePath)) {
       return this.basePath
     }
-    return path.resolve(this.basePath, routePath)
+    return normalizePath(routePath)
   }
 }
 </script>
 
 <style lang="scss">
 .el-submenu.is-active > .el-submenu__title {
-  color: $subMenuActiveText !important;
+  color: #f4f4f5 !important;
 }
 
 .full-mode {
   .nest-menu .el-submenu>.el-submenu__title,
   .el-submenu .el-menu-item {
-    min-width: $sideBarWidth !important;
-    background-color: $subMenuBg !important;
+    min-width: var(--sideBarWidth) !important;
+    background-color: #1f2d3d !important;
 
     &:hover {
-      background-color: $subMenuHover !important;
+      background-color: #001528 !important;
     }
   }
 }

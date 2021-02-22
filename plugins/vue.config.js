@@ -1,7 +1,7 @@
 const path = require('path')
 const name = 'Aurora template'
 
-const RouterWebpackPlugin = require('./plugins/router.webpack.plugin')
+const RouterWebpackPlugin = require('./router.webpack.plugin')
 //接口服务器地址
 let crossHost = 'http://localhost:9528';
 
