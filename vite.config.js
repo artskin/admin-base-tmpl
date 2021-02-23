@@ -1,21 +1,24 @@
 import { defineConfig } from 'vite'
 import {createVuePlugin} from 'vite-plugin-vue2'
 import { viteMockServe } from 'vite-plugin-mock';
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin(),
+  plugins: [
+    createVuePlugin(),
     viteMockServe({
-    // default
-    mockPath: 'mock',
-    // localEnabled: command === 'serve',
-  })],
+      // default
+      mockPath: 'mock',
+      // localEnabled: command === 'serve',
+    })
+  ],
   resolve:{
     alias:{
-      '@':'/src/'
+      '@':'/src'
     },
   },
   server: {
-    port:4001,
+    port:3001,
   //   hmr: {
   //     port: 443,
   //   }

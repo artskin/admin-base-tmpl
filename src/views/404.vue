@@ -4,22 +4,22 @@
       <div class="pic-404">
         <img
           class="pic-404__parent"
-          src="@/assets/404-images/404.png"
+          src="../assets/404-images/404.png"
           alt="404"
         >
         <img
           class="pic-404__child left"
-          src="@/assets/404-images/404-cloud.png"
+          src="../assets/404-images/404-cloud.png"
           alt="404"
         >
         <img
           class="pic-404__child mid"
-          src="@/assets/404-images/404-cloud.png"
+          src="../assets/404-images/404-cloud.png"
           alt="404"
         >
         <img
           class="pic-404__child right"
-          src="@/assets/404-images/404-cloud.png"
+          src="../assets/404-images/404-cloud.png"
           alt="404"
         >
       </div>
@@ -56,7 +56,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'Page404'
 })
-export default class extends Vue {
+export default class Page404 extends Vue {
   private message = '404 Page Not Found'
 }
 </script>

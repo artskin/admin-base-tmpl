@@ -20,7 +20,6 @@
     "vue-i18n": "^8.22.4",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.5.1",
-    "vuex": "^3.6.2",
     "vuex-module-decorators": "^1.0.1"
   },
   "devDependencies": {
@@ -30,9 +29,5 @@
     "vite-plugin-mock": "^2.1.5",
     "vite-plugin-vue2": "^1.2.1",
     "vue-template-compiler": "^2.6.12"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
+  }
 }

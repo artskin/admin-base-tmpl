@@ -12,7 +12,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
-  name: 'Menu1-2-1'
+  name: 'Menu121'
 })
-export default class extends Vue {}
+export default class Menu121 extends Vue {}
 </script>
