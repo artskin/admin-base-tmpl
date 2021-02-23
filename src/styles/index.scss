@@ -1,9 +1,9 @@
 // @import './variables.scss'; // Already imported in style-resources-loader
-// @import './mixins.scss'; // Already imported in style-resources-loader
+@import './mixins.scss'; // Already imported in style-resources-loader
 @import './transition.scss';
 @import './_variables.scss';
 
-@import './element-variables.scss';
+//@import './element-variables.scss';
 
 
 /* base scss*/
@@ -95,4 +95,7 @@ div:focus {
 
 .app-container {
   padding: var(--padding-l);
+}
+.el-button--primary{
+  @include buttonCreat(--primary,--primary)
 }

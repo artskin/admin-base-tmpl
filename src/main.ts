@@ -1,16 +1,17 @@
 import Vue from 'vue'
 
 //全量引入
-// import ElementUI from 'element-ui'
-// Vue.use(ElementUI)
+import ElementUI from 'element-ui'
+Vue.use(ElementUI)
+import 'element-ui/lib/theme-chalk/index.css';
 
 //按需引入
-import elementUI from '@/utils/need-element-ui'
-Vue.use(elementUI)
+// import elementUI from '@/utils/need-element-ui'
+// Vue.use(elementUI)
 
 
 //import '@/styles/element-variables.scss'
-//import '@/styles/index.scss'
+import '@/styles/index.scss'
 
 import App from '@/App.vue'
 import store from '@/store'

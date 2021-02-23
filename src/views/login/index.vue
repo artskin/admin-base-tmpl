@@ -147,7 +147,8 @@ export default class Login extends Vue {
   private handleLogin() {
     (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
       if (valid) {
-        this.loading = true
+        this.loading = true;
+        console.log(await UserModule.Login(this.loginForm))
         await UserModule.Login(this.loginForm)
 
         this.$router.push({
@@ -180,11 +181,12 @@ export let route = {
 </script>
 
 <style lang="scss">
+
 .login-container {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: $loginBg;
+  background-color: var(--loginBg);
   .title-container {
     position: relative;
     .title {
@@ -215,10 +217,10 @@ export let route = {
       border: 0px;
       border-radius: 0px;
       color: var(--light);
-      caret-color: $loginCursorColor;
+      caret-color: var(--loginCursorColor);
       -webkit-appearance: none;
       &:-webkit-autofill {
-        box-shadow: 0 0 0px 1000px $loginBg inset !important;
+        box-shadow: 0 0 0px 1000px var(--loginBg) inset !important;
         -webkit-text-fill-color: #fff !important;
       }
     }
@@ -245,14 +247,12 @@ export let route = {
     display: block;
   }
 }
-.el-button--primary{
-  @include buttonCreat(--primary,--primary)
-}
+
 
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
-@supports (-webkit-mask: none) and (not (cater-color: $loginCursorColor)) {
+@supports (-webkit-mask: none) and (not (cater-color: var(--loginCursorColor))) {
   .login-container .el-input {
-    input { color: $loginCursorColor; }
+    input { color: var(--loginCursorColor) }
     input::first-line { color: var(--lightGray); }
   }
 }

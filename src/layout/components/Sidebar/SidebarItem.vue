@@ -48,7 +48,7 @@
 </template>
 
 <script lang="ts">
-import { normalizePath } from 'vite'
+import path from 'path-browserify'
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { Route, RouteConfig } from 'vue-router'
 import { isExternal } from '@/utils/validate'
@@ -105,7 +105,7 @@ export default class SidebarItem extends Vue {
     if (isExternal(this.basePath)) {
       return this.basePath
     }
-    return normalizePath(routePath)
+    return path.resolve(this.basePath, routePath)
   }
 }
 </script>
