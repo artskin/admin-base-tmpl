@@ -1,19 +1,19 @@
 # ABT：admin base template
 
-> 你是否还在为启动前端项目的缓慢等待而焦急。为修改代码等代码编译 running而烦恼。是时候抛弃webpack了。
+> 你是否还在为启动前端项目的缓慢等待而焦急。为修改代码等代码编译 running而烦恼。。
 
-> 拥抱vite,开发环境秒开，修改代码秒更新不是梦...
+> 是时候抛弃Webpack了,拥抱vite,开发环境秒开，修改代码秒更新不是梦...
 
 > vite2 + vue3的开发，网上已有大量文章介绍。
-但是我们原有项目不可能一上来就全部用vue3重构，那么能不能用vite2完美运行之前的vue2开发的项目呢? ——答案是：true
+但是我们原有项目不可能一上来就全部用vue3重构，那么能不能用vite2运行之前的vue2开发的项目呢? ——答案是：true
+
 ## 总览
+
 本项目是一个admin后台系统的基础框架。基于vite2.0（esbuild）重新搭建（之前是webpack，vue-cli4.x版本）。
 
-由于之前项目的包袱，所以项目代码还是vue2+typescript，经过几天的研究调试，终于让vue2+ts的旧项目也享受到了vite2带来的秒开快感。
+项目技术栈还是vue2+typescript+elementUI，目前已基于vite2改造完成，让vue2+ts的旧项目也享受到了vite2带来的秒开快感。
 
-技术栈 vue vue-router vuex typescript admin 。
 包含了 Element UI & Axios & Permission control & 国际化切换及配置，等后台必要的基础功能模块。
-
 
 Mock 数据部分，可以通过 [vite-plugin-mock]()启动服务，通过vite.config.js配置并运行。
 
