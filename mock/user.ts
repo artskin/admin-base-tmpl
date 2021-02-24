@@ -5,7 +5,7 @@ export default [
     method: 'post',
     timeout: 200,
     response: ({body})=>{
-      console.log('body>>>>>>>>', body);
+      console.log('body==>', body);
       return {
         code: 20000,
         message: 'ok',
@@ -16,11 +16,26 @@ export default [
     },
   },
   {
+    url: '/users/logout',
+    method: 'post',
+    timeout: 200,
+    response: ({body})=>{
+      console.log('body==>', body);
+      return {
+        code: 20000,
+        message: 'ok',
+        data:{
+          accessToken:''
+        }
+      }
+    },
+  },
+  {
     url: '/users/info',
     method: 'post',
     timeout: 200,
     response: ({body})=>{
-      console.log('body>>>>>>>>', body);
+      console.log('body==>', body);
       return {
         code: 20000,
         message: 'ok',

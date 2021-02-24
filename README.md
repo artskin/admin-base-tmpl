@@ -1,4 +1,4 @@
-# Aurora admin template
+# ABT：admin base template
 
 > 你是否还在为启动前端项目的缓慢等待而焦急。为修改代码等代码编译 running而烦恼。是时候抛弃webpack了。
 
@@ -17,7 +17,7 @@
 
 Mock 数据部分，可以通过 [vite-plugin-mock]()启动服务，通过vite.config.js配置并运行。
 
-### 功能列表
+### 基础功能
 
 - 登录/登出
 - 权限控制
@@ -54,7 +54,7 @@ npm run build
 
 看这里 [Configuration Reference](https://cli.vuejs.org/config/).
 
-## 相关项目
+## 参考项目
 [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template/tree/minimal) 
 
 [vue-typescript-admin-mock-server](https://github.com/armour/vue-typescript-admin-mock-server) (Mock 服务器)
