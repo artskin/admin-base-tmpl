@@ -88,7 +88,6 @@ export default class Layout extends mixins(ResizeMixin) {
   .main-container {
     margin-left: 54px;
   }
-
   .sidebar-container {
     width: 54px !important;
   }
