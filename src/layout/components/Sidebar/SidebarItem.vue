@@ -114,16 +114,23 @@ export default class SidebarItem extends Vue {
 .el-submenu.is-active > .el-submenu__title {
   color: #f4f4f5 !important;
 }
+.el-menu-item,.el-submenu{
+  background-color: var(--primary) !important;
+  color: var(--light);
+  &:focus,
+  &:hover,
+  .el-submenu__title:hover{
+    background-color: var(--primary-hover) !important;
+  }
+  i{
+    color: var(--light);
+  }
+}
 
 .full-mode {
-  .nest-menu .el-submenu>.el-submenu__title,
+  .el-submenu>.el-submenu__title,
   .el-submenu .el-menu-item {
     min-width: var(--sideBarWidth) !important;
-    background-color: #1f2d3d !important;
-
-    &:hover {
-      background-color: #001528 !important;
-    }
   }
 }
 
@@ -132,7 +139,6 @@ export default class SidebarItem extends Vue {
     .submenu-title-noDropdown {
       padding: 0 !important;
       position: relative;
-
       .el-tooltip {
         padding-left: 15px !important;
       }
@@ -140,10 +146,8 @@ export default class SidebarItem extends Vue {
 
     .el-submenu {
       overflow: hidden;
-
       &>.el-submenu__title {
         padding-left: 15px !important;
-
         .el-submenu__icon-arrow {
           display: none;
         }

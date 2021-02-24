@@ -40,9 +40,7 @@
   --padding-l: 20px;
   --padding-xl: 24px;
 
-  /* width */
-  --sideBarWidth: #{$sideBarWidth};
-
+  
   /* font-family */
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
@@ -54,6 +52,14 @@
   @include colorGroup('--info',$info);
   @include colorGroup('--warning',$warning);
   @include colorGroup('--danger',$danger);
+
+  /* width */
+  --sideBarWidth: #{$sideBarWidth};
+
+  --menuBg: var(--primary);
+  --menuText: #{$white};
+  --menuActiveText: #{$pink}; 
+
 }
 
 /* Global scss */

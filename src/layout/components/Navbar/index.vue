@@ -27,7 +27,7 @@
           </router-link>
           <a
             target="_blank"
-            href="https://gitlab.sz.sensetime.com/fe/aurora-cli/"
+            href="https://github.com/artskin/base-admin"
           >
             <el-dropdown-item>
               Github

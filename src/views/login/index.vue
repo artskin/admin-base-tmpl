@@ -71,7 +71,6 @@ import { AppModule } from '@/store/modules/app';
 import LangSelect from '@/components/LangSelect/index.vue';
 
 @Component({
-  //name: 'Login',//会覆盖class的Name
   components: {
     LangSelect
   }
@@ -148,18 +147,13 @@ export default class Login extends Vue {
     (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
       if (valid) {
         this.loading = true;
-        console.log(await UserModule.Login(this.loginForm))
         await UserModule.Login(this.loginForm)
 
         this.$router.push({
           path: this.redirect || '/',
           query: this.otherQuery
         })
-        
-        // Just to simulate the time of the request
-        // setTimeout(() => {
-        //   this.loading = false
-        // }, 0.5 * 1000)
+
       } else {
         return false
       }
@@ -181,7 +175,6 @@ export let route = {
 </script>
 
 <style lang="scss">
-
 .login-container {
   height: 100%;
   width: 100%;
@@ -247,7 +240,6 @@ export let route = {
     display: block;
   }
 }
-
 
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
 @supports (-webkit-mask: none) and (not (cater-color: var(--loginCursorColor))) {

@@ -79,7 +79,7 @@ import { ITaskItem } from '@/api/types'
     }
   }
 })
-export default class extends Vue {
+export default class Table extends Vue {
   private list: ITaskItem[] = []
   private listLoading = true
   private listQuery = {

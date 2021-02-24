@@ -24,7 +24,7 @@ import { TreeData } from 'element-ui/types/tree'
 @Component({
   name: 'Tree'
 })
-export default class extends Vue {
+export default class Tree extends Vue {
   private filterText = '';
   private data2 = [{
     id: 1,

@@ -150,7 +150,7 @@ export default new Router({
       component: Layout,
       children: [
         {
-          path: 'https://gitlab.sz.sensetime.com/fe/aurora-cli',
+          path: 'https://github.com/artskin/base-admin',
           meta: {
             title: 'External Link',
             icon: 'el-icon-link'
