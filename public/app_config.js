@@ -10,7 +10,7 @@ window.appConf = {
     userInfo :host+'/users/info',
     sysInfo  :host+'/sys/info',
     logout   :host+'/users/logout',
-    tasks    :host+'/api/v1/tasks',
+    tasks    :host+'/task/list',
   }
   
 }

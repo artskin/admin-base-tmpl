@@ -1,6 +1,9 @@
 <template>
   <div class="app-container">
-    <el-table
+    <ul>
+      <li v-for="item in list" :key="item.id">{{item.task_id}} -- {{item.status}} -- {{item.source.type}}</li>
+    </ul>
+    <!-- <el-table
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
@@ -14,6 +17,7 @@
         width="295"
       >
         <template slot-scope="scope">
+          {{ scope }}
           {{ scope.row.task_id }}
         </template>
       </el-table-column>
@@ -54,7 +58,7 @@
           <span>{{ scope.row.timestamp | parseTime }}</span>
         </template>
       </el-table-column>
-    </el-table>
+    </el-table> -->
   </div>
 </template>
 
@@ -95,9 +99,9 @@ export default class Table extends Vue {
     this.listLoading = true
     //const { data } = await getTasks(this.listQuery)
     await getTasks(this.listQuery).then((resp:any)=>{
-      //console.log(resp)
-      if(resp && resp.dataList){
-        this.list = resp.dataList
+      console.log(resp.data.list)
+      if(resp && resp.data.list){
+        this.list = resp.data.list
       }
     })
     
