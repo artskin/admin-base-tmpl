@@ -114,7 +114,7 @@ export default class Layout extends mixins(ResizeMixin) {
     .sidebar-container {
       pointer-events: none;
       transition-duration: 0.3s;
-      transform: translate3d(-var(--sideBarWidth), 0, 0);
+      transform: translate3d(var(--closesideBarWidth), 0, 0) !important;
     }
   }
 }

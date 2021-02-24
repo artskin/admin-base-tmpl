@@ -18,7 +18,7 @@ import { Component, Vue } from 'vue-property-decorator'
 import { UserModule } from '@/store/modules/user'
 
 @Component({
-  name: 'Dashboard'
+
 })
 export default class Dashboard extends Vue {
   get name() {

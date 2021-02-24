@@ -55,6 +55,7 @@
 
   /* width */
   --sideBarWidth: #{$sideBarWidth};
+  --closesideBarWidth: #{-$sideBarWidth};
 
   --menuBg: var(--primary);
   --menuText: #{$white};
