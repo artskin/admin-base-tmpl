@@ -103,7 +103,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'Form'
 })
-export default class extends Vue {
+export default class Form extends Vue {
   private form = {
     name: '',
     region: '',

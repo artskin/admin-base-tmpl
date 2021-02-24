@@ -16,6 +16,7 @@
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.0",
     "sass": "^1.32.8",
+    "tslib": "^2.1.0",
     "vue": "^2.6.12",
     "vue-i18n": "^8.22.4",
     "vue-property-decorator": "^9.1.2",
