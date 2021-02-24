@@ -1,6 +1,5 @@
 # ABT：admin base template
 
-
 > 你是否还在为启动前端项目的缓慢等待而焦急，为修改代码等代码编译看效果而烦恼...
 
 > 是时候抛弃Webpack了,拥抱vite,开发环境秒开，修改代码秒更新不是梦...
@@ -16,7 +15,7 @@
 
 包含了 Element UI & Axios & Permission control & 国际化切换及配置，等后台必要的基础功能模块。
 
-Mock 数据部分，可以通过 [vite-plugin-mock]()启动服务，通过vite.config.js配置并运行。
+Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plugin-mock)启动服务，通过vite.config.js配置并运行。
 
 ### 基础功能
 

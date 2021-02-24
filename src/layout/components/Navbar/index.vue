@@ -14,6 +14,7 @@
       <el-dropdown
         class="avatar-container right-menu-item hover-effect"
         trigger="click"
+        @command="selectTheme"
       >
         <div class="avatar-wrapper">
           <i class="el-icon-setting"></i>
@@ -25,6 +26,12 @@
               Home
             </el-dropdown-item>
           </router-link>
+          <el-dropdown-item command="tbTheme">
+            淘宝色
+          </el-dropdown-item>
+          <el-dropdown-item command="darkTheme">
+            深色
+          </el-dropdown-item>
           <a
             target="_blank"
             href="https://github.com/artskin/base-admin"
@@ -79,6 +86,16 @@ export default class Navbar extends Vue {
   private async logout() {
     await UserModule.LogOut()
     this.$router.push(`/login?redirect=${this.$route.fullPath}`)
+  }
+  selectTheme(theme){
+    console.log(document.body.classList.item(0),document.body.classList)
+    if(!document.body.classList.length){
+      document.body.classList.add(theme)
+    }else{
+      document.body.classList.replace(document.body.classList.value,theme)
+    }
+   
+    
   }
 }
 </script>

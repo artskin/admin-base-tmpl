@@ -62,7 +62,20 @@
   --menuActiveText: #{$pink}; 
 
 }
-
+.tbTheme{
+  @include colorGroup('--primary',$orange);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--info',$info);
+  @include colorGroup('--warning',$warning);
+  @include colorGroup('--danger',$danger);
+}
+.darkTheme{
+  @include colorGroup('--primary',$dark);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--info',$info);
+  @include colorGroup('--warning',$warning);
+  @include colorGroup('--danger',$danger);
+}
 /* Global scss */
 html,
 body {

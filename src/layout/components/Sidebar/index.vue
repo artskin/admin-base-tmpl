@@ -1,7 +1,7 @@
 <template>
 <div :class="{'hideSidebar':isCollapse}">
   <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
-    <h1 class="logo">Logo</h1>
+    <h1 class="logo">Log<span>o</span></h1>
     <el-menu
       :collapse="isCollapse"
       :text-color="variables.menuText"
@@ -81,6 +81,9 @@ export default class SideBar extends Vue {
   .logo {
     padding: 0;
     font-size: 18px;
+    span{
+      display: none;
+    }
   }
 }
 .sidebar-container {
