@@ -179,7 +179,7 @@ export let route = {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: var(--loginBg);
+  background-color: var(--menuBg);
   .title-container {
     position: relative;
     .title {
@@ -244,7 +244,6 @@ export let route = {
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
 @supports (-webkit-mask: none) and (not (cater-color: var(--loginCursorColor))) {
   .login-container .el-input {
-    input { color: var(--loginCursorColor) }
     input::first-line { color: var(--lightGray); }
   }
 }
