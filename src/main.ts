@@ -9,7 +9,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import elementUI from '@/utils/need-element-ui'
 // Vue.use(elementUI)
 
-
 //import '@/styles/element-variables.scss'
 import '@/styles/index.scss'
 
