@@ -114,16 +114,20 @@ export default class SidebarItem extends Vue {
 .el-submenu.is-active > .el-submenu__title {
   color: #f4f4f5 !important;
 }
+
 .el-menu-item,.el-submenu{
-  background-color: var(--primary) !important;
-  color: var(--light);
+  &,.el-submenu__title,i{
+    color: var(--light);
+  }
+  
   &:focus,
   &:hover,
   .el-submenu__title:hover{
     background-color: var(--primary-hover) !important;
   }
-  i{
-    color: var(--light);
+  &.is-active{
+    color:var(--white);
+    background-color: var(--primary-active) !important;
   }
 }
 
@@ -135,6 +139,7 @@ export default class SidebarItem extends Vue {
 }
 
 .simple-mode {
+  background-color: var(--primary);
   &.first-level {
     .submenu-title-noDropdown {
       padding: 0 !important;

@@ -1,11 +1,9 @@
 <template>
 <div :class="{'hideSidebar':isCollapse}">
   <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
-    <h1 class="logo">Log<span>o</span></h1>
+    <h1 class="logo"><em>AB<span>T</span></em></h1>
     <el-menu
       :collapse="isCollapse"
-      :text-color="variables.menuText"
-      :active-text-color="variables.menuActiveText"
       :unique-opened="false"
       :collapse-transition="false"
       mode="vertical"
@@ -75,12 +73,17 @@ export default class SideBar extends Vue {
 .logo{
   font-size: 20px;
   text-align: center;
-  color: rgba(255,255,255,.4);
+  color: rgba(255,255,255,.5);
+  em{
+    border: 1px dashed rgba(255,255,255,.1);
+    padding: 0 10px;
+  }
 }
 .hideSidebar {
   .logo {
     padding: 0;
     font-size: 18px;
+    em{padding: 0 4px;}
     span{
       display: none;
     }

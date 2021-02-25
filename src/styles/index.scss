@@ -68,6 +68,7 @@
   @include colorGroup('--info',$info);
   @include colorGroup('--warning',$warning);
   @include colorGroup('--danger',$danger);
+  --light: #{$white};
 }
 .darkTheme{
   @include colorGroup('--primary',$dark);
