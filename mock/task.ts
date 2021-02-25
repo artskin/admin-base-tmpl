@@ -1,6 +1,9 @@
+
 import { MockMethod } from 'vite-plugin-mock';
-// import mockjs from 'mockjs'
-// console.log(mockjs)
+
+const Mock = require('mockjs')
+const Random = Mock.Random;
+
 enum sourceType{
   'UNKNOWN',
   'VN_RTSP',
@@ -16,13 +19,15 @@ export default [
     timeout: 200,
     response: ({body})=>{
       console.log('body==>', body);
-      //console.log(mockjs.mock('name'))
       const tasksList = [];
-      const tasksCount = 30;
+      const tasksCount = 20;
       for (let i = 0; i < tasksCount; i++) {
         tasksList.push({
-          "task_id": '12213',
-          "status": 1,
+          "task_id": Random.id(),
+          "status": Random.boolean(),
+          "deviceName":Random.name(),
+          "timestamp":Random.date(),
+          "title":Random.string(10),
           "source": {
             "type": sourceType[0],
             "parameter": {

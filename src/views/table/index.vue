@@ -1,9 +1,6 @@
 <template>
   <div class="app-container">
-    <ul>
-      <li v-for="item in list" :key="item.id">{{item.task_id}} -- {{item.status}} -- {{item.source.type}}</li>
-    </ul>
-    <!-- <el-table
+    <el-table
       v-loading="listLoading"
       :data="list"
       element-loading-text="Loading"
@@ -13,11 +10,10 @@
     >
       <el-table-column
         align="center"
-        label="Task_ID"
+        label="task_id"
         width="295"
       >
         <template slot-scope="scope">
-          {{ scope }}
           {{ scope.row.task_id }}
         </template>
       </el-table-column>
@@ -58,7 +54,7 @@
           <span>{{ scope.row.timestamp | parseTime }}</span>
         </template>
       </el-table-column>
-    </el-table> -->
+    </el-table>
   </div>
 </template>
 
