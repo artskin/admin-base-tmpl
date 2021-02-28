@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '../layout/index.vue'
 // import routes from './routes.js'
-// console.log(routes)
 Vue.use(Router)
 
 /*
