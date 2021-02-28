@@ -1,7 +1,10 @@
 <template>
 <div :class="{'hideSidebar':isCollapse}">
   <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
-    <h1 class="logo"><em>AB<span>T</span></em></h1>
+    <h1 class="logo">
+      <img class="img-logo" src="/img/logo.svg" alt="">
+      <span>Admin Base</span>
+    </h1>
     <el-menu
       :collapse="isCollapse"
       :unique-opened="false"
@@ -16,7 +19,6 @@
         :is-collapse="isCollapse"
       />
     </el-menu>
-    
 </div>
 </template>
 
@@ -53,14 +55,7 @@ export default class SideBar extends Vue {
       let cssArr = element.split(':')
       cssMap[cssArr[0].trim()] = cssArr[1]
     });
-    console.log(cssMap)
     return cssMap
-    
-    return {
-      menuBg: "var(--menuBg)",
-      menuText: "var(--menuText)",
-      menuActiveText: "var(--menuActiveText)"
-    }
   }
 
   get isCollapse() {
@@ -70,20 +65,24 @@ export default class SideBar extends Vue {
 </script>
 
 <style lang="scss">
+.img-logo{
+  height: 24px;
+}
 .logo{
   font-size: 20px;
   text-align: center;
   color: rgba(255,255,255,.5);
-  em{
-    border: 1px dashed rgba(255,255,255,.1);
-    padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+  span{
+    padding-left: 5px;
   }
 }
 .hideSidebar {
   .logo {
-    padding: 0;
     font-size: 18px;
-    em{padding: 0 4px;}
     span{
       display: none;
     }
@@ -123,7 +122,6 @@ export default class SideBar extends Vue {
 .el-scrollbar {
   height: 100%
 }
-
 .el-menu {
   border: none;
   height: 100%;

@@ -1,0 +1,37 @@
+
+/* Variables */
+// less Base color
+@primary: #253460;
+@success: #31D500;
+@info: #1cbcd8;
+@warning: #DF9812;
+@danger: #E6455F;
+@dark: #343a40;
+@white:#f1f2f4;
+@orange: #fd7e14;
+
+@sideBarBg:#292e40;
+
+.colorGroup(@key,@value){
+  @{key}: @value;
+  @{key}-hover: lighten(@value, 5%);
+  @{key}-active: darken(@value, 5%);
+  @{key}-opacity:rgba(@value, 0.1);
+}
+
+.darkTheme{
+  .colorGroup(--primary,@dark);
+  .colorGroup(--success,@success);
+  .colorGroup(--info,@info);
+  .colorGroup(--warning,@warning);
+  .colorGroup(--danger,@danger);
+}
+
+.tbTheme{
+  .colorGroup(--primary,@orange);
+  .colorGroup(--success,@success);
+  .colorGroup(--info,@info);
+  .colorGroup(--warning,@warning);
+  .colorGroup(--danger,@danger);
+  --light: @white;
+}
