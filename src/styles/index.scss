@@ -107,3 +107,20 @@ div:focus {
 .el-button--primary{
   @include buttonCreat(--primary,--primary)
 }
+//scrollbar style
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+  /* or add it to the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background:lighten($gray, 20%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+  /* or add it to the track */
+}

@@ -55,8 +55,8 @@ export default new Router({
       component: Layout,
       redirect: '/example/tree',
       meta: {
-        title: 'Example',
-        icon: 'el-icon-eleme'
+        title: 'Pages',
+        icon: 'el-icon-document-copy'
       },
       children: [
         {
