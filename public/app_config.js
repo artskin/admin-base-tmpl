@@ -5,6 +5,7 @@ let host =""
 window.appConf = {
   "lang":"en",
   "theme":"",
+  "mWidth":900,
   "api":{
     login    : `${host}/users/login`,
     logout   : `${host}/users/logout`,

@@ -69,10 +69,10 @@ export default new Router({
           }
         },
         {
-          path: 'table',
-          component: () => import(/* webpackChunkName: "table" */ '@/views/table/index.vue'),
+          path: 'task',
+          component: () => import(/* webpackChunkName: "table" */ '@/views/task/index.vue'),
           meta: {
-            title: 'Table',
+            title: 'Task List',
             icon: 'el-icon-s-grid'
           }
         }

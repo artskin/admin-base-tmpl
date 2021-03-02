@@ -7,6 +7,7 @@ declare module '*.vue' {
 interface Window {
   appConf:{
     lang:string
+    mWidth:number
     api:{
       login:string,
       userInfo:string,

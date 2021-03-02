@@ -1,7 +1,7 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { AppModule, DeviceType } from '@/store/modules/app'
 
-const WIDTH = 992 // refer to Bootstrap's responsive design
+const WIDTH = window.appConf.mWidth; // refer to Bootstrap's responsive design
 
 @Component({
   name: 'ResizeMixin'

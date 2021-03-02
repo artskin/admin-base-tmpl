@@ -45,12 +45,16 @@ npm run build
 
 - [x] elementUI按需引入，并更改主题
 - [ ] 路由根据目录自动生成
+- [ ] Dashboard 
 
 ### 自定义 Vue 配置
 
 看这里 [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 参考项目
+
+https://coderthemes.com/greeva/layouts/vertical-dark/ui-buttons.html
+
 [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template/tree/minimal) 
 
 Javascript 版本相关:
