@@ -68,6 +68,7 @@ export default class Layout extends mixins(ResizeMixin) {
   min-height: 100%;
   transition: margin-left .28s;
   margin-left: var(--sideBarWidth);
+  background-color: var(--mainBG);
   position: relative;
 }
 

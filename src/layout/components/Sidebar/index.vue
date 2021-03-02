@@ -26,7 +26,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import SidebarItem from './SidebarItem.vue'
-import variables from '@/styles/_variables.scss'
+import variables from '@/assets/styles/_variables.scss'
 
 function getCaption(str){
 	let index=str.lastIndexOf("\{");
@@ -89,13 +89,13 @@ export default class SideBar extends Vue {
   }
 }
 .sidebar-container {
-  background-color: var(--primary);
+  background-color: var(--sideBarBg);
   // reset element-ui css
   .horizontal-collapse-transition {
     transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
   }
   .el-menu{
-    background-color: var(--primary) !important;
+    background-color: var(--sideBarBg) !important;
   }
 
   .scrollbar-wrapper {

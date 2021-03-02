@@ -26,11 +26,11 @@
               Home
             </el-dropdown-item>
           </router-link>
-          <el-dropdown-item command="tbTheme">
-            淘宝色
+          <el-dropdown-item command="themeOrange">
+            橘橙色
           </el-dropdown-item>
-          <el-dropdown-item command="darkTheme">
-            深色
+          <el-dropdown-item command="themeDarkBlue">
+            深蓝色
           </el-dropdown-item>
           <a
             target="_blank"
@@ -48,6 +48,7 @@
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
+      <el-color-picker v-model="color2"></el-color-picker>
     </div>
   </div>
 </template>
@@ -67,6 +68,7 @@ import Hamburger from '@/components/Hamburger/index.vue'
   }
 })
 export default class Navbar extends Vue {
+  color2:string = '#556ee6'
   get sidebar() {
     return AppModule.sidebar
   }
@@ -162,6 +164,13 @@ export default class Navbar extends Vue {
         }
       }
     }
+    
+  }
+}
+::v-deep{
+  .el-color-picker__trigger{
+    padding: 9px;
+    border: none;
   }
 }
 </style>

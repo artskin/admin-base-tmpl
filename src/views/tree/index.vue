@@ -1,9 +1,9 @@
 <template>
-  <div class="app-container">
+  <div class="page-router">
     <el-input
       v-model="filterText"
       placeholder="Filter keyword"
-      style="margin-bottom:30px;"
+      style="margin-bottom:20px;"
     />
     <el-tree
       ref="tree2"

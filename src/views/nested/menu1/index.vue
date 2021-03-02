@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:30px;">
+  <div class="page-router">
     <el-alert
       :closable="false"
       title="menu 1"

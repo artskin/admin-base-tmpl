@@ -25,9 +25,8 @@ export default [
         tasksList.push({
           "task_id": Random.id(),
           "status": Random.boolean(),
-          "deviceName":Random.name(),
           "timestamp":Random.date(),
-          "title":Random.string(10),
+          "title":Random.name(10),
           "source": {
             "type": sourceType[0],
             "parameter": {

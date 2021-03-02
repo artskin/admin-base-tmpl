@@ -1,5 +1,5 @@
 <template>
-  <div class="app-container">
+  <div class="page-router">
     <el-form
       ref="form"
       :model="form"

@@ -1,0 +1,58 @@
+/* Variables */
+//default
+$indigo: #6610f2;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$orange: #fd7e14;
+$teal: #20c997;
+$cyan: #17a2b8;
+$white: #fff;
+$secondary: #868e96;
+$light: #f8f9fa;
+$tiffany: #4AB7BD;
+
+//* Base color 素米蓝色风格配色
+$blue: #4E88F3;
+$red: #F7777F;
+$yellow: #F9B653;
+$green:#51CBA8;
+$dark: #404247;
+$dark-gray: #858B95;
+$gray: #CED3D8;
+$gray-light:#E7EAEF;
+//$text-dark: #3E4042;
+
+// Main color
+$primary: $blue;
+$success: $green;
+$info: $dark-gray;
+$warning: $yellow;
+$danger: $red;
+$border-color:$gray-light;
+
+// Sidebar
+$sideBarWidth: 210px;
+$subMenuBg:#1f2d3d;
+$subMenuHover:#737d86;
+$subMenuActiveText:#f4f4f5;
+$menuBg:#323234;
+$menuText:#FFFFFF;
+$menuActiveText: var(--primary); // Also see settings.sidebarTextTheme
+
+//layout
+$page-padding:20px;
+$page-bg:#eff1f6;
+$--scrollbar-color:#ACB8CC;
+
+// Login page
+$lightGray: #eee;
+$darkGray:$page-bg;
+$loginBg: #fff;
+$loginCursorColor: $dark;
+// The :export directive is the magic sauce for webpack
+// https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
+:export {
+  menuBg: $menuBg;
+  menuText: $menuText;
+  menuActiveText: $menuActiveText;
+}
