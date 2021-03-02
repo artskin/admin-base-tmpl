@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Layout from '../layout/index.vue'
 // import routes from './routes.js'
-// console.log(routes)
 Vue.use(Router)
 
 /*
@@ -56,8 +55,8 @@ export default new Router({
       component: Layout,
       redirect: '/example/tree',
       meta: {
-        title: 'Example',
-        icon: 'el-icon-eleme'
+        title: 'Pages',
+        icon: 'el-icon-document-copy'
       },
       children: [
         {

@@ -11,7 +11,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 //import '@/styles/element-variables.scss'
 import '@/styles/index.scss'
-
+import '@/styles/theme_dark.less'
 import App from '@/App.vue'
 import store from '@/store'
 import router from '@/router'

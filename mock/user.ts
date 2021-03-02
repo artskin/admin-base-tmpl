@@ -40,6 +40,7 @@ export default [
         code: 20000,
         message: 'ok',
         data: {
+          user:{
             id: 0,
             username: 'admin',
             password: 'any',
@@ -49,6 +50,7 @@ export default [
             email: 'admin@test.com',
             phone: '1234567890',
             roles: ['admin'],
+          }
         },
       }
     },

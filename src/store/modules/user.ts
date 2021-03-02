@@ -21,7 +21,8 @@ class User extends VuexModule implements IUserState {
 
   @Mutation
   private SET_TOKEN(token: string) {
-    this.token = token
+    this.token = token;
+    setToken(token)
   }
 
   @Mutation
@@ -49,7 +50,7 @@ class User extends VuexModule implements IUserState {
     let { username, password } = userInfo
     username = username.trim()
     const { data } = await login({ username, password })
-    setToken(data.accessToken)
+    
     this.SET_TOKEN(data.accessToken)
   }
 
@@ -60,16 +61,18 @@ class User extends VuexModule implements IUserState {
     this.SET_ROLES([])
   }
 
-  @Action
+  @Action({rawError: true})
   public async GetUserInfo() {
     if (this.token === '') {
       throw Error('GetUserInfo: token is undefined!')
     }
     const { data } = await getUserInfo({ /* Your params here */ })
+    console.log(data)
     if (!data) {
       throw Error('Verification failed, please Login again.')
     }
     const { roles, name, avatar, introduction } = data.user
+    console.log(roles, name, avatar, introduction)
     // roles must be a non-empty array
     if (!roles || roles.length <= 0) {
       throw Error('GetUserInfo: roles must be a non-null array!')
