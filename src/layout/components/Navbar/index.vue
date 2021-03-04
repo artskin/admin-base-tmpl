@@ -17,7 +17,7 @@
         @command="selectTheme"
       >
         <div class="avatar-wrapper">
-          <i class="el-icon-setting"></i>
+          <i class="el-icon-user"></i>
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -48,7 +48,7 @@
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
-      <el-color-picker v-model="color2"></el-color-picker>
+      <SysSetting></SysSetting>
     </div>
   </div>
 </template>
@@ -59,16 +59,16 @@ import { AppModule } from '@/store/modules/app'
 import { UserModule } from '@/store/modules/user'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
-
+import SysSetting from './SysSetting.vue'
 @Component({
   name: 'Navbar',
   components: {
     Breadcrumb,
-    Hamburger
+    Hamburger,
+    SysSetting
   }
 })
 export default class Navbar extends Vue {
-  color2:string = '#556ee6'
   get sidebar() {
     return AppModule.sidebar
   }
@@ -96,8 +96,6 @@ export default class Navbar extends Vue {
     }else{
       document.body.classList.replace(document.body.classList.value,theme)
     }
-   
-    
   }
 }
 </script>
@@ -132,6 +130,7 @@ export default class Navbar extends Vue {
     float: right;
     height: 100%;
     line-height: 50px;
+    display: flex;
     &:focus {
       outline: none;
     }

@@ -179,7 +179,7 @@ export let route = {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: var(--menuBg);
+  background-color: var(--sideBarBg);
   .title-container {
     position: relative;
     .title {

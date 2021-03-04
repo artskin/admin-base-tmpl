@@ -12,5 +12,6 @@ window.appConf = {
     userInfo : `${host}/users/info`,
     sysInfo  : `${host}/sys/info`,
     tasks    : `${host}/task/list`,
+    statistics:`${host}/statistics`
   }
 }

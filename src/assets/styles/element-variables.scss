@@ -47,65 +47,66 @@ $--font-path: 'element-ui/lib/theme-chalk/fonts';
 /*按需引入用到的组件的scss文件和基础scss文件*/
 //@import "theme-chalk/src/base.scss";
 /*字体图标*/
-@import "theme-chalk/src/icon.scss";
-@import "theme-chalk/src/rate.scss";
-//@import "theme-chalk/src/button.scss";
-@import "theme-chalk/src/input.scss";
-@import "theme-chalk/src/input-number.scss";
-@import "theme-chalk/src/row.scss";
+// @import "theme-chalk/src/icon.scss";
+// @import "theme-chalk/src/rate.scss";
+// //@import "theme-chalk/src/button.scss";
+// @import "theme-chalk/src/input.scss";
+// @import "theme-chalk/src/input-number.scss";
+// @import "theme-chalk/src/row.scss";
 
-@import "theme-chalk/src/form.scss";
-@import "theme-chalk/src/form-item.scss";
+// @import "theme-chalk/src/form.scss";
+// @import "theme-chalk/src/form-item.scss";
 
-@import "theme-chalk/src/dropdown.scss";//包含button.scss？
-// @import "theme-chalk/src/dropdown-menu.scss";//这两个为空
-// @import "theme-chalk/src/dropdown-item.scss";
-@import "theme-chalk/src/scrollbar.scss";
+// @import "theme-chalk/src/dropdown.scss";//包含button.scss？
+// // @import "theme-chalk/src/dropdown-menu.scss";//这两个为空
+// // @import "theme-chalk/src/dropdown-item.scss";
+// @import "theme-chalk/src/scrollbar.scss";
 
-@import "theme-chalk/src/menu.scss";
-@import "theme-chalk/src/submenu.scss";
-@import "theme-chalk/src/menu-item.scss";
-@import "theme-chalk/src/menu-item-group.scss";
+// @import "theme-chalk/src/menu.scss";
+// @import "theme-chalk/src/submenu.scss";
+// @import "theme-chalk/src/menu-item.scss";
+// @import "theme-chalk/src/menu-item-group.scss";
 
-/**面包屑*/
-@import "theme-chalk/src/breadcrumb.scss";
-@import "theme-chalk/src/breadcrumb-item.scss";
+// /**面包屑*/
+// @import "theme-chalk/src/breadcrumb.scss";
+// @import "theme-chalk/src/breadcrumb-item.scss";
 
-//tree
-@import "theme-chalk/src/tree.scss";
+// //tree
+// @import "theme-chalk/src/tree.scss";
 
 
 
-//date-picker
-@import "theme-chalk/src/date-picker.scss";
+// //date-picker
+// @import "theme-chalk/src/date-picker.scss";
 
-//alert
-@import "theme-chalk/src/alert.scss";
-@import "theme-chalk/src/message.scss";
-@import "theme-chalk/src/table.scss";
-@import "theme-chalk/src/tabs.scss";
-@import "theme-chalk/src/col.scss";
-@import "theme-chalk/src/card.scss";
+// //alert
+// @import "theme-chalk/src/alert.scss";
+// @import "theme-chalk/src/message.scss";
+// @import "theme-chalk/src/table.scss";
+// @import "theme-chalk/src/tabs.scss";
+// @import "theme-chalk/src/col.scss";
+// @import "theme-chalk/src/card.scss";
 
-@import "theme-chalk/src/aside.scss";
-@import "theme-chalk/src/main.scss";
-@import "theme-chalk/src/header.scss";
-@import "theme-chalk/src/container.scss";
-@import "theme-chalk/src/pagination.scss";
-@import "theme-chalk/src/drawer.scss";
-@import "theme-chalk/src/page-header.scss";
-@import "theme-chalk/src/radio-button.scss";
-@import "theme-chalk/src/radio-group.scss";
-@import "theme-chalk/src/message-box.scss";//包含button.scss
-@import "theme-chalk/src/popover.scss";
-@import "theme-chalk/src/switch.scss";
-@import "theme-chalk/src/radio.scss";
-@import "theme-chalk/src/dialog.scss";
-@import "theme-chalk/src/image.scss";
-@import "theme-chalk/src/upload.scss";
-@import "theme-chalk/src/loading.scss";
-@import "theme-chalk/src/tag.scss";
-@import "theme-chalk/src/slider.scss";
-@import "theme-chalk/src/cascader.scss";
+// @import "theme-chalk/src/aside.scss";
+// @import "theme-chalk/src/main.scss";
+// @import "theme-chalk/src/header.scss";
+// @import "theme-chalk/src/container.scss";
+// @import "theme-chalk/src/pagination.scss";
+// @import "theme-chalk/src/drawer.scss";
+// @import "theme-chalk/src/page-header.scss";
+// @import "theme-chalk/src/radio-button.scss";
+// @import "theme-chalk/src/radio-group.scss";
+// @import "theme-chalk/src/message-box.scss";//包含button.scss
+// @import "theme-chalk/src/popover.scss";
+// @import "theme-chalk/src/switch.scss";
+// @import "theme-chalk/src/radio.scss";
+// @import "theme-chalk/src/dialog.scss";
+// @import "theme-chalk/src/image.scss";
+// @import "theme-chalk/src/upload.scss";
+// @import "theme-chalk/src/loading.scss";
+// @import "theme-chalk/src/tag.scss";
+// @import "theme-chalk/src/slider.scss";
+// @import "theme-chalk/src/cascader.scss";
+// @import "theme-chalk/src/color-picker.scss";
 
 

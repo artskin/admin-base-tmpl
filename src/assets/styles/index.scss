@@ -39,7 +39,6 @@
   --padding-m: 16px;
   --padding-l: 20px;
   --padding-xl: 24px;
-
   
   /* font-family */
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -66,7 +65,13 @@
 .themeDarkBlue{
   $sideBarBg:#0b2559;
   --mainBG:#f6f8fc;
+  $success:#34c38f;
+  $danger:#f46a6a;
+  $warning:#f1b44c;
   @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+  @include colorGroup('--warning',$warning);
 }
 
 .themeOrange{

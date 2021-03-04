@@ -12,7 +12,8 @@ interface Window {
       login:string,
       userInfo:string,
       logout:string,
-      tasks:string
+      tasks:string,
+      statistics:string
     }
   }
 }

@@ -2,36 +2,10 @@
   <div class="dashboard-container">
     <p class="gray">Welcome! <em>{{ name }}</em></p>
     <el-row :gutter="20">
-      <el-col :span="6">
-        <el-card class="box-card">
-          <p class="total-number">
-            <span>12214</span>
-            <em>Visitors</em>
-          </p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card class="box-card">
-          <p class="total-number">
-            <span>12214</span>
-            <em>Visitors</em>
-          </p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card class="box-card">
-          <p class="total-number">
-            <span>12214</span>
-            <em>Visitors</em>
-          </p>
-        </el-card>
-      </el-col>
-      <el-col :span="6">
-        <el-card class="box-card">
-          <p class="total-number">
-            <span>12214</span>
-            <em>Visitors</em>
-          </p>
+      <el-col :span="6" v-for="(item,index) in overview" :key="index">
+        <el-card class="box-card total-number">
+          <em>{{item.name}}</em>
+          <span>{{item.number}}</span>
         </el-card>
       </el-col>
     </el-row>
@@ -55,13 +29,37 @@
         </el-card>
       </el-col>
     </el-row>
-    
+    <el-row :gutter="20">
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>卡片名称</span>
+            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+          </div>
+          <div v-for="o in 4" :key="o" class="text item">
+            {{'列表内容 ' + o }}
+          </div>
+        </el-card>
+      </el-col>
+      <el-col :span="12">
+        <el-card class="box-card">
+          <div slot="header" class="clearfix">
+            <span>卡片名称</span>
+            <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+          </div>
+          <div v-for="o in 4" :key="o" class="text item">
+            {{'列表内容 ' + o }}
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { UserModule } from '@/store/modules/user'
+import { getStatistics } from '@/api/statistics'
 
 @Component({
 
@@ -72,6 +70,20 @@ export default class Dashboard extends Vue {
   }
   percentage:number = 40
   colors:string = '#ea4c89'
+  overview:Array<Object> = [
+    {
+      num:123,
+      name:'Visitors'
+    }
+  ]
+  created() {
+    this.loadStatistics()
+  }
+  loadStatistics(){
+    getStatistics().then((resp)=>{
+      this.overview = resp.data.list
+    })
+  }
 }
 </script>
 
@@ -97,9 +109,8 @@ export default class Dashboard extends Vue {
 }
 .total-number{
   span{
-    font-size: 32px;
+    font-size: 28px;
     display: block;
-    padding-bottom: 10px;
   }
   em{
     color: var(--gray);

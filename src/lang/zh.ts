@@ -5,7 +5,7 @@ export default {
   },
   "switchLang":"语言切换",
   "login":{
-    "title":"登录 Aurora",
+    "title":"登录 ABT",
     "username":"用户名",
     "password":"密码",
     "submitText":"登录"

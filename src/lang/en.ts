@@ -5,7 +5,7 @@ export default {
   },
   "switchLang":"Language switch",
   "login":{
-    "title":"Login Aurora",
+    "title":"Login ABT",
     "username":"UserName",
     "password":"Password",
     "submitText":"Sign in"
