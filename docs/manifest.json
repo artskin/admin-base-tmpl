@@ -1,0 +1,20 @@
+{
+  "name": "Admin Base Template",
+  "short_name": "Vue Ts Admin",
+  "icons": [
+    {
+      "src": "./favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/icons/apple-touch-icon-300x300.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#4DBA87"
+}
