@@ -7,11 +7,11 @@ window.appConf = {
   "theme":"",
   "mWidth":900,
   "api":{
-    login    : `${host}/users/login`,
-    logout   : `${host}/users/logout`,
-    userInfo : `${host}/users/info`,
-    sysInfo  : `${host}/sys/info`,
-    tasks    : `${host}/task/list`,
-    statistics:`${host}/statistics`
+    login      : `${host}/users/login`,
+    logout     : `${host}/users/logout`,
+    userInfo   : `${host}/users/info`,
+    sysInfo    : `${host}/sys/info`,
+    tasks      : `${host}/task/list`,
+    statistics : `${host}/statistics`
   }
 }
