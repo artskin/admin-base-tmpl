@@ -3,15 +3,20 @@
     <el-button class="btn-setting" @click="drawer = true" icon="el-icon-setting" size="mini" circle></el-button>
     <el-drawer
       title="Setting"
+      :size="250"
       :visible.sync="drawer"
       :direction="direction"
       :before-close="handleClose">
-      <el-radio-group class="color-cards" v-model="currentTheme" @change="themeChanged">
-        <el-radio label="themeDefault"><br>default</el-radio>
-        <el-radio label="themeDarkBlue"><br>DarkBlue</el-radio>
-        <el-radio label="themeOrange"><br>Orange</el-radio>
-      </el-radio-group>
-      <el-color-picker v-model="color2"></el-color-picker>
+      <section class="drawer-ctx">
+        <h5>主题选择</h5>
+        <el-radio-group class="color-cards" v-model="currentTheme" @change="themeChanged">
+          <el-radio label="themeDefault"><br>default</el-radio>
+          <el-radio label="themeDarkBlue"><br>DarkBlue</el-radio>
+          <el-radio label="themeOrange"><br>Orange</el-radio>
+        </el-radio-group>
+        <h5>自定义主题</h5>
+        <el-color-picker v-model="color2"></el-color-picker>
+      </section>
     </el-drawer>
   </div>
 </template>
@@ -66,13 +71,16 @@ export default class SysSetting extends Vue {
   margin-right: 10px;
   vertical-align: middle;
 }
+.drawer-ctx,
 .el-drawer__header{
   padding: 15px;
 }
+
 .setting_layer{
   ::v-deep{
     .color-cards{
       .el-radio{
+        margin-right: 10px;
         &::before{
           content: ' ';
           display: inline-block;
