@@ -51,20 +51,29 @@ export default class SysSetting extends Vue {
   handleClose(done) {
     console.log(done())
   }
-  mounted() {
-    if(localStorage.getItem('currentTheme')){
-      this.themeChanged(localStorage.getItem('currentTheme'))
+  created() {
+    let localTheme = localStorage.getItem('currentTheme')
+    if(localTheme && !document.body.classList.length){
+      document.body.classList.add(localTheme)
+      this.currentTheme = localTheme
     }
+  }
+  mounted() {
+    
   }
   themeChanged(theme){
     // if(this.currentTheme != theme){
       this.currentTheme = theme
       window.localStorage.setItem('currentTheme',theme);
-      console.log(document.body.classList.item(0),document.body.classList)
       if(!document.body.classList.length){
         document.body.classList.add(theme)
       }else{
-        document.body.classList.replace(document.body.classList.value,theme)
+        if(document.body.classList.length == 1){
+          document.body.classList.replace(document.body.classList.value,theme)
+        }else{
+          document.body.classList.replace(document.body.classList[0],theme)
+        }
+        
       }
     //}
     
