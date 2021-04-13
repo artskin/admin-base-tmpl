@@ -54,7 +54,7 @@ export default class ChartBar extends Vue {
           },
           legend: {
             //display: false
-            position:'right'
+            position:'bottom'
           },
           tooltips: {
             intersect: false

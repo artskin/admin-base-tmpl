@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="/lib/element-ui.css">
     <link rel="stylesheet" href="/lib/el-icon.css">
     <script>
-      document.write('<script src="./app_config.js?v='+ Math.random() +'"><\/script>');
+      function loadJs(url){
+        let script=document.createElement('script');
+        script.src=url;
+        document.head.appendChild(script);
+      }
+      loadJs(`./app_config.js?v=${Date.now()}`);
     </script>
   </head>
   <body>

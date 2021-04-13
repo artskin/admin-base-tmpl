@@ -32,7 +32,7 @@
             <el-button style="float: right; padding: 3px 0" type="text">more</el-button>
           </div>
           <div v-for="o in 4" :key="o" class="text item">
-            {{'最新动态 ' + o }}
+            {{ o + '. 最新动态 ' }}
           </div>
         </el-card>
       </el-col>
@@ -43,7 +43,7 @@
             <el-button style="float: right; padding: 3px 0" type="text">more</el-button>
           </div>
           <div v-for="o in 4" :key="o" class="text item">
-            {{'待办事项 ' + o }}
+            {{ o + '. 待办事项 '}}
           </div>
         </el-card>
       </el-col>
@@ -150,7 +150,7 @@ export default class Dashboard extends Vue {
     font-style: normal;
     font-size: 14px;
   }
-  p{font-size: 14px;}
+  div{font-size: 14px;white-space:nowrap;}
 }
 .el-progress--line{
   margin-bottom: 15px;
