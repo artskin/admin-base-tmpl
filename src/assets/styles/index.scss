@@ -3,6 +3,7 @@
 @import './transition.scss';
 @import './_variables.scss';
 @import './element-variables.scss';
+@import './element-transform.scss';
 //@import './element-variables.scss';
 
 
@@ -132,7 +133,7 @@ div:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background:lighten($gray, 20%);
+  background: #CED3D8;
   border-radius: 5px;
 }
 

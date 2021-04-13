@@ -10,6 +10,16 @@ enum dimensionItems{
   'Viper',
   'Stranger'
 }
+enum zhengfu{
+  "-",
+  "+"
+}
+enum Icontype{
+  'el-icon-data-line',
+  'el-icon-coin',
+  'el-icon-sell',
+  'el-icon-user'
+}
 // //const tasksList: taskType[] = [];
 
 export default [
@@ -25,6 +35,8 @@ export default [
         tasksList.push({
           "name": dimensionItems[i] || 'default',
           "number": Random.integer(0,100000),
+          "growing": zhengfu[Random.integer(0,1)] + Random.integer(0,4000)/100,
+          "icon":Icontype[i]
         })
       }
       return {

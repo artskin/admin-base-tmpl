@@ -18,6 +18,8 @@
       >
         <div class="avatar-wrapper">
           <i class="el-icon-user"></i>
+          <span class="uname">{{username}}</span>
+          
           <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
@@ -26,12 +28,6 @@
               Home
             </el-dropdown-item>
           </router-link>
-          <el-dropdown-item command="themeOrange">
-            橘橙色
-          </el-dropdown-item>
-          <el-dropdown-item command="themeDarkBlue">
-            深蓝色
-          </el-dropdown-item>
           <a
             target="_blank"
             href="https://github.com/artskin/base-admin"
@@ -80,6 +76,9 @@ export default class Navbar extends Vue {
   get avatar() {
     return UserModule.avatar
   }
+  get username(){
+    return UserModule.name
+  }
 
   private toggleSideBar() {
     AppModule.ToggleSideBar(false)
@@ -104,9 +103,13 @@ export default class Navbar extends Vue {
 .navbar {
   height: 50px;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
   background: #fff;
-  box-shadow: 0 1px 4px rgba(0,21,41,.08);
+  box-shadow: 0 1px 8px rgba(0,21,41,.08);
 
   .hamburger-container {
     line-height: 46px;
@@ -131,6 +134,9 @@ export default class Navbar extends Vue {
     height: 100%;
     line-height: 50px;
     display: flex;
+    .uname{
+      font-size: 12px;
+    }
     &:focus {
       outline: none;
     }

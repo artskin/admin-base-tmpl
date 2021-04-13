@@ -2,7 +2,7 @@
   <div class="setting_layer">
     <el-button class="btn-setting" @click="drawer = true" icon="el-icon-setting" size="mini" circle></el-button>
     <el-drawer
-      title="Setting"
+      title="Settings"
       :size="250"
       :visible.sync="drawer"
       :direction="direction"
@@ -52,31 +52,26 @@ export default class SysSetting extends Vue {
     console.log(done())
   }
   created() {
+    this.themeInit()
+  }
+  mounted() {
+    
+  }
+  themeInit(){
     let localTheme = localStorage.getItem('currentTheme')
     if(localTheme && !document.body.classList.length){
       document.body.classList.add(localTheme)
       this.currentTheme = localTheme
     }
   }
-  mounted() {
-    
-  }
   themeChanged(theme){
-    // if(this.currentTheme != theme){
-      this.currentTheme = theme
-      window.localStorage.setItem('currentTheme',theme);
-      if(!document.body.classList.length){
-        document.body.classList.add(theme)
-      }else{
-        if(document.body.classList.length == 1){
-          document.body.classList.replace(document.body.classList.value,theme)
-        }else{
-          document.body.classList.replace(document.body.classList[0],theme)
-        }
-        
-      }
-    //}
-    
+    this.currentTheme = theme
+    localStorage.setItem('currentTheme',theme);
+    if(!document.body.classList.length){
+      document.body.classList.add(theme)
+    }else{
+      document.body.classList.replace(document.body.classList[0],theme)
+    }
   }
 }
 </script>
@@ -90,16 +85,26 @@ export default class SysSetting extends Vue {
 .el-drawer__header{
   padding: 15px;
 }
-
 .setting_layer{
+  h5{
+    margin: 0.2em 0;
+    color: var(--info);
+  }
   ::v-deep{
+    .el-drawer__header{
+      padding:0 15px;
+      margin-bottom: 0;
+    }
     .color-cards{
+      display: flex;
+      width: 100%;
       .el-radio{
+        width: 30%;
         margin-right: 10px;
         &::before{
           content: ' ';
           display: inline-block;
-          border: 1px solid var(--primary);
+          border: 2px solid transparent;
           border-radius: 6px;
           display: inline-block;
           height: 60px;
@@ -110,10 +115,19 @@ export default class SysSetting extends Vue {
           display: none;
         }
       }
-      .el-radio:nth-child(2){
+      .is-checked{
         &::before{
-          background:#0b2559;
+          border-color: var(--success);
         }
+      }
+      .el-radio:nth-child(1)::before{
+        background: #292e40;
+      }
+      .el-radio:nth-child(3)::before{
+        background: #fb8532;
+      }
+      .el-radio:nth-child(2)::before{
+        background:#0b2559;
       }
     }
   }

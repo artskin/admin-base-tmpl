@@ -71,14 +71,14 @@ class User extends VuexModule implements IUserState {
     if (!data) {
       throw Error('Verification failed, please Login again.')
     }
-    const { roles, name, avatar, introduction } = data.user
-    console.log(roles, name, avatar, introduction)
+    const { roles, name, avatar, introduction,username } = data.user
+    console.log(roles, name,username, avatar, introduction)
     // roles must be a non-empty array
     if (!roles || roles.length <= 0) {
       throw Error('GetUserInfo: roles must be a non-null array!')
     }
     this.SET_ROLES(roles)
-    this.SET_NAME(name)
+    this.SET_NAME(username)
     this.SET_AVATAR(avatar)
     this.SET_INTRODUCTION(introduction)
   }
