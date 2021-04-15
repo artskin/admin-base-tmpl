@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   server: {
-    port:3001,
+    port:3301,
   //   hmr: {
   //     port: 443,
   //   }

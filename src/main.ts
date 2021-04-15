@@ -19,7 +19,6 @@ import '@/router/permission'
 
 
 import i18n from '@/lang/index'
-console.log(i18n.messages)
 
 Vue.config.productionTip = false
 

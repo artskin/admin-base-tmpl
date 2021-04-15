@@ -1,8 +1,10 @@
 <template>
-  <div class="setting_layer">
+  <div class="setting-layer">
     <el-button class="btn-setting" @click="drawer = true" icon="el-icon-setting" size="mini" circle></el-button>
     <el-drawer
+      class="drawer-setting"
       title="Settings"
+      :append-to-body="true"
       :size="250"
       :visible.sync="drawer"
       :direction="direction"
@@ -77,60 +79,59 @@ export default class SysSetting extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.setting-layer{
+  display: flex;
+  align-items: center;
+}
 .btn-setting{
-  margin-right: 10px;
-  vertical-align: middle;
+  margin:0 10px;
 }
-.drawer-ctx,
-.el-drawer__header{
-  padding: 15px;
-}
-.setting_layer{
-  h5{
-    margin: 0.2em 0;
-    color: var(--info);
+::v-deep{
+  .drawer-ctx,
+  .el-drawer__header{
+    padding:12.5px 15px;
+    margin-bottom: 0;
   }
-  ::v-deep{
-    .el-drawer__header{
-      padding:0 15px;
-      margin-bottom: 0;
+  .el-drawer__body{
+    h5{
+      margin: 1.2em 0 .8em;
+      color: var(--info);
     }
-    .color-cards{
-      display: flex;
-      width: 100%;
-      .el-radio{
-        width: 30%;
-        margin-right: 10px;
-        &::before{
-          content: ' ';
-          display: inline-block;
-          border: 2px solid transparent;
-          border-radius: 6px;
-          display: inline-block;
-          height: 60px;
-          width: 100%;
-          margin-bottom: 5px;
-        }
-        .el-radio__input{
-          display: none;
-        }
+  }
+  .color-cards{
+    display: flex;
+    width: 100%;
+    .el-radio{
+      width: 30%;
+      margin-right: 10px;
+      &::before{
+        content: ' ';
+        display: inline-block;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        display: inline-block;
+        height: 60px;
+        width: 100%;
+        margin-bottom: 5px;
       }
-      .is-checked{
-        &::before{
-          border-color: var(--success);
-        }
+      .el-radio__input{
+        display: none;
       }
-      .el-radio:nth-child(1)::before{
-        background: #292e40;
+    }
+    .is-checked{
+      &::before{
+        border-color: var(--success);
       }
-      .el-radio:nth-child(3)::before{
-        background: #fb8532;
-      }
-      .el-radio:nth-child(2)::before{
-        background:#0b2559;
-      }
+    }
+    .el-radio:nth-child(1)::before{
+      background: #292e40;
+    }
+    .el-radio:nth-child(3)::before{
+      background: #fb8532;
+    }
+    .el-radio:nth-child(2)::before{
+      background:#0b2559;
     }
   }
 }
-
 </style>
