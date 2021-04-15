@@ -151,16 +151,13 @@ export default class Login extends Vue {
         this.loading = true;
         try{
           await UserModule.Login(this.loginForm)
+          this.$router.push({
+            path: this.redirect || '/',
+            query: this.otherQuery
+          })
         }catch(err){
           console.log(err)
         }
-        
-
-        this.$router.push({
-          path: this.redirect || '/',
-          query: this.otherQuery
-        })
-
       } else {
         return false
       }

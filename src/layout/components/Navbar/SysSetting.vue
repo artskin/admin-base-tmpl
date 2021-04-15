@@ -4,6 +4,7 @@
     <el-drawer
       title="Settings"
       :size="250"
+      :append-to-body="true"
       :visible.sync="drawer"
       :direction="direction"
       :before-close="handleClose">
