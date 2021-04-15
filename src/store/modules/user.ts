@@ -47,7 +47,8 @@ class User extends VuexModule implements IUserState {
 
   @Action
   public async Login(userInfo: { username: string, password: string }) {
-    let { username, password } = userInfo
+    let { username, password } = userInfo;
+    console.log('调用登录接口')
     username = username.trim()
     const { data } = await login({ username, password })
     

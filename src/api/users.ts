@@ -7,7 +7,7 @@ export const getUserInfo = (data: any) =>
     method: 'get',
     data
   })
-
+console.log(window.appConf,apipath,apipath.login)
 export const login = (data: any) =>
   request({
     url: apipath.login,

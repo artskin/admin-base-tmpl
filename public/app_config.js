@@ -1,6 +1,6 @@
 
 //apiserver 和前端在同一个服务器时host=''
-let host =""
+let host ="https://yapi.baidu.com/mock/48673/api"
 
 window.appConf = {
   "lang":"en",
