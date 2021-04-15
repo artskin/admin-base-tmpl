@@ -71,11 +71,13 @@ export default class SideBar extends Vue {
 .logo{
   font-size: 20px;
   text-align: center;
-  color: rgba(255,255,255,.5);
+  color: var(--menu-color);
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: normal;
+  height: 50px;
+  margin: 0;
   span{
     padding-left: 5px;
   }

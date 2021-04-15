@@ -60,12 +60,15 @@
   @include colorGroup('--sideBarBg',$sideBarBg);
   --menuBg: var(--primary);
   --menuText: #{$white};
+  --menu-color:var(--gray);
   --menuActiveText: #{$pink}; 
-  --mainBG:#f9fcfe;
+  //--mainBG:#f9fcfe;
+  --mainBG:#f7f7fc;
 }
 .themeDarkBlue{
   $sideBarBg:#0b2559;
   --mainBG:#f6f8fc;
+  --menu-color:var(--gray);
   $success:#34c38f;
   $danger:#f46a6a;
   $warning:#f1b44c;
@@ -75,10 +78,28 @@
   @include colorGroup('--warning',$warning);
 }
 
-.themeOrange{
+.themeLight{
+  $primary:#23b7e5;
   --mainBG:#f9f6f4;
-  $sideBarBg:#fb8532;
+  --gray:var(--primary);
+  --menu-color:var(--dark);
+  $sideBarBg:#fff;
   @include colorGroup('--sideBarBg',$sideBarBg);
+
+  @include colorGroup('--primary',$primary);
+  .el-menu{
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: #eee;
+    }
+  }
 }
 
 /* Global scss */
@@ -140,4 +161,8 @@ div:focus {
 ::-webkit-scrollbar-corner {
   background-color: transparent;
   /* or add it to the track */
+}
+
+@media only screen and (max-width: 768px){
+
 }

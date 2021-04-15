@@ -117,7 +117,7 @@ export default class SidebarItem extends Vue {
 
 .el-menu-item,.el-submenu{
   &,.el-submenu__title,i{
-    color: var(--gray);
+    color: var(--menu-color);
   }
   
   &:focus,

@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard-container">
     <p class="gray">Analytics Dashboard</p>
-    <el-row :gutter="20">
-      <el-col :span="6" v-for="(item,index) in overview" :key="index">
+    <el-row :gutter="16" class="valign-items">
+      <el-col :span="6" :xs="12" v-for="(item,index) in overview" :key="index">
         <el-card class="box-card total-number">
           <i class="icon-total" :class="item.icon"></i>
           <em>{{item.name}}</em>
@@ -11,21 +11,21 @@
         </el-card>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
-      <el-col :span="16">
+    <el-row :gutter="20" class="valign-items">
+      <el-col :span="16" :xs="24">
         <el-card class="box-card">
           <ChartLine />
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24">
         <el-card class="box-card">
           <ChartBar />
         </el-card>
       </el-col>
     </el-row>
     
-    <el-row :gutter="20">
-      <el-col :span="12">
+    <el-row :gutter="20" class="valign-items">
+      <el-col :span="12" :xs="24">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>最新动态</span>
@@ -36,7 +36,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="12" :xs="24">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
             <span>待办事项</span>
@@ -48,11 +48,11 @@
         </el-card>
       </el-col>
     </el-row>
-    <el-row :gutter="20">
-      <el-col :span="12">
+    <el-row :gutter="20" class="valign-items">
+      <el-col :span="12" :xs="24">
         
       </el-col>
-      <el-col :span="12">
+      <el-col :span="12" :xs="24">
         <el-card class="box-card">
           <el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
           <el-progress :text-inside="true" :stroke-width="24" :percentage="60" status="success"></el-progress>
@@ -110,7 +110,7 @@ export default class Dashboard extends Vue {
 
 .dashboard {
   &-container {
-    margin: 20px;
+    padding:5px 30px;
     
     .el-card{border: none;}
   }
@@ -122,11 +122,8 @@ export default class Dashboard extends Vue {
 .gray{
   color: var(--gray);
 }
-.el-row {
-  margin-bottom: 20px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+.valign-items{
+  .el-col{margin-bottom: 20px;}
 }
 .total-number{
   position: relative;
@@ -153,5 +150,10 @@ export default class Dashboard extends Vue {
 }
 .el-progress--line{
   margin-bottom: 15px;
+}
+@media only screen and (max-width: 768px){
+  .dashboard-container{
+    padding:2px 20px
+  }
 }
 </style>

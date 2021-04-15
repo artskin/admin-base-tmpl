@@ -13,7 +13,7 @@
         <el-radio-group class="color-cards" v-model="currentTheme" @change="themeChanged">
           <el-radio label="themeDefault"><br>default</el-radio>
           <el-radio label="themeDarkBlue"><br>DarkBlue</el-radio>
-          <el-radio label="themeOrange"><br>Orange</el-radio>
+          <el-radio label="themeLight"><br>Light</el-radio>
         </el-radio-group>
         <h5>自定义主题</h5>
         <el-color-picker v-model="color2"></el-color-picker>
@@ -50,7 +50,8 @@ export default class SysSetting extends Vue {
   currentTheme:string = 'default'
 
   handleClose(done) {
-    console.log(done())
+    done()
+    //console.log()
   }
   created() {
     this.themeInit()
@@ -130,7 +131,7 @@ export default class SysSetting extends Vue {
         background: #292e40;
       }
       .el-radio:nth-child(3)::before{
-        background: #fb8532;
+        background: #ece5e0;
       }
       .el-radio:nth-child(2)::before{
         background:#0b2559;

@@ -22,8 +22,10 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 - 登录/登出
 - 权限控制
 - 国际化：支持图片或其他资源同时切换(登录页切换示例)
-- 一键换肤(右上角)
+- 一键换肤(右上角)，通过css 的var 无感切换
+- 响应式布局
 - mock数据(`mock/`文件夹下)
+- 
 
 ### 安装依赖
 
