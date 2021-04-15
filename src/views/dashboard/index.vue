@@ -6,8 +6,8 @@
         <el-card class="box-card total-number">
           <i class="icon-total" :class="item.icon"></i>
           <em>{{item.name}}</em>
-          <span class="main-number">{{item.number}}</span>
-          <div><span :class="item.style">{{item.growing}}</span> Since last week</div> 
+          <span class="main-number">{{item.value}}</span>
+          <div><span :class="item.style">{{item.percent}}</span> Since last week</div> 
         </el-card>
       </el-col>
     </el-row>

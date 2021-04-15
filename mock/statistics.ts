@@ -34,13 +34,13 @@ export default [
       for (let i = 0; i < tasksCount; i++) {
         tasksList.push({
           "name": dimensionItems[i] || 'default',
-          "number": Random.integer(0,100000),
-          "growing": zhengfu[Random.integer(0,1)] + Random.integer(0,4000)/100,
+          "value": Random.integer(0,100000),
+          "percent": zhengfu[Random.integer(0,1)] + Random.integer(0,4000)/100,
           "icon":Icontype[i]
         })
       }
       return {
-        code: 20000,
+        code: 2000,
         message: 'ok',
         data:{
           list:tasksList

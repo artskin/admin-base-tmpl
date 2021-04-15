@@ -1,10 +1,10 @@
 import request from '@/utils/request'
-const apipath = window.appConf.api
+const apipath = window.appConf?.api
 
 export const getUserInfo = (data: any) =>
   request({
     url: apipath.userInfo,
-    method: 'post',
+    method: 'get',
     data
   })
 

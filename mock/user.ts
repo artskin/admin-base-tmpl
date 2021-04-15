@@ -1,13 +1,13 @@
 import { MockMethod } from 'vite-plugin-mock';
 export default [
   {
-    url: '/users/login',
+    url: '/auth/login',
     method: 'post',
     timeout: 200,
     response: ({body})=>{
       console.log('body==>', body);
       return {
-        code: 20000,
+        code: 2000,
         message: 'ok',
         data:{
           accessToken:'adsadswee313sddq'
@@ -16,13 +16,13 @@ export default [
     },
   },
   {
-    url: '/users/logout',
+    url: '/auth/logout',
     method: 'post',
     timeout: 200,
     response: ({body})=>{
       console.log('body==>', body);
       return {
-        code: 20000,
+        code: 2000,
         message: 'ok',
         data:{
           accessToken:''
@@ -32,12 +32,12 @@ export default [
   },
   {
     url: '/users/info',
-    method: 'post',
+    method: 'get',
     timeout: 200,
     response: ({body})=>{
       console.log('body==>', body);
       return {
-        code: 20000,
+        code: 2000,
         message: 'ok',
         data: {
           user:{
@@ -61,7 +61,7 @@ export default [
     timeout: 200,
     response: ({body})=>{
       return {
-        code: 20000,
+        code: 2000,
         message: 'ok',
         data: {
           sys_name: '智能管理系统',

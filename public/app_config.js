@@ -7,8 +7,8 @@ window.appConf = {
   "theme":"",
   "mWidth":900,
   "api":{
-    login    : `${host}/users/login`,
-    logout   : `${host}/users/logout`,
+    login    : `${host}/auth/login`,
+    logout   : `${host}/auth/logout`,
     userInfo : `${host}/users/info`,
     sysInfo  : `${host}/sys/info`,
     tasks    : `${host}/task/list`,

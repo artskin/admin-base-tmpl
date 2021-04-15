@@ -136,7 +136,6 @@ export default class Navbar extends Vue {
     display: flex;
     .uname{
       font-size: 12px;
-      margin:0 2px;
     }
     &:focus {
       outline: none;
@@ -160,9 +159,7 @@ export default class Navbar extends Vue {
     .avatar-container {
       .avatar-wrapper {
         position: relative;
-        padding: 0 4px;
-        display: flex;
-        align-items: center;
+        padding: 0 8px;
         .user-avatar {
           cursor: pointer;
         }

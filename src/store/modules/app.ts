@@ -1,7 +1,7 @@
 import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-decorators'
 import Cookies from 'js-cookie';
 import { getSidebarStatus, setSidebarStatus } from '@/utils/cookies'
-const initLang = window.appConf.lang
+const initLang = window.appConf?.lang || 'en'
 import store from '@/store'
 
 export enum DeviceType {

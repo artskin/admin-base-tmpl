@@ -18,7 +18,8 @@ export default defineConfig({
     },
   },
   server: {
-    port:3301,
+    port:3001,
+    cors:true,
   //   hmr: {
   //     port: 443,
   //   }
