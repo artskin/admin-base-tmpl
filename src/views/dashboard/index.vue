@@ -94,13 +94,12 @@ export default class Dashboard extends Vue {
     getStatistics().then((resp)=>{
       this.overview = resp.data.list
       this.overview.map((item:any)=>{
-        console.log(item.growing,item.growing < 0)
-        if(item.growing < 0){
+        if(item.percent < 0){
           item.style = 'text--danger'
         }else{
           item.style = 'text--success'
         }
-        item.growing += "%"
+        item.percent += "%"
       })
     })
   }

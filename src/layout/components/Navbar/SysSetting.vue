@@ -82,19 +82,24 @@ export default class SysSetting extends Vue {
   margin-right: 10px;
   vertical-align: middle;
 }
-.drawer-ctx,
+
 .el-drawer__header{
   padding: 15px;
 }
 .setting_layer{
-  h5{
-    margin: 0.2em 0;
-    color: var(--info);
-  }
-  ::v-deep{
+  
+}
+::v-deep{
+    .el-drawer__body,
     .el-drawer__header{
-      padding:0 15px;
+      padding:12.5px 15px;
       margin-bottom: 0;
+    }
+    .drawer-ctx{
+      h5{
+        margin: 0.8em 0;
+        color: var(--info);
+      }
     }
     .color-cards{
       display: flex;
@@ -132,6 +137,4 @@ export default class SysSetting extends Vue {
       }
     }
   }
-}
-
 </style>
