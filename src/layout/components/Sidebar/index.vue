@@ -2,7 +2,8 @@
 <div :class="{'hideSidebar':isCollapse}">
   <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
     <h1 class="logo">
-      <img class="img-logo" src="/img/logo.svg" alt="">
+      <!-- <img class="img-logo" src="/img/logo.svg" alt=""> -->
+      <icon-svg className="svg-logo"></icon-svg>
       <span>Admin Base</span>
     </h1>
     <el-menu
@@ -27,7 +28,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import SidebarItem from './SidebarItem.vue'
 import variables from '@/assets/styles/_variables.scss'
-
+import IconSvg from '@/components/IconSvg/index.vue'
 function getCaption(str){
 	let index=str.lastIndexOf("\{");
 	str=str.substring(index+1,str.length-1);
@@ -36,7 +37,8 @@ function getCaption(str){
 @Component({
   name: 'SideBar',
   components: {
-    SidebarItem
+    SidebarItem,
+    IconSvg
   }
 })
 export default class SideBar extends Vue {
@@ -67,6 +69,16 @@ export default class SideBar extends Vue {
 <style lang="scss">
 .img-logo{
   height: 24px;
+}
+.svg-logo{
+  height: 30px;
+  path{
+    &:nth-child(2){
+      fill:var(--primary)
+    }
+    fill:var(--primary-hover)
+  }
+  
 }
 .logo{
   font-size: 20px;

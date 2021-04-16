@@ -49,13 +49,9 @@
       </el-col>
     </el-row>
     <el-row :gutter="20" class="valign-items">
-      <el-col :span="12" :xs="24">
-        
-      </el-col>
-      <el-col :span="12" :xs="24">
+      <el-col :span="24">
         <el-card class="box-card">
-          <el-progress type="dashboard" :percentage="percentage" :color="colors"></el-progress>
-          <el-progress :text-inside="true" :stroke-width="24" :percentage="60" status="success"></el-progress>
+          <el-progress v-for="(item,index) in progress" :key="index" :type="item.type" :status="item.status" :percentage="item.percentage" :color="item.color"></el-progress>
         </el-card>
       </el-col>
     </el-row>
@@ -79,8 +75,34 @@ export default class Dashboard extends Vue {
   get name() {
     return UserModule.name
   }
-  percentage:number = 40
-  colors:string = '#ea4c89'
+  progress = [
+    { 
+      type:'dashboard',
+      percentage:40,
+      color:'#ea4c89'
+    },
+    {
+      type:'dashboard',
+      percentage:80,
+      color:'#51cba8'
+    },
+    {
+      type:'circle',
+      percentage:10,
+      color:'#4e88f3'
+    },
+    {
+      type:'circle',
+      percentage:100,
+      color:'#4e88f3',
+      status:'success'
+    },
+    {
+      type:'line',
+      percentage:10,
+      color:'#4e88f3'
+    },
+  ]
   overview:Array<Object> = [
     {
       num:123,

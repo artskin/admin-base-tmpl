@@ -97,7 +97,7 @@ export default new Router({
       redirect: '/nested/menu1',
       meta: {
         title: 'Nested',
-        icon: 'el-icon-set-up'
+        icon: 'el-icon-finished'
       },
       children: [
         {
@@ -131,14 +131,27 @@ export default new Router({
       ]
     },
     {
-      path: '/external-link',
+      path: '/senseui',
       component: Layout,
       children: [
         {
-          path: 'https://github.com/artskin/base-admin',
+          path: 'https://senseui.im',
           meta: {
-            title: 'External Link',
-            icon: 'el-icon-link'
+            title: 'Sense UI',
+            icon: 'el-icon-menu'
+          }
+        }
+      ]
+    },
+    {
+      path: '/gudong',
+      component: Layout,
+      children: [
+        {
+          path: 'https://gudong.im',
+          meta: {
+            title: 'FE Notes',
+            icon: 'el-icon-notebook-1'
           }
         }
       ]

@@ -11,7 +11,7 @@
 
 本项目是一个admin后台系统的基础框架。基于vite2.0（esbuild）重新搭建（之前是webpack，vue-cli4.x版本）。
 
-项目技术栈还是vue2+typescript+elementUI，目前已基于vite2改造完成，让vue2+ts的旧项目也享受到了vite2带来的秒开快感。
+技术栈是：vue2+typescript+elementUI，目前已基于vite2改造完成，让vue2+ts的旧项目也享受到了vite2带来的秒开快感。
 
 包含了 Element UI & Axios & Permission control & 国际化切换及配置，等后台必要的基础功能模块。
 
@@ -23,7 +23,7 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 - 权限控制
 - 国际化：支持图片或其他资源同时切换(登录页切换示例)
 - 一键换肤(右上角)，通过css 的var 无感切换
-- 响应式布局
+- 响应式布局(pc，pad,手机)
 - mock数据(`mock/`文件夹下)
 - 
 
@@ -46,12 +46,7 @@ npm run build
 ### ToDo 
 
 - [x] elementUI按需引入，并更改主题
-- [ ] 路由根据目录自动生成
-- [ ] Dashboard 
-
-### 自定义 Vue 配置
-
-看这里 [Configuration Reference](https://cli.vuejs.org/config/).
+- [x] Dashboard 
 
 ## 参考项目
 
