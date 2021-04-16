@@ -17,6 +17,7 @@ export interface IAppState {
     opened: boolean
     withoutAnimation: boolean
   }
+  theme:string
 }
 
 @Module({ dynamic: true, store, name: 'app' })
@@ -27,6 +28,7 @@ class App extends VuexModule implements IAppState {
   }
   public device = DeviceType.Desktop
   public language = Cookies.get('language') || initLang;
+  public theme = 'default';
 
   @Mutation
   private TOGGLE_SIDEBAR(withoutAnimation: boolean) {
@@ -49,6 +51,11 @@ class App extends VuexModule implements IAppState {
   @Mutation
   private TOGGLE_DEVICE(device: DeviceType) {
     this.device = device
+  }
+
+  @Mutation
+  SET_THEME(theme:string) {
+    this.theme = theme
   }
   
   @Mutation
@@ -75,6 +82,10 @@ class App extends VuexModule implements IAppState {
   @Action({ commit: 'SET_LANGUAGE' })
   async SetLanguage(language: string) {
     return language;
+  }
+  @Action({ commit: 'SET_THEME' })
+  async SetTheme(theme: string) {
+    return theme;
   }
 }
 

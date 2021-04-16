@@ -27,13 +27,9 @@
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import SidebarItem from './SidebarItem.vue'
-import variables from '@/assets/styles/_variables.scss'
 import IconSvg from '@/components/IconSvg/index.vue'
-function getCaption(str){
-	let index=str.lastIndexOf("\{");
-	str=str.substring(index+1,str.length-1);
-	return str;
-}
+import variables from '@/assets/styles/_variables.scss'
+import {styleToObject} from '@/utils/tools'
 @Component({
   name: 'SideBar',
   components: {
@@ -51,13 +47,7 @@ export default class SideBar extends Vue {
   }
 
   get variables() {
-    let cssVar = getCaption(variables).split(';')
-    let cssMap = {}
-    cssVar.forEach((element:String) => {
-      let cssArr = element.split(':')
-      cssMap[cssArr[0].trim()] = cssArr[1]
-    });
-    return cssMap
+    return styleToObject(variables)
   }
 
   get isCollapse() {

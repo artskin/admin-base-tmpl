@@ -24,17 +24,14 @@ router.beforeEach(async(to: Route, _: Route, next: any) => {
       if (UserModule.roles.length === 0) {
         try {
           // Get user info, including roles
-          console.log('await UserModule.GetUserInfo()')
           await UserModule.GetUserInfo()
           // Set the replace: true, so the navigation will not leave a history record
           //await next({ ...to, replace: true })
           next()
         } catch (err) {
-          console.log(err)
           // Remove token and redirect to login page
           UserModule.ResetToken()
           //Message.error(err || 'Has Error')
-          console.log(to.path)
           next(`/login?redirect=${to.path}`)
           NProgress.done()
         }

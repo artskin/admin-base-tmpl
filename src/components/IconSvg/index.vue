@@ -13,7 +13,6 @@ import { Component, Vue, Prop } from 'vue-property-decorator'
 export default class IconSvg extends Vue {
   @Prop({default:''}) className!:string
   mounted() {
-    console.log(this.className)
   }
 }
 </script>

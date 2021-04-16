@@ -63,12 +63,14 @@ export default class SysSetting extends Vue {
     let localTheme = localStorage.getItem('currentTheme')
     if(localTheme && !document.body.classList.length){
       document.body.classList.add(localTheme)
-      this.currentTheme = localTheme
+      this.currentTheme = localTheme;
+      AppModule.SetTheme(localTheme)
     }
   }
   themeChanged(theme){
     this.currentTheme = theme
     localStorage.setItem('currentTheme',theme);
+    AppModule.SetTheme(theme)
     if(!document.body.classList.length){
       document.body.classList.add(theme)
     }else{

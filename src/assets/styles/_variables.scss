@@ -1,3 +1,4 @@
+@import './mixins.scss';
 /* Variables */
 //default
 $indigo: #6610f2;
@@ -49,9 +50,107 @@ $lightGray: #eee;
 $darkGray:$page-bg;
 $loginBg: #fff;
 $loginCursorColor: $dark;
+
+/*theme-colors*/
+/* base scss*/
+:root{
+  /* color */
+  --blue: #{$blue};
+  --indigo: #{$indigo};
+  --purple: #{$purple};
+  --pink: #{$pink};
+  --red: #{$red};
+  --orange: #{$orange};
+  --yellow: #{$yellow};
+  --green: #{$green};
+  --teal: #{$teal};
+  --cyan: #{$cyan};
+  --white: #{$white};
+  --gray: #{$gray};
+  --gray-dark: #{$dark-gray};
+  --secondary: #{$secondary};
+  --light: #{$light};
+  --dark: #{$dark};
+
+  /* media */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  /* padding */
+  --padding-xs: 4px;
+  --padding-s: 8px;
+  --padding-m: 16px;
+  --padding-l: 20px;
+  --padding-xl: 24px;
+  
+  /* font-family */
+  --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --font-family-element: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+}
+:root{
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--info',$info);
+  @include colorGroup('--warning',$warning);
+  @include colorGroup('--danger',$danger);
+
+  /* width */
+  $sideBarBg:#292e40;
+  --sideBarWidth: #{$sideBarWidth};
+  --closesideBarWidth: #{-$sideBarWidth};
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  --menuBg: var(--primary);
+  --menuText: #{$white};
+  --menu-color:var(--gray);
+  --menuActiveText: #{$pink}; 
+  //--mainBG:#f9fcfe;
+  --mainBG:#f7f7fc;
+}
+.themeDarkBlue{
+  $sideBarBg:#0b2559;
+  --mainBG:#f6f8fc;
+  --menu-color:var(--gray);
+  $success:#34c38f;
+  $danger:#f46a6a;
+  $warning:#f1b44c;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+  @include colorGroup('--warning',$warning);
+}
+
+.themeLight{
+  $primary:#018786;
+  --mainBG:#f9f6f4;
+  --gray:var(--primary);
+  --menu-color:var(--dark);
+  $sideBarBg:#fff;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+
+  @include colorGroup('--primary',$primary);
+  .el-menu{
+    position: relative;
+    &::after{
+      content: '';
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 1px;
+      background-color: #eee;
+    }
+  }
+}
+
 // The :export directive is the magic sauce for webpack
 // https://mattferderer.com/use-sass-variables-in-typescript-and-javascript
 :export {
+  primary:$primary;
   menuBg: $menuBg;
   menuText: $menuText;
   menuActiveText: $menuActiveText;

@@ -1,13 +1,13 @@
 import request from '@/utils/request'
 const apipath = window.appConf?.api
-
+console.log(window.appConf)
 export const getUserInfo = (data: any) =>
   request({
     url: apipath.userInfo,
     method: 'get',
     data
   })
-console.log(window.appConf,apipath,apipath.login)
+
 export const login = (data: any) =>
   request({
     url: apipath.login,

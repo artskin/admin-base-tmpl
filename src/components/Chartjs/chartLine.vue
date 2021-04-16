@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Component, Vue,Prop, Watch } from 'vue-property-decorator';
 import Chart from 'chart.js/auto';
-
+import { AppModule } from '@/store/modules/app'
 @Component({})
 export default class ChartLine extends Vue {
   @Prop({default:"14px"}) size!:string
@@ -15,43 +15,58 @@ export default class ChartLine extends Vue {
   $refs!:{
     chartLine:HTMLCanvasElement
   }
-  created() {
-
+  chartline:any
+  created() {}
+  
+  get theme(){
+    return AppModule.theme
+  }
+  @Watch('theme')
+  themeChanged(nv,ov){
+    this.chartData.datasets[0].borderColor = getComputedStyle(document.body).getPropertyValue('--primary')
+    this.chartline.update()
+  }
+  get themeVariables(){
+    return getComputedStyle(document.body).getPropertyValue('--primary')
   }
   
-  mounted(){
+  get gradient(){
     const ctx:any = this.$refs.chartLine.getContext('2d');
-    let gradient = ctx.createLinearGradient(0, 0, 0, 225);
-			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
-			gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
-      
-    let chartline = new Chart(this.$refs.chartLine, {
+    let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
+			gradientColor.addColorStop(0, "rgba(215, 227, 244, 1)");
+			gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
+    return gradientColor
+  }
+  
+  chartData = {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    datasets: [{
+      label: "Sales",
+      fill: true,
+      backgroundColor: '',
+      borderColor: this.themeVariables,
+      data: [
+        2115,
+        1562,
+        1584,
+        1892,
+        1587,
+        1923,
+        2566,
+        2448,
+        2805,
+        3438,
+        2917,
+        3327
+      ]
+    }]
+  }
+  mounted(){
+    this.chartData.datasets[0].backgroundColor = this.gradient;
+    this.chartline = new Chart(this.$refs.chartLine, {
       type: "line",
-      data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-        datasets: [{
-          label: "Sales",
-          fill: true,
-          backgroundColor: gradient,
-          borderColor: '#3B7DDD',
-          data: [
-            2115,
-            1562,
-            1584,
-            1892,
-            1587,
-            1923,
-            2566,
-            2448,
-            2805,
-            3438,
-            2917,
-            3327
-          ]
-        }]
-      },
+      data: this.chartData,
       options: {
-        
         //bezierCurve : true,
         //Number - Tension of the bezier curve between points
         tension : 0.4,
@@ -94,7 +109,6 @@ export default class ChartLine extends Vue {
         }
       }
     });
-    console.log(chartline)
     
   }
 

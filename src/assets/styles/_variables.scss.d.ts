@@ -1,4 +1,5 @@
 export interface IScssVariables {
+  primary:string
   menuBg: string
   menuText: string
   menuActiveText: string

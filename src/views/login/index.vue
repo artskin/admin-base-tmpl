@@ -145,7 +145,6 @@ export default class Login extends Vue {
   }
 
   private handleLogin() {
-    console.log('登录');
     (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
       if (valid) {
         this.loading = true;
