@@ -5,7 +5,7 @@ export const getUserInfo = (data: any) =>
   request({
     url: apipath.userInfo,
     method: 'get',
-    data
+    params:data
   })
 
 export const login = (data: any) =>

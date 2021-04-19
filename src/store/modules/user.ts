@@ -1,10 +1,11 @@
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { login, logout, getUserInfo } from '@/api/users'
-import { getToken, setToken, removeToken } from '@/utils/cookies'
+import { getToken, setToken, removeToken,setUid,getUid } from '@/utils/cookies'
 import store from '@/store'
 
 export interface IUserState {
   token: string
+  uid:string
   name: string
   avatar: string
   introduction: string
@@ -15,6 +16,7 @@ export interface IUserState {
 class User extends VuexModule implements IUserState {
   public token = getToken() || ''
   public name = ''
+  public uid = ''
   public avatar = ''
   public introduction = ''
   public roles: string[] = []
@@ -23,6 +25,11 @@ class User extends VuexModule implements IUserState {
   private SET_TOKEN(token: string) {
     this.token = token;
     setToken(token)
+  }
+  @Mutation
+  private SET_UID(uid: string) {
+    this.uid = uid;
+    setUid(uid)
   }
 
   @Mutation
@@ -52,6 +59,7 @@ class User extends VuexModule implements IUserState {
     const { data } = await login({ username, password })
     
     this.SET_TOKEN(data.accessToken)
+    this.SET_UID(data.uid)
   }
 
   @Action
@@ -66,12 +74,12 @@ class User extends VuexModule implements IUserState {
     if (this.token === '') {
       throw Error('GetUserInfo: token is undefined!')
     }
-    const { data } = await getUserInfo({ /* Your params here */ })
-    console.log(data)
+    const { data } = await getUserInfo({uid:this.uid || getUid('uid')})
+    
     if (!data) {
       throw Error('Verification failed, please Login again.')
     }
-    const { roles, name, avatar, introduction,username } = data.user
+    const { roles, name, avatar, introduction,username } = data
     // roles must be a non-empty array
     if (!roles || roles.length <= 0) {
       throw Error('GetUserInfo: roles must be a non-null array!')

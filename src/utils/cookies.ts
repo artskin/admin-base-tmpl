@@ -9,4 +9,6 @@ export const setSidebarStatus = (sidebarStatus: string) => Cookies.set(sidebarSt
 const tokenKey = 'admin_access_token'
 export const getToken = () => Cookies.get(tokenKey)
 export const setToken = (token: string) => Cookies.set(tokenKey, token)
+export const setUid = (uid: string) => Cookies.set('uid', uid)
+export const getUid = (uid: string) => Cookies.get(uid)
 export const removeToken = () => Cookies.remove(tokenKey)
