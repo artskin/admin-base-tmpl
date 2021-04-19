@@ -1,5 +1,5 @@
 <template>
-  <div class="setting_layer">
+  <div class="setting_layer flex-center">
     <el-button class="btn-setting" @click="drawer = true" icon="el-icon-setting" size="mini" circle></el-button>
     <el-drawer
       title="Settings"

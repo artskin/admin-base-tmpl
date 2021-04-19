@@ -2,9 +2,8 @@
 <div :class="{'hideSidebar':isCollapse}">
   <!-- <el-scrollbar wrap-class="scrollbar-wrapper"></el-scrollbar> -->
     <h1 class="logo">
-      <!-- <img class="img-logo" src="/img/logo.svg" alt=""> -->
       <icon-svg className="svg-logo"></icon-svg>
-      <span>Admin Base</span>
+      <span>Admin Kit</span>
     </h1>
     <el-menu
       :collapse="isCollapse"
@@ -61,6 +60,7 @@ export default class SideBar extends Vue {
   height: 24px;
 }
 .svg-logo{
+  width: 30px;
   height: 30px;
   path{
     &:nth-child(2){
@@ -68,7 +68,6 @@ export default class SideBar extends Vue {
     }
     fill:var(--primary-hover)
   }
-  
 }
 .logo{
   font-size: 20px;

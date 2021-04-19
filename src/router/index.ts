@@ -60,6 +60,14 @@ export default new Router({
       },
       children: [
         {
+          path: 'cards',
+          component: () => import(/* webpackChunkName: "tree" */ '@/views/list/card.vue'),
+          meta: {
+            title: 'Card Items',
+            icon: 'el-icon-files'
+          }
+        },
+        {
           path: 'tree',
           component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
           meta: {

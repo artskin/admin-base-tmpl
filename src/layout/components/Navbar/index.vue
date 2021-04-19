@@ -16,7 +16,7 @@
         trigger="click"
         @command="selectTheme"
       >
-        <div class="avatar-wrapper">
+        <div class="avatar-wrapper flex-center">
           <i class="el-icon-user"></i>
           <span class="uname">{{username}}</span>
           
@@ -136,6 +136,7 @@ export default class Navbar extends Vue {
     display: flex;
     .uname{
       font-size: 12px;
+      padding: 0 4px;
     }
     &:focus {
       outline: none;

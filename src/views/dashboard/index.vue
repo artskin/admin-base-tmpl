@@ -1,10 +1,10 @@
 <template>
   <div class="dashboard-container">
     <p class="gray">Analytics Dashboard</p>
-    <el-row :gutter="16" class="valign-items">
+    <el-row :gutter="16" class="valign-items" :loading="isLoading">
       <el-col :span="6" :xs="12" v-for="(item,index) in overview" :key="index">
         <el-card class="box-card total-number">
-          <i class="icon-total" :class="item.icon"></i>
+          <i class="icon-total" :class="'el-icon-'+item.icon"></i>
           <em>{{item.name}}</em>
           <span class="main-number">{{item.value}}</span>
           <div><span :class="item.style">{{item.percent}}</span> Since last week</div> 
@@ -103,16 +103,13 @@ export default class Dashboard extends Vue {
       color:'#4e88f3'
     },
   ]
-  overview:Array<Object> = [
-    {
-      num:123,
-      name:'Visitors'
-    }
-  ]
+  isLoading:boolean = false
+  overview:Array<Object> = []
   created() {
     this.loadStatistics()
   }
   loadStatistics(){
+    this.isLoading = true
     getStatistics().then((resp)=>{
       this.overview = resp.data.list
       this.overview.map((item:any)=>{
@@ -123,6 +120,7 @@ export default class Dashboard extends Vue {
         }
         item.percent += "%"
       })
+      this.isLoading = false
     })
   }
 }
