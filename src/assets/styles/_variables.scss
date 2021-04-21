@@ -80,11 +80,11 @@ $loginCursorColor: $dark;
   --breakpoint-xl: 1200px;
 
   /* padding */
-  --padding-xs: 4px;
-  --padding-s: 8px;
-  --padding-m: 16px;
-  --padding-l: 20px;
-  --padding-xl: 24px;
+  --gap-xs: 4px;
+  --gap-s: 8px;
+  --gap-m: 16px;
+  --gap-l: 20px;
+  --gap-xl: 24px;
   
   /* font-family */
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -145,6 +145,17 @@ $loginCursorColor: $dark;
       background-color: #eee;
     }
   }
+}
+@media only screen and (max-width: 768px){
+  :root{
+    /* padding:base-gap:3 */
+  --gap-xs: 3px;
+  --gap-s: 6px;
+  --gap-m: 12px;
+  --gap-l: 15px;
+  --gap-xl: 18px;
+  }
+  
 }
 
 // The :export directive is the magic sauce for webpack

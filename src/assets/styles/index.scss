@@ -49,7 +49,7 @@ div:focus {
 }
 
 .page-router{
-  padding: var(--padding-l);
+  padding: var(--gap-l);
 }
 .el-button--primary{
   @include buttonCreat(--primary,--primary)

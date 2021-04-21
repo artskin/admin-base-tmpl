@@ -2,7 +2,7 @@
   <div class="page-router">
     <el-row :gutter="16" class="card-list">
 
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -27,7 +27,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -52,7 +52,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -77,7 +77,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -102,7 +102,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -127,7 +127,7 @@
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8">
+      <el-col :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
@@ -216,7 +216,7 @@ export default class Card extends Vue {
   .card-item{
     dl,dd{margin: 0;}
     .img-layer{
-      max-width: 30%;
+      max-width: 33%;
       background: #f3f6f9;
       border-radius: 4px;
       overflow: hidden;
@@ -228,19 +228,16 @@ export default class Card extends Vue {
         width: 100%;
         height: 180px;
         object-fit: cover;
-        
       }
       &:hover{
         dt{
           height: auto;
           transition: all .1s ease-in;
-          transform: translateY(0px);
-          
+          transform: translateY(1px);
         }
       }
-      
       dt{
-        padding:5px 10px 10px;
+        padding:5px 8px;
         transform: translateY(30px);
         height: 0;
         position: absolute;
@@ -250,22 +247,27 @@ export default class Card extends Vue {
         //background: rgba(255,255,255,.8);
         overflow: hidden;
         &::after{
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: rgba(255,255,255,.7);
-            filter:blur(3px);
-            z-index: -1;
+          content: '';
+          display: block;
+          width: 101.5%;
+          height: 102%;
+          position: absolute;
+          left: -1%;
+          top: -1%;
+          background: rgba(255,255,255,.7);
+          filter:blur(10px);
+          z-index: -1;
         }
         strong{
           font-size: 14px;
         }
         time{
           font-size: 12px;
+          white-space:nowrap;
+          text-overflow: ellipsis;
+          max-width: 100%;
+          overflow: hidden;
+          display: inline-block;
         }
       }
     }
@@ -275,6 +277,12 @@ export default class Card extends Vue {
       padding-left: 10px;
       h5{
         margin: 0;
+      }
+      em{
+        font-style: normal;
+      }
+      .el-tag{
+        border-color: transparent;
       }
     }
     .el-card__body{
