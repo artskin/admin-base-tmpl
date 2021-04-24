@@ -6,3 +6,10 @@ export const getTasks = (params: any) =>
     method: 'get',
     params
   })
+
+  export const getRecords = (params: any) =>
+  request({
+    url: apipath.records,
+    method: 'get',
+    params
+  })

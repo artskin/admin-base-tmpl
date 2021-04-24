@@ -2,165 +2,35 @@
   <div class="page-router">
     <el-row :gutter="16" class="card-list">
 
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
+      <el-col v-for="(item,index) in list" :key="index" :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
           <dl class="img-layer">
             <dd>
-              <img src="/img/human.jpg" alt="">
+              <img :src="item.avatar" alt="">
             </dd>
             <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
+              <strong>{{item.device.position}}</strong><br>
+              <time datetime="2021-02-14 12:21:22">{{item.time}}</time>
             </dt>
           </dl>
           <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
+            <h5>姓名：{{item.name}}</h5>
+            <span class="mini">{{item.uuid}}</span>
             <p>相似度：98.33%</p>
-            <p>
+            <p class="card-attrs">
               <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
+              <el-tag size="mini" v-for="(n,i) in item.attr" :key="i">{{n}}</el-tag>
             </p>
           </div>
         </el-card>
       </el-col>
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
-        <el-card class="box-card card-item">
-          <dl class="img-layer">
-            <dd>
-              <img src="/img/human.jpg" alt="">
-            </dd>
-            <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
-            </dt>
-          </dl>
-          <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
-            <p>相似度：98.33%</p>
-            <p>
-              <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
-        <el-card class="box-card card-item">
-          <dl class="img-layer">
-            <dd>
-              <img src="/img/human.jpg" alt="">
-            </dd>
-            <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
-            </dt>
-          </dl>
-          <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
-            <p>相似度：98.33%</p>
-            <p>
-              <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
-        <el-card class="box-card card-item">
-          <dl class="img-layer">
-            <dd>
-              <img src="/img/human.jpg" alt="">
-            </dd>
-            <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
-            </dt>
-          </dl>
-          <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
-            <p>相似度：98.33%</p>
-            <p>
-              <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
-        <el-card class="box-card card-item">
-          <dl class="img-layer">
-            <dd>
-              <img src="/img/human.jpg" alt="">
-            </dd>
-            <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
-            </dt>
-          </dl>
-          <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
-            <p>相似度：98.33%</p>
-            <p>
-              <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-      <el-col :span="8" :xs="24" :sm="12" :md="8">
-        <el-card class="box-card card-item">
-          <dl class="img-layer">
-            <dd>
-              <img src="/img/human.jpg" alt="">
-            </dd>
-            <dt>
-              <strong>位置：一楼大厅</strong><br>
-              <time datetime="2021-02-14 12:21:22">2021-02-14 12:21:22</time>
-            </dt>
-          </dl>
-          <div class="content-layer">
-            <h5>姓名：陌生人sdada</h5>
-            <span>MSS20120321</span>
-            <p>相似度：98.33%</p>
-            <p>
-              <em>特征：</em>
-              <el-tag>口罩</el-tag>
-              <el-tag type="warning">违章</el-tag>
-              <el-tag type="info">男性</el-tag>
-              <el-tag type="info">中年</el-tag>
-            </p>
-          </div>
-        </el-card>
-      </el-col>
-
-      
     </el-row>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { getTasks } from '@/api/tasks'
+import { getRecords } from '@/api/tasks'
 import { ITaskItem } from '@/api/types'
 
 @Component({
@@ -184,7 +54,7 @@ export default class Card extends Vue {
   private listLoading = true
   private listQuery = {
     page: 1,
-    limit: 20
+    limit: 12
   }
 
   created() {
@@ -194,7 +64,7 @@ export default class Card extends Vue {
   private async getList() {
     this.listLoading = true
     //const { data } = await getTasks(this.listQuery)
-    await getTasks(this.listQuery).then((resp:any)=>{
+    await getRecords(this.listQuery).then((resp:any)=>{
       
       if(resp && resp.data.list){
         this.list = resp.data.list
@@ -277,6 +147,11 @@ export default class Card extends Vue {
       padding-left: 10px;
       h5{
         margin: 0;
+        font-size: 16px;
+      }
+      span.mini{
+        font-size: 12px;
+        color: #999;
       }
       em{
         font-style: normal;
@@ -287,7 +162,13 @@ export default class Card extends Vue {
     }
     .el-card__body{
       display: flex;
+      max-height: 220px;
+      font-size: 14px;
     }
-    
+    .card-attrs{
+      .el-tag{
+        margin: 0 5px 5px 0;
+      }
+    }
   }
 </style>

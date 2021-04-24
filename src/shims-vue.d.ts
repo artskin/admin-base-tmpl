@@ -13,6 +13,7 @@ interface Window {
       userInfo:string,
       logout:string,
       tasks:string,
+      records:string,
       statistics:string
     }
   }
