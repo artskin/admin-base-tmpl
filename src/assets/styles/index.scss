@@ -51,9 +51,6 @@ div:focus {
 .page-router{
   padding: var(--gap-l);
 }
-.el-button--primary{
-  @include buttonCreat(--primary,--primary)
-}
 //scrollbar style
 ::-webkit-scrollbar {
   width: 6px;

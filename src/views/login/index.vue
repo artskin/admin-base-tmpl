@@ -182,15 +182,15 @@ export let route = {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background-color: var(--sideBarBg);
+  background-color: var(--gray-light);
   display: flex;
+  color: var(--dark);
   justify-content: center;
   align-items: center;
   .title-container {
     position: relative;
     .title {
       font-size: 26px;
-      color: var(--light);
       margin: 0px auto 40px auto;
       text-align: center;
       font-weight: bold;
@@ -212,10 +212,8 @@ export let route = {
   }
   .el-input {
     input {
-      background: transparent;
       border: 0px;
-      border-radius: 0px;
-      color: var(--light);
+      border-radius: 4px;
       caret-color: var(--loginCursorColor);
       -webkit-appearance: none;
       &:-webkit-autofill {
@@ -230,7 +228,7 @@ export let route = {
   .tips {
     position:relative;
     font-size: 14px;
-    color: #fff;
+    color: var(--dark2);
     margin-bottom: 10px;
     display: flex;
     justify-content: space-between;
@@ -242,7 +240,6 @@ export let route = {
     }
   }
   .set-language{
-    color: var(--light);
     display: block;
   }
 }

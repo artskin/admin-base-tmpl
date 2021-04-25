@@ -63,7 +63,7 @@ export default new Router({
           path: 'cards',
           component: () => import(/* webpackChunkName: "tree" */ '@/views/list/card.vue'),
           meta: {
-            title: 'Card Items',
+            title: 'Card list',
             icon: 'el-icon-files'
           }
         },

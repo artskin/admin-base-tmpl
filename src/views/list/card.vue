@@ -87,6 +87,7 @@ export default class Card extends Vue {
     dl,dd{margin: 0;}
     .img-layer{
       max-width: 33%;
+      width:33%;
       background: #f3f6f9;
       border-radius: 4px;
       overflow: hidden;
@@ -160,6 +161,7 @@ export default class Card extends Vue {
         border-color: transparent;
       }
     }
+    
     .el-card__body{
       display: flex;
       max-height: 220px;
@@ -170,5 +172,8 @@ export default class Card extends Vue {
         margin: 0 5px 5px 0;
       }
     }
+  }
+  .el-card{
+    border-width: 0.5px;
   }
 </style>

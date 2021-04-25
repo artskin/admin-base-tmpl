@@ -18,6 +18,7 @@ $red: #F7777F;
 $yellow: #F9B653;
 $green:#51CBA8;
 $dark: #404247;
+$dark2: #515154;
 $dark-gray: #858B95;
 $gray: #CED3D8;
 $gray-light:#E7EAEF;
@@ -67,10 +68,12 @@ $loginCursorColor: $dark;
   --cyan: #{$cyan};
   --white: #{$white};
   --gray: #{$gray};
+  --gray-light: #{$gray-light};
   --gray-dark: #{$dark-gray};
   --secondary: #{$secondary};
   --light: #{$light};
   --dark: #{$dark};
+  --dark2: #{$dark2};
 
   /* media */
   --breakpoint-xs: 0;
