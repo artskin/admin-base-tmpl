@@ -68,19 +68,19 @@ export default new Router({
           }
         },
         {
-          path: 'tree',
-          component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
-          meta: {
-            title: 'Tree',
-            icon: 'el-icon-finished'
-          }
-        },
-        {
           path: 'task',
           component: () => import(/* webpackChunkName: "table" */ '@/views/task/index.vue'),
           meta: {
             title: 'Task List',
             icon: 'el-icon-s-grid'
+          }
+        },
+        {
+          path: 'tree',
+          component: () => import(/* webpackChunkName: "tree" */ '@/views/tree/index.vue'),
+          meta: {
+            title: 'Tree',
+            icon: 'el-icon-finished'
           }
         }
       ]

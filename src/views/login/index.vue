@@ -161,7 +161,7 @@ export default class Login extends Vue {
             query: this.otherQuery
           })
         }catch(err){
-          this.animateClass = 't'
+          this.animateClass = ''
           this.animateClassTitle = ''
           console.log(err)
         }

@@ -51,6 +51,11 @@ div:focus {
 .page-router{
   padding: var(--gap-l);
 }
+.page-title{
+  margin: 0;
+  font-size: 14px;
+  padding-bottom: var(--gap-m);
+}
 //scrollbar style
 ::-webkit-scrollbar {
   width: 6px;

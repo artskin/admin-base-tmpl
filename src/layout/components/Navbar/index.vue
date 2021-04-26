@@ -14,7 +14,6 @@
       <el-dropdown
         class="avatar-container right-menu-item hover-effect"
         trigger="click"
-        @command="selectTheme"
       >
         <div class="avatar-wrapper flex-center">
           <i class="el-icon-user"></i>
@@ -87,14 +86,6 @@ export default class Navbar extends Vue {
   private async logout() {
     await UserModule.LogOut()
     this.$router.push(`/login?redirect=${this.$route.fullPath}`)
-  }
-  selectTheme(theme){
-    console.log(document.body.classList.item(0),document.body.classList)
-    if(!document.body.classList.length){
-      document.body.classList.add(theme)
-    }else{
-      document.body.classList.replace(document.body.classList.value,theme)
-    }
   }
 }
 </script>
