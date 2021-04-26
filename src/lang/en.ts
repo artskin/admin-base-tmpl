@@ -5,7 +5,8 @@ export default {
   },
   "switchLang":"Language switch",
   "login":{
-    "title":"Login ABT",
+    "title":"Login",
+    "sys_name":"admin kit",
     "username":"UserName",
     "password":"Password",
     "submitText":"Sign in"

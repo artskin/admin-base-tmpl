@@ -8,55 +8,57 @@
       autocomplete="on"
       label-position="left"
     >
-      <div class="title-container">
+      <div class="title-container" :class="animateClassTitle">
         <h3 class="title">
           {{$t("login.title")}}
+          <span>{{$t("login.sys_name")}}</span>
         </h3>
       </div>
+      <div class="form-layer" :class="animateClass">
+        <el-form-item prop="username">
+          <el-input
+            ref="username"
+            prefix-icon="el-icon-user"
+            v-model="loginForm.username"
+            name="username"
+            type="text"
+            autocomplete="on"
+            placeholder="username"
+          />
+        </el-form-item>
 
-      <el-form-item prop="username">
-        <el-input
-          ref="username"
-          prefix-icon="el-icon-user"
-          v-model="loginForm.username"
-          name="username"
-          type="text"
-          autocomplete="on"
-          placeholder="username"
-        />
-      </el-form-item>
-
-      <el-form-item prop="password">
-        <el-input
-          :key="passwordType"
-          ref="password"
-          v-model="loginForm.password"
-          :type="passwordType"
-          placeholder="password"
-          name="password"
-          prefix-icon="el-icon-postcard"
-          autocomplete="on"
-          @keyup.enter.native="handleLogin"
+        <el-form-item prop="password">
+          <el-input
+            :key="passwordType"
+            ref="password"
+            v-model="loginForm.password"
+            :type="passwordType"
+            placeholder="password"
+            name="password"
+            prefix-icon="el-icon-postcard"
+            autocomplete="on"
+            @keyup.enter.native="handleLogin"
+          >
+            <i slot="suffix" @click="showPwd" class="el-input__icon" :class="passwordType === 'password' ? 'el-icon-turn-off' : 'el-icon-open'"></i>
+          </el-input>
+        </el-form-item>
+        <el-button
+          :loading="loading"
+          type="primary"
+          size="big"
+          style="width:100%; margin-bottom:30px;"
+          @click.native.prevent="handleLogin"
         >
-          <i slot="suffix" @click="showPwd" class="el-input__icon" :class="passwordType === 'password' ? 'el-icon-turn-off' : 'el-icon-open'"></i>
-        </el-input>
-      </el-form-item>
-      <el-button
-        :loading="loading"
-        type="primary"
-        size="big"
-        style="width:100%; margin-bottom:30px;"
-        @click.native.prevent="handleLogin"
-      >
-        {{$t("login.submitText")}}
-      </el-button>
-
-      <div class="tips">
-        <span>{{$t("login.username")}}: admin </span>
-        <span>{{$t("login.password")}}: any </span>
-        <lang-select class="set-language" @langChanged="changeLanguage" size="16px">{{currentLang}}</lang-select>
+          {{$t("login.submitText")}}
+        </el-button>
+        <div class="tips">
+          <span>{{$t("login.username")}}: admin </span>
+          <span>{{$t("login.password")}}: any </span>
+        </div>
       </div>
+      
     </el-form>
+    <lang-select class="set-language" @langChanged="changeLanguage" size="16px">{{currentLang}}</lang-select>
   </div>
 </template>
 
@@ -105,6 +107,8 @@ export default class Login extends Vue {
   private redirect?: string
   private otherQuery: Dictionary<string> = {}
   currentLang=''
+  animateClass = ''
+  animateClassTitle = ''
 
   @Watch('$route', { immediate: true })
   private onRouteChange(route: Route) {
@@ -148,6 +152,8 @@ export default class Login extends Vue {
     (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
       if (valid) {
         this.loading = true;
+        this.animateClass = 'animate__animated animate__zoomOut'
+        this.animateClassTitle = 'animate__animated animate__delay-1s animate__slideInDown'
         try{
           await UserModule.Login(this.loginForm)
           this.$router.push({
@@ -155,6 +161,8 @@ export default class Login extends Vue {
             query: this.otherQuery
           })
         }catch(err){
+          this.animateClass = 't'
+          this.animateClassTitle = ''
           console.log(err)
         }
       } else {
@@ -179,9 +187,11 @@ export let route = {
 
 <style lang="scss">
 .login-container {
+  --animate-delay:0.2s;
   height: 100%;
   width: 100%;
   overflow: hidden;
+  position: relative;
   background-color: var(--gray-light);
   display: flex;
   color: var(--dark);
@@ -241,7 +251,39 @@ export let route = {
   }
   .set-language{
     display: block;
+    position: absolute;
+    right: 25px;
+    top: 20px;
   }
+  @keyframes slideInDown2{
+    0%{
+      transform:translateY(0);
+      visibility:visible
+    }to{
+      transform:translateY(100px)
+    }
+  }
+  .animate__slideInDown{
+    animation-name:slideInDown2;
+    h3{
+      span{
+        display: none;
+      }
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 1em;
+        text-align: left;
+        animation:dotAnimate 1s infinite;
+      }
+    }
+  }
+    @keyframes dotAnimate{
+        0%,100%{content: "";}
+        25%{content: ".";}
+        50%{content: "..";}
+        75%{content: "...";}
+    }
 }
 
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/
