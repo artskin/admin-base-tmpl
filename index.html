@@ -7,8 +7,8 @@
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg">
     <title>admin base template</title>
     <script>
-      let host ="https://api.senseui.im/api"
-      //let host ="http://localhost:3301/api"
+      //let host ="https://api.senseui.im/api"
+      let host ="http://localhost:3301/api"
       window.appConf = {
         "lang":"en",
         "theme":"",
@@ -20,6 +20,7 @@
           sysInfo  : `${host}/sys/info`,
           tasks    : `${host}/task/list`,
           records  : `${host}/records/list`,
+          toplist  : `${host}/top/list`,
           statistics:`${host}/statistics/list`
         }
       }

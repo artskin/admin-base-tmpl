@@ -163,6 +163,7 @@ export default class Login extends Vue {
         }catch(err){
           this.animateClass = ''
           this.animateClassTitle = ''
+          this.loading = false
           console.log(err)
         }
       } else {
@@ -187,7 +188,7 @@ export let route = {
 
 <style lang="scss">
 .login-container {
-  --animate-delay:0.2s;
+  --animate-delay:0.1s;
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -260,7 +261,7 @@ export let route = {
       transform:translateY(0);
       visibility:visible
     }to{
-      transform:translateY(100px)
+      transform:translateY(130px)
     }
   }
   .animate__slideInDown{

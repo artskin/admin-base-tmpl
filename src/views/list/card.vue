@@ -175,6 +175,18 @@ export default class Card extends Vue {
     }
   }
   .el-card{
-    border-width: 0.5px;
+    border-width: 1px;
   }
+  
+  @media screen and (-webkit-min-device-pixel-ratio: 2) {
+    .el-card{
+      border-width: 0.5px;
+    }
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 3) {
+    .el-card{
+      border-width: 0.333333px;
+    }
+  }
+
 </style>

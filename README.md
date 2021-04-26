@@ -21,7 +21,7 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 - 权限控制:路有权限/元素权限/接口权限
 - 国际化：支持图片或其他资源同时切换(登录页切换示例)
 - 一键换肤(右上角)，通过css 的var 无感切换
-- 响应式布局`pc/pad/phone`
+- 响应式布局：完美适配`PC/iPad/Phone`
 - mock数据(`mock/`文件夹下)
 - 
 
@@ -47,7 +47,7 @@ npm run build
 - [ ] 可配置的布局：菜单支持左右结构，上下结构切换
 - [ ] 添加Material Design 风格主题
 
-## 参考项目
+## 参考致谢
 
 [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template/tree/minimal) 
 
