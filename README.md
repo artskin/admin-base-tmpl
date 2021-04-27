@@ -54,3 +54,4 @@ npm run build
 https://coderthemes.com/greeva/layouts/vertical-dark/ui-buttons.html
 
 [adminlte](adminlte.io)
+[animate.style](https://animate.style/)

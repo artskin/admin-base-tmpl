@@ -14,7 +14,7 @@ interface Window {
       logout:string,
       tasks:string,
       records:string,
-      toplist:string,
+      top:string,
       statistics:string
     }
   }

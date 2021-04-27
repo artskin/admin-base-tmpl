@@ -31,11 +31,6 @@
             <span>Top Saler</span>
             <el-button style="float: right; padding: 3px 0" type="text">more</el-button>
           </div>
-          <!-- "name": faker.name.firstName(),
-          "portrait": faker.image.avatar(),
-          "time": faker.datatype.datetime(),
-          "value": faker.datatype.number(),
-          "progress":faker.datatype.number(100), -->
           <ul class="top-list">
             <li v-for="(n,i) in toplist" :key="i" class="text item">
               <img :src="n.portrait" alt="">
@@ -53,9 +48,18 @@
             <span>最新动态</span>
             <el-button style="float: right; padding: 3px 0" type="text">more</el-button>
           </div>
-          <div v-for="o in 10" :key="o" class="text item">
-            {{ o + '. 创新链、产业链、资金链相互助力' }}
-          </div>
+          <ul class="top-list">
+            <li v-for="(item,index) in topitems" :key="index">
+              <i class="icon el-icon-medal"></i>
+              <div class="news">
+                <h6>
+                  {{item.title}}
+                </h6>
+                <p>{{item.intro}}</p>
+              </div>
+              <i class="el-icon-arrow-right"></i>
+            </li>
+          </ul>
         </el-card>
       </el-col>
 
@@ -73,7 +77,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import { UserModule } from '@/store/modules/user'
-import { getStatistics, getToplist } from '@/api/statistics'
+import { getStatistics, getToplist, getTopitems } from '@/api/statistics'
 import ChartLine from '@/components/Chartjs/chartLine.vue'
 import ChartBar from '@/components/Chartjs/chartPie.vue'
 
@@ -108,19 +112,16 @@ export default class Dashboard extends Vue {
       percentage:100,
       color:'#4e88f3',
       status:'success'
-    },
-    {
-      type:'line',
-      percentage:10,
-      color:'#4e88f3'
-    },
+    }
   ]
   isLoading:boolean = false
   overview:Array<Object> = []
   toplist:Array<Object> = []
+  topitems:Array<Object> = []
   created() {
     this.loadStatistics()
     this.loadToplist()
+    this.loadTopitems()
   }
   loadStatistics(){
     this.isLoading = true
@@ -143,15 +144,18 @@ export default class Dashboard extends Vue {
       console.log(this.toplist)
     })
   }
+  loadTopitems(){
+    getTopitems().then((res:any)=>{
+      this.topitems = res.data.list;
+    })
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-
 .dashboard {
   &-container {
     padding:5px 30px;
-    
     .el-card{border: none;}
   }
   &-text {
@@ -212,8 +216,12 @@ export default class Dashboard extends Vue {
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: 50px;
     em{font-style: normal;display: inline-block;padding:0 20px}
+    i.icon{
+      font-size: 26px;
+    }
   }
   .el-progress{
     flex: 1;
@@ -224,6 +232,16 @@ export default class Dashboard extends Vue {
     height: 40px;
     width: 40px;
     border-radius: 21px;
+    background: var(--gray-light);
+  }
+  .news{
+    padding: 0 20px;
+    h6{margin: 0;font-weight: normal;font-size: 16px;}
+    p{
+      width: 80%;height: 20px;overflow: hidden;text-overflow: ellipsis;margin: 0;
+      font-size: 14px;
+    color: var(--info-hover);
+    }
   }
 }
 @media only screen and (max-width: 768px){

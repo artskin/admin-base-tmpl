@@ -115,11 +115,13 @@ $loginCursorColor: $dark;
 }
 .themeDarkBlue{
   $sideBarBg:#0b2559;
+  $primary:#2a41cb;
   --mainBG:#f6f8fc;
   --menu-color:var(--gray);
   $success:#34c38f;
   $danger:#f46a6a;
   $warning:#f1b44c;
+  @include colorGroup('--primary',$primary);
   @include colorGroup('--sideBarBg',$sideBarBg);
   @include colorGroup('--success',$success);
   @include colorGroup('--danger',$danger);
@@ -137,16 +139,16 @@ $loginCursorColor: $dark;
   @include colorGroup('--primary',$primary);
   .el-menu{
     position: relative;
-    &::after{
-      content: '';
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      width: 1px;
-      background-color: #eee;
-    }
+    // &::after{
+    //   content: '';
+    //   display: block;
+    //   position: absolute;
+    //   right: 0;
+    //   top: 0;
+    //   height: 100%;
+    //   width: 0.5px;
+    //   background-color: #eee;
+    // }
   }
 }
 @media only screen and (max-width: 768px){

@@ -7,6 +7,10 @@ export const getStatistics = () =>
   })
 
 export const getToplist = () => request({
-    url: `${apipath.toplist}`,
+    url: `${apipath.top}/list`,
     method: 'get'
   })
+export const getTopitems = () => request({
+  url: `${apipath.top}/items`,
+  method: 'get'
+})

@@ -93,6 +93,7 @@ export default class SideBar extends Vue {
 }
 .sidebar-container {
   background-color: var(--sideBarBg);
+  box-shadow: 0 1px 8px rgb(0 21 41 / 8%);
   // reset element-ui css
   .horizontal-collapse-transition {
     transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;

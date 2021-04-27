@@ -86,6 +86,21 @@ export default new Router({
       ]
     },
     {
+      path: '/ui',
+      component: Layout,
+      redirect: '/elements',
+      children: [
+        {
+          path: 'elements',
+          component: () => import(/* webpackChunkName: "dashboard" */ '@/views/ui-elements/index.vue'),
+          meta: {
+            title: 'UI Elements',
+            icon: 'el-icon-set-up'
+          }
+        }
+      ]
+    },
+    {
       path: '/form',
       component: Layout,
       children: [
