@@ -8,7 +8,7 @@
 
 ## 总览
 
-本项目是一个admin后台系统的基础套件。已基于vite2.0（esbuild）重新改造完成（之前是webpack，vue-cli4.x版本）。
+本项目是一个admin后台系统的基础套件。已基于vite2.0（esmodule+esbuild）重新改造完成（之前是webpack，vue-cli4.x版本）。
 
 技术栈是：Vue2+ElementUI+Typescript，让Vue2+ts的旧项目也享受到了vite2带来的秒开福利。
 
@@ -16,15 +16,19 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 
 ### 基础功能
 > 管理系统必要的基础功能模块。
+已有功能
+- [x] 登录/登出
+- [x] 权限控制:路由权限/元素权限/接口权限
+- [x] 国际化：支持图片或其他资源同时切换(登录页切换示例)
+- [x] 一键换肤(右上角)，通过css 的var 无感切换
+- [x] 响应式布局：完美适配`PC/iPad/Phone`
+- [x] mock数据(`mock/`文件夹下)
 
-- 登录/登出
-- 权限控制:路有权限/元素权限/接口权限
-- 国际化：支持图片或其他资源同时切换(登录页切换示例)
-- 一键换肤(右上角)，通过css 的var 无感切换
-- 响应式布局：完美适配`PC/iPad/Phone`
-- mock数据(`mock/`文件夹下)
-- 
+### ToDo 
 
+- [ ] 重写Element UI的样式部分：引入css var，更方便更自由的定制主题
+- [ ] 可配置的布局：菜单支持左右结构，上下结构切换
+- [ ] 添加Material Design 风格主题
 ### 安装依赖
 
 ```bash
@@ -40,12 +44,12 @@ npm run dev
 ```bash
 npm run build
 ```
+### 生产环境预览
 
-### ToDo 
+```bash
+npm run serve
+```
 
-- [ ] 重写Element UI的样式部分：1.用less；2.引入css var，更方便更自由的定制主题
-- [ ] 可配置的布局：菜单支持左右结构，上下结构切换
-- [ ] 添加Material Design 风格主题
 
 ## 参考致谢
 
