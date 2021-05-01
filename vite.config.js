@@ -23,5 +23,8 @@ export default defineConfig({
   //   hmr: {
   //     port: 443,
   //   }
+  },
+  build:{
+    outDir:'docs'
   }
 })
