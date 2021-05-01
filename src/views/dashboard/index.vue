@@ -98,20 +98,9 @@ export default class Dashboard extends Vue {
       color:'#ea4c89'
     },
     {
-      type:'dashboard',
-      percentage:80,
-      color:'#51cba8'
-    },
-    {
       type:'circle',
       percentage:10,
       color:'#4e88f3'
-    },
-    {
-      type:'circle',
-      percentage:100,
-      color:'#4e88f3',
-      status:'success'
     }
   ]
   isLoading:boolean = false
@@ -236,6 +225,7 @@ export default class Dashboard extends Vue {
   }
   .news{
     padding: 0 20px;
+    flex:1;
     h6{margin: 0;font-weight: normal;font-size: 16px;}
     p{
       width: 80%;height: 20px;overflow: hidden;text-overflow: ellipsis;margin: 0;

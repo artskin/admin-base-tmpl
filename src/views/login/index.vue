@@ -211,8 +211,7 @@ export let route = {
     position: relative;
     width: 520px;
     max-width: 100%;
-    padding: 0 35px 12%;
-    margin: 0 auto;
+    padding: 6% 30px 12%;
     overflow: hidden;
   }
   .el-form-item {
