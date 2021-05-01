@@ -7,6 +7,7 @@
 但是我们原有项目大部分还都是Vue2.x版本，不可能一上来就全部用vue3重构，那么能不能用vite2运行之前的vue2开发的项目呢?
 
 ## 总览
+![pewview](./public/preview.gif)
 
 本项目是一个admin后台系统的基础套件。已基于vite2.0（esmodule+esbuild）重新改造完成（之前是webpack，vue-cli4.x版本）。
 
