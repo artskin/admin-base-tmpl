@@ -81,8 +81,6 @@ $loginCursorColor: $dark;
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-
-  
   
   /* font-family */
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -135,22 +133,21 @@ $loginCursorColor: $dark;
   --menu-color:var(--dark);
   $sideBarBg:#fff;
   @include colorGroup('--sideBarBg',$sideBarBg);
-
   @include colorGroup('--primary',$primary);
-  .el-menu{
-    position: relative;
-    // &::after{
-    //   content: '';
-    //   display: block;
-    //   position: absolute;
-    //   right: 0;
-    //   top: 0;
-    //   height: 100%;
-    //   width: 0.5px;
-    //   background-color: #eee;
-    // }
-  }
 }
+
+.themeOrange{
+  $primary:#ff650e;
+  --mainBG:#f5f5f7;
+  //--gray:var(--gray);
+  --menu-color:#414389;
+  --menu-color-icon:#8d8eb8;
+  $sideBarBg:#fff;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+}
+
+
 @media only screen and (max-width: 1440px){
   :root{
     /* padding:base-gap:3 */

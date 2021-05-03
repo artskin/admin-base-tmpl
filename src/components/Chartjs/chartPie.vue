@@ -20,7 +20,7 @@ export default class ChartBar extends Vue {
   
   mounted(){
     let chartline = new Chart(this.$refs.chartLine, {
-      type: "pie",
+      type: "doughnut",
       data: {
         labels: ["Visitor", "Saler", "Viper", "Stranger"],
         datasets: [{
@@ -42,6 +42,7 @@ export default class ChartBar extends Vue {
       },
       options: {
         responsive: false,
+        cutout:96,
         interaction:{
           intersect:false
         },

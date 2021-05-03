@@ -95,7 +95,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "dashboard" */ '@/views/element-ui/index.vue'),
           meta: {
             title: 'Element UI',
-            icon: 'el-icon-set-up'
+            icon: 'el-icon-eleme'
           }
         }
       ]

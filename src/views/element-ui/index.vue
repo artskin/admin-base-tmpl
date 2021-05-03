@@ -1,6 +1,6 @@
 <template>
   <div class="page-router element-demo">
-    <h4>Button 按钮</h4>
+    <h3 class="page-title">Button 按钮</h3>
     <el-row>
       <el-button>默认按钮</el-button>
       <el-button type="primary">主要按钮</el-button>

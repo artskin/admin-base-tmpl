@@ -17,23 +17,28 @@ export default class ChartLine extends Vue {
   }
   chartline:any
   created() {}
-  
+  get themeColor(){
+    return AppModule.primaryColor
+  }
   get theme(){
     return AppModule.theme
   }
   @Watch('theme')
   themeChanged(nv,ov){
-    this.chartData.datasets[0].borderColor = getComputedStyle(document.body).getPropertyValue('--primary')
+    let primaryColor = this.themeColor; // || getComputedStyle(document.body).getPropertyValue('--primary');
+    const ctx:any = this.$refs.chartLine.getContext('2d');
+    let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
+			gradientColor.addColorStop(0, primaryColor);
+			gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
+    this.chartData.datasets[0].backgroundColor = gradientColor;
+    this.chartData.datasets[0].borderColor = primaryColor;
     this.chartline.update()
   }
-  get themeVariables(){
-    return getComputedStyle(document.body).getPropertyValue('--primary')
-  }
-  
+
   get gradient(){
     const ctx:any = this.$refs.chartLine.getContext('2d');
     let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
-			gradientColor.addColorStop(0, "rgba(215, 227, 244, 1)");
+			gradientColor.addColorStop(0, this.themeColor);
 			gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
     return gradientColor
   }
@@ -44,7 +49,7 @@ export default class ChartLine extends Vue {
       label: "Sales",
       fill: true,
       backgroundColor: '',
-      borderColor: this.themeVariables,
+      borderColor: this.themeColor,
       data: [
         2115,
         1562,
@@ -61,7 +66,7 @@ export default class ChartLine extends Vue {
       ]
     }]
   }
-  mounted(){
+  initChart(){
     this.chartData.datasets[0].backgroundColor = this.gradient;
     this.chartline = new Chart(this.$refs.chartLine, {
       type: "line",
@@ -109,7 +114,9 @@ export default class ChartLine extends Vue {
         }
       }
     });
-    
+  }
+  mounted(){
+    this.initChart();
   }
 
   handleSetLanguage(lang:string) {

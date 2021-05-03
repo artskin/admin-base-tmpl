@@ -18,6 +18,7 @@ export interface IAppState {
     withoutAnimation: boolean
   }
   theme:string
+  primaryColor:string
 }
 
 @Module({ dynamic: true, store, name: 'app' })
@@ -29,6 +30,7 @@ class App extends VuexModule implements IAppState {
   public device = DeviceType.Desktop
   public language = Cookies.get('language') || initLang;
   public theme = 'default';
+  public primaryColor = 'blue';
 
   @Mutation
   private TOGGLE_SIDEBAR(withoutAnimation: boolean) {
@@ -56,6 +58,7 @@ class App extends VuexModule implements IAppState {
   @Mutation
   SET_THEME(theme:string) {
     this.theme = theme
+    this.primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
   }
   
   @Mutation

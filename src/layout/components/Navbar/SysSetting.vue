@@ -14,6 +14,8 @@
           <el-radio label="themeDefault"><br>default</el-radio>
           <el-radio label="themeDarkBlue"><br>DarkBlue</el-radio>
           <el-radio label="themeLight"><br>Light</el-radio>
+          <el-radio label="themeOrange"><br>Orange</el-radio>
+          <el-radio label="themeDak"><br>Light</el-radio>
         </el-radio-group>
         <h5>自定义主题</h5>
         <el-color-picker v-model="color2"></el-color-picker>
@@ -106,10 +108,12 @@ export default class SysSetting extends Vue {
     }
     .color-cards{
       display: flex;
+      flex-wrap: wrap;
       width: 100%;
       .el-radio{
         width: 30%;
-        margin-right: 10px;
+        margin-right: 3%;
+        margin-bottom: 5%;
         &::before{
           content: ' ';
           display: inline-block;
@@ -132,11 +136,17 @@ export default class SysSetting extends Vue {
       .el-radio:nth-child(1)::before{
         background: #292e40;
       }
+      .el-radio:nth-child(2)::before{
+        background:#0b2559;
+      }
       .el-radio:nth-child(3)::before{
         background: #ece5e0;
       }
-      .el-radio:nth-child(2)::before{
-        background:#0b2559;
+      .el-radio:nth-child(4)::before{
+        background: #ff650e;
+      }
+      .el-radio:nth-child(5)::before{
+        background: #0a0a45;
       }
     }
   }

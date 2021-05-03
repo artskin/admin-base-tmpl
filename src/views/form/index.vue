@@ -1,5 +1,6 @@
 <template>
   <div class="page-router">
+    <h3 class="page-title">form 表单</h3>
     <el-form
       ref="form"
       :model="form"
@@ -83,14 +84,14 @@
         />
       </el-form-item>
       <el-form-item>
+        <el-button @click="onCancel">
+          Cancel
+        </el-button>
         <el-button
           type="primary"
           @click="onSubmit"
         >
           Create
-        </el-button>
-        <el-button @click="onCancel">
-          Cancel
         </el-button>
       </el-form-item>
     </el-form>

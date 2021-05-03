@@ -205,7 +205,7 @@ export default class Dashboard extends Vue {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    em{font-style: normal;display: inline-block;padding:0 20px}
+    em{font-style: normal;display: inline-block;padding:0 20px;width: 80px;}
     i.icon{
       font-size: 26px;
     }
@@ -226,7 +226,7 @@ export default class Dashboard extends Vue {
     flex:1;
     h6{margin: 0;font-weight: normal;font-size: 16px;}
     p{
-      width: 80%;height: 20px;overflow: hidden;text-overflow: ellipsis;margin: 0;
+      width: 80%;height: 20px;line-height: 20px; overflow: hidden;text-overflow: ellipsis;margin: 0;
       font-size: 14px;
     color: var(--info-hover);
     }
