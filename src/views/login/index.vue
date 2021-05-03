@@ -103,7 +103,6 @@ export default class Login extends Vue {
   }
   private passwordType = 'password'
   private loading = false
-  private showDialog = false
   private redirect?: string
   private otherQuery: Dictionary<string> = {}
   currentLang=''
@@ -187,6 +186,7 @@ export let route = {
 </script>
 
 <style lang="scss">
+
 .login-container {
   --animate-delay:0.1s;
   height: 100%;
@@ -215,10 +215,15 @@ export let route = {
     overflow: hidden;
   }
   .el-form-item {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gray);
     border-radius: 5px;
     color: #454545;
+  }
+  .is-error{
+    border-color: var(--danger);
+  }
+  .is-success{
+    border-color: var(--success);
   }
   .el-input {
     input {
@@ -284,6 +289,37 @@ export let route = {
         50%{content: "..";}
         75%{content: "...";}
     }
+}
+
+:root{
+  --animate-duration: 1s;
+  --animate-delay: 1s;
+  --animate-repeat: 1;
+}
+.animate__animated{
+  -webkit-animation-duration:1s;
+  animation-duration:1s;
+  -webkit-animation-duration:var(--animate-duration);
+  animation-duration:var(--animate-duration);
+  -webkit-animation-fill-mode:both;
+  animation-fill-mode:both;
+}
+.animate__animated.animate__delay-1s{
+  -webkit-animation-delay:1s;
+  animation-delay:1s;
+  -webkit-animation-delay:var(--animate-delay);
+  animation-delay:var(--animate-delay)
+}
+.animate__zoomOut{-webkit-animation-name:zoomOut;animation-name:zoomOut}
+@-webkit-keyframes zoomOut{
+  0%{opacity:1}
+  50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}
+  to{opacity:0}
+}
+@keyframes zoomOut{
+  0%{opacity:1}
+  50%{opacity:0;-webkit-transform:scale3d(.3,.3,.3);transform:scale3d(.3,.3,.3)}
+  to{opacity:0}
 }
 
 // References: https://www.zhangxinxu.com/wordpress/2018/01/css-caret-color-first-line/

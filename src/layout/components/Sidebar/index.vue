@@ -27,8 +27,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import SidebarItem from './SidebarItem.vue'
 import IconSvg from '@/components/IconSvg/index.vue'
-import variables from '@/assets/styles/_variables.scss'
-import {styleToObject} from '@/utils/tools'
+// import variables from '@/assets/styles/_variables.scss'
+// import {styleToObject} from '@/utils/tools'
 @Component({
   name: 'SideBar',
   components: {
@@ -45,9 +45,9 @@ export default class SideBar extends Vue {
     return (this.$router as any).options.routes
   }
 
-  get variables() {
-    return styleToObject(variables)
-  }
+  // get variables() {
+  //   return styleToObject(variables)
+  // }
 
   get isCollapse() {
     return !this.sidebar.opened

@@ -37,7 +37,8 @@
   border-style: dashed;
 }
 .el-button--primary{
-  @include buttonCreat(--primary,--primary)
+  //@include buttonCreat(--primary,--primary);
+  box-shadow:0 4px 8px 0 rgba(78,136,243,.25);
 }
 .el-button.is-disabled{
   background: rgba(239, 241, 246, 0.8);

@@ -2,7 +2,7 @@
 English | [中文](./README.zh-CN.md)
 
 ## Introduction
-admin-base-template is a free and open source admin kit. using `vite2`. Technology stack is `Vue2`,`Element UI`,`Typescript`.
+admin-base-template is a free and open source admin template kit. using `vite2`. Technology stack is `Vue2`,`Element UI`,`Typescript`.
 ## Preview
 
 Demo: [admin-base-template](http://admin.senseui.im/)
@@ -15,7 +15,7 @@ Demo: [admin-base-template](http://admin.senseui.im/)
 - [x] Login/Logout: token manage
 - [x] Permission: router/element/api
 - [x] Multi-language: Surport image 
-- [x] Theme Handover: useing css var()
+- [x] Theme Handover: using css var()
 - [x] Responsive Layout: for`PC/iPad/Phone`
 - [x] Mock Data(`mock/` Api)
 

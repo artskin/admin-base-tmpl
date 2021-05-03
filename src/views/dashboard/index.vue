@@ -95,12 +95,12 @@ export default class Dashboard extends Vue {
     { 
       type:'dashboard',
       percentage:40,
-      color:'#ea4c89'
+      color:'var(--danger)'
     },
     {
       type:'circle',
       percentage:10,
-      color:'#4e88f3'
+      color:'var(--primary)'
     }
   ]
   isLoading:boolean = false

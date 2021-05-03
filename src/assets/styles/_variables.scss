@@ -93,8 +93,12 @@ $loginCursorColor: $dark;
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   --font-family-element: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+
+  --sideBarWidth: #{$sideBarWidth};
+  --closesideBarWidth: #{-$sideBarWidth};
 }
-:root{
+:root,.themeDefault{
+  //default-theme
   @include colorGroup('--primary',$primary);
   @include colorGroup('--success',$success);
   @include colorGroup('--info',$info);
@@ -103,8 +107,7 @@ $loginCursorColor: $dark;
 
   /* width */
   $sideBarBg:#292e40;
-  --sideBarWidth: #{$sideBarWidth};
-  --closesideBarWidth: #{-$sideBarWidth};
+  
   @include colorGroup('--sideBarBg',$sideBarBg);
   --menuBg: var(--primary);
   --menuText: #{$white};
@@ -114,8 +117,8 @@ $loginCursorColor: $dark;
   --mainBG:#f7f7fc;
 }
 .themeDarkBlue{
-  $sideBarBg:#0b2559;
-  $primary:#2a41cb;
+  $sideBarBg:#112958;
+  $primary:#3546ab;
   --mainBG:#f6f8fc;
   --menu-color:var(--gray);
   $success:#34c38f;

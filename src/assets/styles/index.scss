@@ -64,7 +64,7 @@ div:focus {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #CED3D8;
+  background: var(--gray);
   border-radius: 5px;
 }
 
