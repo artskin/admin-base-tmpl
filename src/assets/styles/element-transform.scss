@@ -4,9 +4,9 @@
   border-bottom: 2px solid var(--gray-light);
 }
 /* button */
-.el-button{
-  padding: 8px 12px;
-}
+// .el-button{
+//   padding: 8px 12px;
+// }
 .el-button--big{
   padding: 9.67px 18px;
   height: 40px;
@@ -38,7 +38,8 @@
 }
 .el-button--primary{
   //@include buttonCreat(--primary,--primary);
-  box-shadow:0 4px 8px 0 rgba(78,136,243,.25);
+  //box-shadow:0 4px 8px 0 rgba(78,136,243,.25);
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 .el-button.is-disabled{
   background: rgba(239, 241, 246, 0.8);

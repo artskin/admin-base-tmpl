@@ -130,7 +130,6 @@ export default class Dashboard extends Vue {
   loadToplist(){
     getToplist().then((res:any)=>{
       this.toplist = res.data.list;
-      console.log(this.toplist)
     })
   }
   loadTopitems(){

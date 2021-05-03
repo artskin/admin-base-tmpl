@@ -12,6 +12,7 @@
   #{$key}-hover: lighten($value, 5%);
   #{$key}-active: darken($value, 5%);
   #{$key}-opacity:rgba($value, 0.1);
+  #{$key}-disabled:rgba($value, 0.5);
 }
 
 @mixin buttonCreat($type,$border){

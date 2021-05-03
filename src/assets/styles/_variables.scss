@@ -134,7 +134,7 @@ $loginCursorColor: $dark;
 .themeLight{
   $primary:#018786;
   --mainBG:#f9f6f4;
-  --gray:var(--primary);
+  //--gray:var(--gray);
   --menu-color:var(--dark);
   $sideBarBg:#fff;
   @include colorGroup('--sideBarBg',$sideBarBg);
