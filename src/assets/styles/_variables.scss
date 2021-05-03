@@ -82,12 +82,7 @@ $loginCursorColor: $dark;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
 
-  /* padding */
-  --gap-xs: 4px;
-  --gap-s: 8px;
-  --gap-m: 16px;
-  --gap-l: 20px;
-  --gap-xl: 24px;
+  
   
   /* font-family */
   --font-family-sans-serif: "Montserrat","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -96,6 +91,8 @@ $loginCursorColor: $dark;
 
   --sideBarWidth: #{$sideBarWidth};
   --closesideBarWidth: #{-$sideBarWidth};
+  /* padding base:4px*/
+  @include gapFn('--gap',4px)
 }
 :root,.themeDefault{
   //default-theme
@@ -133,7 +130,7 @@ $loginCursorColor: $dark;
 
 .themeLight{
   $primary:#018786;
-  --mainBG:#f9f6f4;
+  --mainBG:#f9f9fd;
   //--gray:var(--gray);
   --menu-color:var(--dark);
   $sideBarBg:#fff;
@@ -154,16 +151,17 @@ $loginCursorColor: $dark;
     // }
   }
 }
+@media only screen and (max-width: 1440px){
+  :root{
+    /* padding:base-gap:3 */
+    @include gapFn('--gap',3px);
+  }
+}
 @media only screen and (max-width: 768px){
   :root{
     /* padding:base-gap:3 */
-  --gap-xs: 3px;
-  --gap-s: 6px;
-  --gap-m: 12px;
-  --gap-l: 15px;
-  --gap-xl: 18px;
+    @include gapFn('--gap',2px);
   }
-  
 }
 
 // The :export directive is the magic sauce for webpack

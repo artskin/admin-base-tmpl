@@ -7,6 +7,15 @@
   }
 }
 
+@mixin gapFn($key,$val) {
+  #{$key}-xs:$val;
+  #{$key}-s:$val*2;
+  #{$key}:$val*3;
+  #{$key}-m:$val*4;
+  #{$key}-l:$val*5;
+  #{$key}-xl:$val*6;
+}
+
 @mixin colorGroup($key,$value){
   #{$key}: $value;
   #{$key}-hover: lighten($value, 5%);

@@ -92,9 +92,9 @@ export default new Router({
       children: [
         {
           path: 'elements',
-          component: () => import(/* webpackChunkName: "dashboard" */ '@/views/ui-elements/index.vue'),
+          component: () => import(/* webpackChunkName: "dashboard" */ '@/views/element-ui/index.vue'),
           meta: {
-            title: 'UI Elements',
+            title: 'Element UI',
             icon: 'el-icon-set-up'
           }
         }

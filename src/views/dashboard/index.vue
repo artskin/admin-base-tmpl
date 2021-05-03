@@ -1,7 +1,7 @@
 <template>
-  <div class="dashboard-container">
-    <p class="gray">Analytics Dashboard</p>
-    <el-row :gutter="16" class="valign-items" :loading="isLoading">
+  <div class="page-router dashboard-container">
+    <h3 class="page-title">Analytics</h3>
+    <el-row class="gap-s valign-items" :loading="isLoading">
       <el-col :span="6" :xs="12" v-for="(item,index) in overview" :key="index">
         <el-card class="box-card total-number">
           <i class="icon-total" :class="'el-icon-'+item.icon"></i>
@@ -11,7 +11,7 @@
         </el-card>
       </el-col>
     </el-row>
-    <el-row :gutter="20" class="valign-items">
+    <el-row class="gap-s valign-items">
       <el-col :span="16" :xs="24">
         <el-card class="box-card">
           <ChartLine />
@@ -24,7 +24,7 @@
       </el-col>
     </el-row>
     
-    <el-row :gutter="20" class="valign-items ranking">
+    <el-row class="gap-s valign-items ranking">
       <el-col :span="12" :xs="24">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
@@ -35,7 +35,7 @@
             <li v-for="(n,i) in toplist" :key="i" class="text item">
               <img :src="n.portrait" alt="">
               <em>{{n.name}}</em>
-              <el-progress type="line" :percentage="n.progress"></el-progress>
+              <el-progress type="line" :color="colors[i]" :percentage="n.progress"></el-progress>
               <span>{{n.value}}</span>
             </li>
           </ul>
@@ -64,7 +64,7 @@
       </el-col>
 
     </el-row>
-    <el-row :gutter="20" class="valign-items">
+    <el-row class="gap-s valign-items">
       <el-col :span="24">
         <el-card class="box-card">
           <el-progress v-for="(item,index) in progress" :key="index" :type="item.type" :status="item.status" :percentage="item.percentage" :color="item.color"></el-progress>
@@ -91,6 +91,7 @@ export default class Dashboard extends Vue {
   get name() {
     return UserModule.name
   }
+  colors = ['var(--success)','var(--primary)','var(--warning)','var(--danger)','var(--indigo)']
   progress = [
     { 
       type:'dashboard',
@@ -143,7 +144,6 @@ export default class Dashboard extends Vue {
 <style lang="scss" scoped>
 .dashboard {
   &-container {
-    padding:5px 30px;
     .el-card{border: none;}
   }
   &-text {
@@ -151,12 +151,11 @@ export default class Dashboard extends Vue {
     line-height: 46px;
   }
 }
+
 .gray{
   color: var(--gray);
 }
-.valign-items{
-  .el-col{margin-bottom: 20px;}
-}
+
 .total-number{
   position: relative;
   .icon-total{
@@ -233,9 +232,9 @@ export default class Dashboard extends Vue {
     }
   }
 }
-@media only screen and (max-width: 768px){
-  .dashboard-container{
-    padding:2px 20px
-  }
-}
+// @media only screen and (max-width: 768px){
+//   .dashboard-container{
+//     padding:2px 20px
+//   }
+// }
 </style>

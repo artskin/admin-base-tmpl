@@ -2,12 +2,10 @@
 @import './mixins.scss'; // Already imported in style-resources-loader
 @import './transition.scss';
 @import './_variables.scss';
-@import './element-variables.scss';
 @import './element-transform.scss';
 
 /* Global scss */
-html,
-body {
+html,body {
   height: 100%;
 }
 body {
@@ -16,17 +14,8 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: var(--font-family-element);
 }
-
-#app {
-  height: 100%;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
+*,*:before,*:after {box-sizing: border-box;}
+#app {height: 100%;}
 a,
 a:focus,
 a:hover {
@@ -46,14 +35,20 @@ div:focus {
   justify-content: center;
   align-items: center;
 }
-
+.gap-s{
+  .el-col{
+    padding: 0 var(--gap);
+    margin-bottom: var(--gap-xl);
+  }
+}
 .page-router{
-  padding: var(--gap-l);
+  padding: var(--gap) var(--gap-l);
 }
 .page-title{
   margin: 0;
   font-size: 14px;
-  padding-bottom: var(--gap-m);
+  padding: var(--gap-m);
+  color: var(--gray-dark);
 }
 //scrollbar style
 ::-webkit-scrollbar {

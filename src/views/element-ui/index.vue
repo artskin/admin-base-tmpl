@@ -38,20 +38,29 @@
     </el-row>
     <el-row>
       <el-button disabled>默认按钮</el-button>
-      <el-button type="primary" disabled>主要按钮</el-button>
-      <el-button type="success" disabled>成功按钮</el-button>
-      <el-button type="info" disabled>信息按钮</el-button>
-      <el-button type="warning" disabled size="small">警告按钮</el-button>
-      <el-button type="danger" disabled size="mini">危险按钮</el-button>
-    </el-row>
-
-    <el-row>
-      <el-button plain disabled>朴素按钮</el-button>
+      <el-button disabled plain>朴素按钮</el-button>
       <el-button type="primary" plain disabled>主要按钮</el-button>
       <el-button type="success" plain disabled>成功按钮</el-button>
       <el-button type="info" plain disabled>信息按钮</el-button>
       <el-button type="warning" plain disabled size="small">警告按钮</el-button>
       <el-button type="danger" plain disabled size="mini">危险按钮</el-button>
+    </el-row>
+
+    <h4>日期选择</h4>
+    <el-row>
+      <el-date-picker
+        v-model="value1"
+        type="datetimerange"
+        range-separator="至"
+        start-placeholder="开始日期"
+        end-placeholder="结束日期">
+      </el-date-picker>
+      <el-date-picker
+        v-model="value2"
+        type="week"
+        format="yyyy 第 WW 周"
+        placeholder="选择周">
+      </el-date-picker>
     </el-row>
     <h4>Tag 标签</h4>
     <el-row>
@@ -116,6 +125,8 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'UiElement'
 })
 export default class UiElement extends Vue {
+  value1 =[new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)]
+  value2 = ''
   created() {
   }
   format(percentage) {
@@ -126,6 +137,7 @@ export default class UiElement extends Vue {
 <style lang="scss">
   .element-demo{
     padding: var(--gap-xl);
+    padding-top:var(--gap-s);
     .el-row{
       margin-bottom: 20px;
     }

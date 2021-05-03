@@ -1,44 +1,44 @@
 /* Element Variables */
 //@import './_variables.scss';
 
-// Override Element UI variables
-$--primary-color: $blue;
-$--color-primary:var(--primary);
-$--color-success: $green;
-$--color-warning: $yellow;
-$--color-danger: $red;
-$--color-info: #5d5d5d;
-$--button-font-weight: 400;
-$--color-text-regular: $dark;
-$--border-color-light: #dfe4ed;
-$--border-color-lighter: #e6ebf5;
-$--table-border:1px solid #dfe6ec;
+// // Override Element UI variables
+// $--primary-color: $blue;
+// $--color-primary:var(--primary);
+// $--color-success: $green;
+// $--color-warning: $yellow;
+// $--color-danger: $red;
+// $--color-info: #5d5d5d;
+// $--button-font-weight: 400;
+// $--color-text-regular: $dark;
+// $--border-color-light: #dfe4ed;
+// $--border-color-lighter: #e6ebf5;
+// $--table-border:1px solid #dfe6ec;
 
-$--border-color-base: $border-color !default;
-$--background-color-base: #F3F6FD !default;
+// $--border-color-base: $border-color !default;
+// $--background-color-base: #F3F6FD !default;
 
-/// color||Color|0
-$--checkbox-checked-font-color: var(--primary) !default;
-$--checkbox-checked-input-border-color: var(--primary) !default;
-/// color||Color|0
-$--checkbox-checked-background-color: var(--primary) !default;
+// /// color||Color|0
+// $--checkbox-checked-font-color: var(--primary) !default;
+// $--checkbox-checked-input-border-color: var(--primary) !default;
+// /// color||Color|0
+// $--checkbox-checked-background-color: var(--primary) !default;
 
-$--checkbox-input-border-color-hover: var(--primary) !default;
+// $--checkbox-input-border-color-hover: var(--primary) !default;
 
-$--radio-checked-font-color: var(--primary) !default;
-$--radio-checked-icon-color: var(--primary) !default;
-$--radio-checked-input-border-color: var(--primary) !default;
+// $--radio-checked-font-color: var(--primary) !default;
+// $--radio-checked-icon-color: var(--primary) !default;
+// $--radio-checked-input-border-color: var(--primary) !default;
 
-$--input-focus-border: var(--info-hover) !default;
-$--select-input-focus-border-color: var(--info-hover) !default;
-$--select-option-selected-font-color: var(--primary) !default;
-$--sm: 1024px !default;
-$--md: 1280px !default;
-$--lg: 1720px !default;
-$--xl: 1920px !default;
-$--box-shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.06) !default;
-// Icon font path, required
-$--font-path: 'element-ui/lib/theme-chalk/fonts';
+// $--input-focus-border: var(--info-hover) !default;
+// $--select-input-focus-border-color: var(--info-hover) !default;
+// $--select-option-selected-font-color: var(--primary) !default;
+// $--sm: 1024px !default;
+// $--md: 1280px !default;
+// $--lg: 1720px !default;
+// $--xl: 1920px !default;
+// $--box-shadow-light: 0 2px 8px 0 rgba(0, 0, 0, 0.06) !default;
+// // Icon font path, required
+// $--font-path: 'element-ui/lib/theme-chalk/fonts';
 //$--font-size-base:16px;
 
 // Apply overrided variables in Element UI
