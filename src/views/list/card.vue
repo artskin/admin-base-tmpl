@@ -148,7 +148,7 @@ export default class Card extends Vue {
       }
       span.mini{
         font-size: 12px;
-        color: #999;
+        color: var(--gray);
       }
       em{
         font-style: normal;

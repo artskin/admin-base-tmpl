@@ -39,7 +39,7 @@
 .el-button--primary{
   //@include buttonCreat(--primary,--primary);
   //box-shadow:0 4px 8px 0 rgba(78,136,243,.25);
-  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.06);
 }
 .el-button.is-disabled{
   background: rgba(239, 241, 246, 0.8);
@@ -53,7 +53,13 @@
     border-color: #E7EAEF;
   }
 }
-
+.el-tooltip__popper.is-dark{
+  --white:var(--menu-bgcolor);
+  --primary-text:var(--gray);
+}
+.popper__arrow{
+  --primary-text:var(--sideBarBg);
+}
 
 //input
 // .el-input{

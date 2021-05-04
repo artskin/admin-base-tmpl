@@ -26,6 +26,7 @@ export default class ChartBar extends Vue {
         datasets: [{
           label: "Sales",
           fill: true,
+          borderWidth:0,
           backgroundColor:[
             "#4E88F3",
             "#F9B653",
@@ -41,8 +42,11 @@ export default class ChartBar extends Vue {
         }]
       },
       options: {
+        layout: {
+          padding: 20
+        },
         responsive: false,
-        cutout:96,
+        cutout:88,
         interaction:{
           intersect:false
         },
@@ -64,7 +68,6 @@ export default class ChartBar extends Vue {
         scales: {
           x: {
             display:false,
-            //reverse: true,
             grid: {
               display:false,
               color: "rgba(250,250,250,0.0)"

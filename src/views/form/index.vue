@@ -133,4 +133,7 @@ export default class Form extends Vue {
 .line {
   text-align: center;
 }
+.el-form{
+  padding: 0 var(--gap-xl);
+}
 </style>

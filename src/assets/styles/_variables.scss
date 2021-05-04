@@ -94,6 +94,11 @@ $loginCursorColor: $dark;
 }
 :root,.themeDefault{
   //default-theme
+  $primaryText:#232031;
+  --white-gray:#EBEEF5;
+  --border-color-lighter:var(--white);
+  --primary-text:#{$primaryText};
+  
   @include colorGroup('--primary',$primary);
   @include colorGroup('--success',$success);
   @include colorGroup('--info',$info);
@@ -102,7 +107,7 @@ $loginCursorColor: $dark;
 
   /* width */
   $sideBarBg:#292e40;
-  
+  --menu-bgcolor:#{$sideBarBg};
   @include colorGroup('--sideBarBg',$sideBarBg);
   --menuBg: var(--primary);
   --menuText: #{$white};
@@ -111,11 +116,12 @@ $loginCursorColor: $dark;
   //--mainBG:#f9fcfe;
   --mainBG:#f7f7fc;
 }
-.themeDarkBlue{
+.themeBlue{
   $sideBarBg:#112958;
   $primary:#3546ab;
   --mainBG:#f6f8fc;
   --menu-color:var(--gray);
+  --menu-bgcolor:#{$sideBarBg};
   $success:#34c38f;
   $danger:#f46a6a;
   $warning:#f1b44c;
@@ -131,22 +137,75 @@ $loginCursorColor: $dark;
   --mainBG:#f9f9fd;
   //--gray:var(--gray);
   --menu-color:var(--dark);
+  --menu-bgcolor:var(--white);
   $sideBarBg:#fff;
   @include colorGroup('--sideBarBg',$sideBarBg);
   @include colorGroup('--primary',$primary);
 }
 
 .themeOrange{
+  color:var(--white);
+  
   $primary:#ff650e;
+  $primaryText:#3d3367;
+  --primary-text:#{$primaryText};
   --mainBG:#f5f5f7;
-  //--gray:var(--gray);
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
   --menu-color:#414389;
-  --menu-color-icon:#8d8eb8;
+  --menu-bgcolor:var(--white);
+  --menu-color-icon:var(--gray);
   $sideBarBg:#fff;
   @include colorGroup('--sideBarBg',$sideBarBg);
   @include colorGroup('--primary',$primary);
+  $success:#42a752;
+  @include colorGroup('--success',$success);
+  $danger:#e25334;
+  @include colorGroup('--danger',$danger);
 }
 
+.themeDark{
+  $primary:#6f42c1;
+  $primaryText:#fff;
+  --border-color-lighter:#4d5c89;
+  --white: #23325d;
+  --white-gray:#23325d;
+  --primary-text:#{$primaryText};
+  --mainBG:#192750;
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
+  --menu-color:#a8bcf8;
+  --menu-color-icon:var(--gray);
+  $sideBarBg:#23325d;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  $success:#42a752;
+  @include colorGroup('--success',$success);
+  $danger:#e25334;
+  @include colorGroup('--danger',$danger);
+}
+
+.themeDarkBlue{
+  $primary:#364fcd;
+  $primaryText:#fff;
+  --border-color-lighter:#4d5c89;
+  --white: #1d1d42;
+  --white-gray:#23325d;
+  --primary-text:#{$primaryText};
+  --mainBG:#141432;
+  --gray:#8d8eb8;
+  --gray-dark:#7b87b5;
+  --menu-color:#a8bcf8;
+  --menu-bgcolor:var(--white);
+  --menu-color-icon:var(--gray);
+  $sideBarBg:#1d1d42;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  $success:#42a752;
+  @include colorGroup('--success',$success);
+  $danger:#e25334;
+  @include colorGroup('--danger',$danger);
+}
 
 @media only screen and (max-width: 1440px){
   :root{

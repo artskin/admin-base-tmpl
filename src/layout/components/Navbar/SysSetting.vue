@@ -1,5 +1,5 @@
 <template>
-  <div class="setting_layer flex-center">
+  <div class="setting-layer flex-center">
     <el-button class="btn-setting" @click="drawer = true" icon="el-icon-setting" size="mini" circle></el-button>
     <el-drawer
       title="Settings"
@@ -11,11 +11,12 @@
       <section class="drawer-ctx">
         <h5>主题选择</h5>
         <el-radio-group class="color-cards" v-model="currentTheme" @change="themeChanged">
-          <el-radio label="themeDefault"><br>default</el-radio>
-          <el-radio label="themeDarkBlue"><br>DarkBlue</el-radio>
-          <el-radio label="themeLight"><br>Light</el-radio>
-          <el-radio label="themeOrange"><br>Orange</el-radio>
-          <el-radio label="themeDak"><br>Light</el-radio>
+          <el-radio class="theme-default" label="themeDefault">default</el-radio>
+          <el-radio class="theme-blue" label="themeBlue">Blue</el-radio>
+          <el-radio class="theme-cyan" label="themeLight">Cyan</el-radio>
+          <el-radio class="theme-orange" label="themeOrange">Orange</el-radio>
+          <el-radio class="theme-dark" label="themeDark">Dark</el-radio>
+          <el-radio class="theme-darkblue" label="themeDarkBlue">DarkBlue</el-radio>
         </el-radio-group>
         <h5>自定义主题</h5>
         <el-color-picker v-model="color2"></el-color-picker>
@@ -83,16 +84,18 @@ export default class SysSetting extends Vue {
 </script>
 
 <style lang="scss" scoped>
-.btn-setting{
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
 .el-drawer__header{
   padding: 15px;
 }
-.setting_layer{
-  
+.setting-layer{
+  padding-left:12px;
+  padding-right: 18px;
+  .btn-setting{
+    vertical-align: middle;
+    background: var(--white);
+    color: var(--menu-color);
+    border-color: var(--gray);
+  }
 }
 ::v-deep{
     .el-drawer__body,
@@ -113,40 +116,75 @@ export default class SysSetting extends Vue {
       .el-radio{
         width: 30%;
         margin-right: 3%;
-        margin-bottom: 5%;
-        &::before{
+        margin-bottom: 30px;
+        height: 58px;
+        position: relative;
+        border-radius: 5px;
+        background: #f6f6fc;
+        border:1px solid transparent;
+        box-shadow:inset 0 0 1px rgba(0,0,0,.1);
+        &::before,&::after{
           content: ' ';
           display: inline-block;
-          border: 2px solid transparent;
-          border-radius: 6px;
-          display: inline-block;
-          height: 60px;
-          width: 100%;
-          margin-bottom: 5px;
+          position: absolute;
+          left: 0;
+          height: 100%;
+        }
+        &::before{   
+          border: none;
+          width: 18px;
+          border-radius: 4px 0 0 4px;
+          z-index: 1;
+        }
+        &::after{
+          width: 44px;
+          content: '文字';
+          border-radius: 0 4px 0 0;
+          left: 18px;
+          z-index: 0;
+          bottom: 14px;
+          font-size: 12px;
+          text-align: center;
+          height: 14px;
         }
         .el-radio__input{
           display: none;
         }
-      }
-      .is-checked{
-        &::before{
-          border-color: var(--success);
+        .el-radio__label{
+          position: absolute;
+          bottom: -20px;
+          padding-left: 4px;
         }
       }
-      .el-radio:nth-child(1)::before{
-        background: #292e40;
+      .is-checked{
+        border-color: var(--success);
+        // &::before{
+          
+        // }
       }
-      .el-radio:nth-child(2)::before{
-        background:#0b2559;
+      .theme-default{
+        &::before{background: #292e40;}
+        &::after{color: #4E88F3;}
       }
-      .el-radio:nth-child(3)::before{
-        background: #ece5e0;
+      .theme-blue{
+        &::before{background:#112958;}
+        &::after{color: #3546ab;}
       }
-      .el-radio:nth-child(4)::before{
-        background: #ff650e;
+      .theme-cyan{
+        &::before{background: #018786;}
+        &::after{color: #018786;}
       }
-      .el-radio:nth-child(5)::before{
-        background: #0a0a45;
+      .theme-orange{
+        &::before{background: #ff650e;}
+        &::after{color: #ff650e;}
+      }
+      .theme-dark{
+        &::before{background: #0a0a45;}
+        &::after{color: #4E88F3;}
+      }
+      .theme-darkblue{
+        &::before{background:#112958;}
+        &::after{color: #3546ab;}
       }
     }
   }

@@ -99,7 +99,7 @@ export default class Navbar extends Vue {
   left: 0;
   top: 0;
   width: 100%;
-  background: #fff;
+  background: var(--white);
   box-shadow: 0 1px 8px rgba(0,21,41,.08);
 
   .hamburger-container {
@@ -110,7 +110,7 @@ export default class Navbar extends Vue {
     cursor: pointer;
     transition: background .3s;
     -webkit-tap-highlight-color:transparent;
-
+    ::v-deep i{color: var(--gray-dark);}
     &:hover {
       background: rgba(0, 0, 0, .025)
     }
@@ -133,10 +133,9 @@ export default class Navbar extends Vue {
       outline: none;
     }
     .right-menu-item {
-      padding: 0 8px;
       height: 100%;
       font-size: 18px;
-      color: #5a5e66;
+      color: var(--menu-color);
       vertical-align: text-bottom;
       &.hover-effect {
         cursor: pointer;

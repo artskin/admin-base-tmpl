@@ -177,7 +177,7 @@ export default class Dashboard extends Vue {
     font-style: normal;
     font-size: 14px;
   }
-  div{font-size: 14px;white-space:nowrap;}
+  div{font-size: 14px;white-space:nowrap;color: var(--gray-dark);}
 }
 .el-progress--line{
   margin-bottom: 15px;
@@ -205,20 +205,24 @@ export default class Dashboard extends Vue {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    em{font-style: normal;display: inline-block;padding:0 20px;width: 80px;}
+    em{font-style: normal;display: inline-block;padding:0 15px;width: 70px;}
     i.icon{
       font-size: 26px;
+    }
+    span{
+      display: inline-block;
+      width: 48px;
     }
   }
   .el-progress{
     flex: 1;
     margin-bottom: 0;
-    padding: 0 10px;
+    padding: 0 4px;
   }
   img{
-    height: 40px;
-    width: 40px;
-    border-radius: 21px;
+    height: 36px;
+    width: 36px;
+    border-radius: 20px;
     background: var(--gray-light);
   }
   .news{
@@ -228,7 +232,7 @@ export default class Dashboard extends Vue {
     p{
       width: 80%;height: 20px;line-height: 20px; overflow: hidden;text-overflow: ellipsis;margin: 0;
       font-size: 14px;
-    color: var(--info-hover);
+    color: var(--gray);
     }
   }
 }

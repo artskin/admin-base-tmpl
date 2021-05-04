@@ -25,11 +25,18 @@ export default class ChartLine extends Vue {
   }
   @Watch('theme')
   themeChanged(nv,ov){
+    
     let primaryColor = this.themeColor; // || getComputedStyle(document.body).getPropertyValue('--primary');
     const ctx:any = this.$refs.chartLine.getContext('2d');
     let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
 			gradientColor.addColorStop(0, primaryColor);
-			gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
+      console.log(this.theme)
+      if(this.theme.includes('Dark')){
+        gradientColor.addColorStop(1, "rgba(0, 0, 0, 0)");
+      }else{
+        gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
+      }
+			
     this.chartData.datasets[0].backgroundColor = gradientColor;
     this.chartData.datasets[0].borderColor = primaryColor;
     this.chartline.update()
@@ -95,20 +102,23 @@ export default class ChartLine extends Vue {
         },
         scales: {
           x: {
-            //reverse: true,
             grid: {
               display:true,
-              color: "rgba(250,250,250,0.0)"
+              color: "rgba(250,250,250,0)"
+            },
+            ticks: {
+              color: '#8d8eb8',
             }
           },
           y: {
             ticks: {
-              stepSize: 1000
+              stepSize: 1000,
+              color: '#8d8eb8',
             },
             display: true,
             borderDash: [3, 3],
             grid: {
-              color: "rgba(0,0,0,0.0)"
+              color: "rgba(0,0,0,0)"
             }
           }
         }
