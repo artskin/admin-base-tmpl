@@ -59,6 +59,10 @@ export default class ChartBar extends Vue {
           },
           legend: {
             //display: false
+            labels:{
+              color: '#8d8eb8',
+              textAlign:'left'
+            },
             position:'bottom'
           },
           tooltips: {
@@ -71,12 +75,17 @@ export default class ChartBar extends Vue {
             grid: {
               display:false,
               color: "rgba(250,250,250,0.0)"
+            },
+            ticks: {
+              stepSize: 1000,
+              color: '#8d8eb8',
             }
           },
           y: {
             display:false,
             ticks: {
-              stepSize: 1000
+              stepSize: 1000,
+              
             },
             grid: {
               color: "rgba(0,0,0,0.0)"

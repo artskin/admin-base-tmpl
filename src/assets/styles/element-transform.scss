@@ -192,10 +192,10 @@
 .el-table--striped .el-table__body tr.el-table__row--striped td{
   background: #FAFBFF;
 }
-.el-table--striped .el-table__body tr.el-table__row--striped:hover td,
-.el-table--enable-row-hover .el-table__body tr:hover > td {
-  background-color: #F3F6FD;
-}
+// .el-table--striped .el-table__body tr.el-table__row--striped:hover td,
+// .el-table--enable-row-hover .el-table__body tr:hover > td {
+//   background-color: #F3F6FD;
+// }
 .el-table::before{
   height: 0;
 }

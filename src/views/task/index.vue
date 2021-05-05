@@ -1,5 +1,6 @@
 <template>
   <div class="page-router">
+    <h3 class="page-title">人像库：</h3>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -100,11 +101,11 @@ export default class Table extends Vue {
       if(resp && resp.data.list){
         this.list = resp.data.list
       }
+    }).finally(()=>{
+      this.listLoading = false
     })
     // Just to simulate the time of the request
-    setTimeout(() => {
-      this.listLoading = false
-    }, 0.5 * 1000)
+    
   }
 }
 </script>

@@ -144,8 +144,7 @@ $loginCursorColor: $dark;
 }
 
 .themeOrange{
-  color:var(--white);
-  
+  color:#383874;
   $primary:#ff650e;
   $primaryText:#3d3367;
   --primary-text:#{$primaryText};
@@ -165,32 +164,56 @@ $loginCursorColor: $dark;
 }
 
 .themeDark{
-  $primary:#6f42c1;
+  $primary:#646cff;
+  $success:#42a752;
+  $danger:#e25334;
+  $sideBarBg:#23325d;
   $primaryText:#fff;
-  --border-color-lighter:#4d5c89;
-  --white: #23325d;
-  --white-gray:#23325d;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+
+  $white:#23325d;
+  $white-gray:lighten($white, 5%);
+  --white: #{$white};
+  --white-gray:#{$white-gray};
+  --border-color-extra-light:#7b87b5;
+  --border-color-lighter:#{$white-gray};
+
   --primary-text:#{$primaryText};
   --mainBG:#192750;
   --gray:#8d8eb8;
   --gray-dark:#7b87b5;
   --menu-color:#a8bcf8;
   --menu-color-icon:var(--gray);
-  $sideBarBg:#23325d;
-  @include colorGroup('--sideBarBg',$sideBarBg);
-  @include colorGroup('--primary',$primary);
-  $success:#42a752;
-  @include colorGroup('--success',$success);
-  $danger:#e25334;
-  @include colorGroup('--danger',$danger);
+  --color-text-regular:#8d8eb8;
+  
+  color:var(--gray);
 }
 
 .themeDarkBlue{
   $primary:#364fcd;
+  $success:#42a752;
+  $danger:#e25334;
+  $sideBarBg:#1d1d42;
   $primaryText:#fff;
-  --border-color-lighter:#4d5c89;
+  @include colorGroup('--sideBarBg',$sideBarBg);
+  @include colorGroup('--primary',$primary);
+  @include colorGroup('--success',$success);
+  @include colorGroup('--danger',$danger);
+
+  color:#8d8eb8;
+  --color-text-placeholder:#30305f;
+  --color-text-regular:#8d8eb8;
+  --color-text-secondary:#9696cf;
+  --border-color-lighter:#24244b;
+  --border-color-base:#171735;
+  --border-color-light:#24244b;
+  --background-color-base:var(--primary-opacity);
   --white: #1d1d42;
-  --white-gray:#23325d;
+  --white-gray:#27274e;
+
   --primary-text:#{$primaryText};
   --mainBG:#141432;
   --gray:#8d8eb8;
@@ -198,13 +221,7 @@ $loginCursorColor: $dark;
   --menu-color:#a8bcf8;
   --menu-bgcolor:var(--white);
   --menu-color-icon:var(--gray);
-  $sideBarBg:#1d1d42;
-  @include colorGroup('--sideBarBg',$sideBarBg);
-  @include colorGroup('--primary',$primary);
-  $success:#42a752;
-  @include colorGroup('--success',$success);
-  $danger:#e25334;
-  @include colorGroup('--danger',$danger);
+
 }
 
 @media only screen and (max-width: 1440px){

@@ -94,7 +94,7 @@ export default class SysSetting extends Vue {
     vertical-align: middle;
     background: var(--white);
     color: var(--menu-color);
-    border-color: var(--gray);
+    border-color: var(--white-gray);
   }
 }
 ::v-deep{

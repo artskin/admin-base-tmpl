@@ -84,7 +84,7 @@ export default class Card extends Vue {
     .img-layer{
       max-width: 33%;
       width:33%;
-      background: #f3f6f9;
+      background: var(--white-gray);
       border-radius: 4px;
       overflow: hidden;
       position: relative;

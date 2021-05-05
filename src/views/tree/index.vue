@@ -1,5 +1,6 @@
 <template>
   <div class="page-router">
+    <h3 class="page-title">Tree</h3>
     <el-input
       v-model="filterText"
       placeholder="Filter keyword"
