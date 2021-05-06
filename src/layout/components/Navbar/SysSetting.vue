@@ -19,14 +19,17 @@
           <el-radio class="theme-darkblue" label="themeDarkBlue">DarkBlue</el-radio>
         </el-radio-group>
         <h5>自定义主题</h5>
-        <el-color-picker v-model="customPrimaryColor"></el-color-picker>
+        <div class="flex">
+          主题色：<el-color-picker v-model="customPrimaryColor"></el-color-picker>
+        </div>
+        
       </section>
     </el-drawer>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue,Watch } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import { UserModule } from '@/store/modules/user'
 
@@ -42,10 +45,17 @@ export default class SysSetting extends Vue {
   get avatar() { return UserModule.avatar }
   get theme() { return AppModule.theme }
 
-  customPrimaryColor:string = "#cc000"
+  customPrimaryColor:string |null = "#6610f2"
   drawer:boolean = false
   direction:string = 'rtl'
   currentTheme = ''
+  @Watch('customPrimaryColor',{immediate: true})
+  primaryColorChanged(nv,ov){
+    if(nv && ov){
+      localStorage.setItem('primaryColor',nv);
+      this.$store.dispatch('SetTheme',this.currentTheme)
+    }
+  }
 
   handleClose(done:Function) {
     done()
@@ -53,12 +63,20 @@ export default class SysSetting extends Vue {
   created() {}
   mounted() {
     this.currentTheme = this.theme;
-    this.customPrimaryColor = this.primaryColor;
+    if(localStorage.getItem('primaryColor')){
+      this.customPrimaryColor = localStorage.getItem('primaryColor');
+    }
   }
   themeChanged(theme){
-    this.currentTheme = theme
+    this.currentTheme = theme;
+    if(document.body.hasAttribute('style')){
+      document.body.removeAttribute('style');
+    }
+    if(localStorage.getItem('primaryColor')){
+      localStorage.removeItem('primaryColor')
+    }
     localStorage.setItem('currentTheme',theme);
-    this.$store.dispatch('SetTheme',theme);
+    this.$store.dispatch('SetTheme',{theme:theme,handle:true});
   }
 }
 </script>

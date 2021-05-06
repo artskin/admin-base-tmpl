@@ -30,10 +30,12 @@ div:focus {
 .clearfix {
   @include clearfix;
 }
-.flex-center{
+.flex,.flex-center{
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+.flex-center{
+  justify-content: center;
 }
 .gap-s{
   .el-col{

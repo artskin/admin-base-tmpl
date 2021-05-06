@@ -57,10 +57,16 @@ class App extends VuexModule implements IAppState {
   }
 
   @Mutation
-  SET_THEME(theme:string) {
-    this.theme = theme;
-    themeSetting(theme);
-    this.primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
+  SET_THEME(theme:any) {
+    if(typeof theme == 'string'){
+      this.theme = theme;
+      this.primaryColor = localStorage.getItem('primaryColor') || getComputedStyle(document.body).getPropertyValue('--primary');
+      document.body.style.setProperty('--primary', localStorage.getItem('primaryColor'));
+    }else{
+      this.theme = theme.theme;
+      this.primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
+    }
+    themeSetting(this.theme);
   }
   
   @Mutation

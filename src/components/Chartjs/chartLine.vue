@@ -25,21 +25,7 @@ export default class ChartLine extends Vue {
   }
   @Watch('theme')
   themeChanged(nv,ov){
-    
-    let primaryColor = this.themeColor; // || getComputedStyle(document.body).getPropertyValue('--primary');
-    const ctx:any = this.$refs.chartLine.getContext('2d');
-    let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
-			gradientColor.addColorStop(0, primaryColor);
-      console.log(this.theme)
-      if(this.theme.includes('Dark')){
-        gradientColor.addColorStop(1, "rgba(0, 0, 0, 0)");
-      }else{
-        gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
-      }
-			
-    this.chartData.datasets[0].backgroundColor = gradientColor;
-    this.chartData.datasets[0].borderColor = primaryColor;
-    this.chartline.update()
+    this.reRender()
   }
 
   get gradient(){
@@ -72,6 +58,22 @@ export default class ChartLine extends Vue {
         3327
       ]
     }]
+  }
+  reRender(){
+    let primaryColor = this.themeColor; // || getComputedStyle(document.body).getPropertyValue('--primary');
+    const ctx:any = this.$refs.chartLine.getContext('2d');
+    let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
+			gradientColor.addColorStop(0, primaryColor);
+      console.log(this.theme)
+      if(this.theme.includes('Dark')){
+        gradientColor.addColorStop(1, "rgba(0, 0, 0, 0)");
+      }else{
+        gradientColor.addColorStop(1, "rgba(215, 227, 244, 0)");
+      }
+			
+    this.chartData.datasets[0].backgroundColor = gradientColor;
+    this.chartData.datasets[0].borderColor = primaryColor;
+    this.chartline.update()
   }
   initChart(){
     this.chartData.datasets[0].backgroundColor = this.gradient;
@@ -127,6 +129,7 @@ export default class ChartLine extends Vue {
   }
   mounted(){
     this.initChart();
+    this.reRender()
   }
 
   handleSetLanguage(lang:string) {
