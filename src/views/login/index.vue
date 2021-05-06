@@ -189,6 +189,7 @@ export let route = {
 
 .login-container {
   --animate-delay:0.1s;
+  --white-gray:#fff;
   height: 100%;
   width: 100%;
   overflow: hidden;

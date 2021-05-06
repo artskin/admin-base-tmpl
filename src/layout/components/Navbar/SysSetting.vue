@@ -19,7 +19,7 @@
           <el-radio class="theme-darkblue" label="themeDarkBlue">DarkBlue</el-radio>
         </el-radio-group>
         <h5>自定义主题</h5>
-        <el-color-picker v-model="color2"></el-color-picker>
+        <el-color-picker v-model="customPrimaryColor"></el-color-picker>
       </section>
     </el-drawer>
   </div>
@@ -36,49 +36,29 @@ import { UserModule } from '@/store/modules/user'
   }
 })
 export default class SysSetting extends Vue {
-  get sidebar() {
-    return AppModule.sidebar
-  }
+  get primaryColor(){ return AppModule.primaryColor }
+  get sidebar() { return AppModule.sidebar }
+  get device() { return AppModule.device.toString() }
+  get avatar() { return UserModule.avatar }
+  get theme() { return AppModule.theme }
 
-  get device() {
-    return AppModule.device.toString()
-  }
-
-  get avatar() {
-    return UserModule.avatar
-  }
-  color2:string = "#cc000"
+  customPrimaryColor:string = "#cc000"
   drawer:boolean = false
   direction:string = 'rtl'
-  currentTheme:string = 'default'
+  currentTheme = ''
 
-  handleClose(done) {
+  handleClose(done:Function) {
     done()
-    //console.log()
   }
-  created() {
-    this.themeInit()
-  }
+  created() {}
   mounted() {
-    
-  }
-  themeInit(){
-    let localTheme = localStorage.getItem('currentTheme')
-    if(localTheme && !document.body.classList.length){
-      document.body.classList.add(localTheme)
-      this.currentTheme = localTheme;
-      AppModule.SetTheme(localTheme)
-    }
+    this.currentTheme = this.theme;
+    this.customPrimaryColor = this.primaryColor;
   }
   themeChanged(theme){
     this.currentTheme = theme
     localStorage.setItem('currentTheme',theme);
-    AppModule.SetTheme(theme)
-    if(!document.body.classList.length){
-      document.body.classList.add(theme)
-    }else{
-      document.body.classList.replace(document.body.classList[0],theme)
-    }
+    this.$store.dispatch('SetTheme',theme);
   }
 }
 </script>

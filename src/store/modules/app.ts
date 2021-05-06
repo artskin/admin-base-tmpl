@@ -2,6 +2,7 @@ import { VuexModule, Module, Mutation, Action, getModule } from 'vuex-module-dec
 import Cookies from 'js-cookie';
 import { getSidebarStatus, setSidebarStatus } from '@/utils/cookies'
 const initLang = window.appConf?.lang || 'en'
+import {themeSetting} from '@/utils/tools'
 import store from '@/store'
 
 export enum DeviceType {
@@ -29,8 +30,8 @@ class App extends VuexModule implements IAppState {
   }
   public device = DeviceType.Desktop
   public language = Cookies.get('language') || initLang;
-  public theme = 'default';
-  public primaryColor = 'blue';
+  public theme = 'themeDefault';
+  public primaryColor = getComputedStyle(document.body).getPropertyValue('--primary') || 'blue';
 
   @Mutation
   private TOGGLE_SIDEBAR(withoutAnimation: boolean) {
@@ -57,7 +58,8 @@ class App extends VuexModule implements IAppState {
 
   @Mutation
   SET_THEME(theme:string) {
-    this.theme = theme
+    this.theme = theme;
+    themeSetting(theme);
     this.primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
   }
   
