@@ -17,17 +17,17 @@ export default class ChartLine extends Vue {
   }
   chartline:any
   created() {}
-  get themeColor(){
-    return AppModule.primaryColor
-  }
   get theme(){
     return AppModule.theme
   }
-  @Watch('theme')
-  themeChanged(nv,ov){
+  get themeColor(){
+    return AppModule.primaryColor
+  }
+  @Watch('themeColor')
+  themeColorChanged(nv,ov){
     this.reRender()
   }
-
+  
   get gradient(){
     const ctx:any = this.$refs.chartLine.getContext('2d');
     let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
@@ -59,12 +59,15 @@ export default class ChartLine extends Vue {
       ]
     }]
   }
+  mounted(){
+    this.initChart();
+    this.reRender()
+  }
   reRender(){
-    let primaryColor = this.themeColor; // || getComputedStyle(document.body).getPropertyValue('--primary');
+    let primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
     const ctx:any = this.$refs.chartLine.getContext('2d');
     let gradientColor = ctx.createLinearGradient(0, 0, 0, 225);
 			gradientColor.addColorStop(0, primaryColor);
-      console.log(this.theme)
       if(this.theme.includes('Dark')){
         gradientColor.addColorStop(1, "rgba(0, 0, 0, 0)");
       }else{
@@ -127,16 +130,7 @@ export default class ChartLine extends Vue {
       }
     });
   }
-  mounted(){
-    this.initChart();
-    this.reRender()
-  }
-
-  handleSetLanguage(lang:string) {
-    
-  }
 }
-
 </script>
 
 <style lang="scss" scoped>

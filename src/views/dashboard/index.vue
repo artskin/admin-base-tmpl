@@ -163,9 +163,12 @@ export default class Dashboard extends Vue {
     right: 20px;
     top: 20px;
     background: var(--primary-opacity);
-    color: var(--primary-hover);
+    color: var(--primary);
     padding: 10px;
     border-radius: 55%;
+    &::before{
+      opacity: .6;
+    }
   }
   span.main-number{
     font-size: 28px;

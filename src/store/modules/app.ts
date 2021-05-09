@@ -4,6 +4,7 @@ import { getSidebarStatus, setSidebarStatus } from '@/utils/cookies'
 const initLang = window.appConf?.lang || 'en'
 import {themeSetting} from '@/utils/tools'
 import store from '@/store'
+import {lightenDarkenColor} from '@/utils/color'
 
 export enum DeviceType {
   Mobile,
@@ -60,13 +61,21 @@ class App extends VuexModule implements IAppState {
   SET_THEME(theme:any) {
     if(typeof theme == 'string'){
       this.theme = theme;
-      this.primaryColor = localStorage.getItem('primaryColor') || getComputedStyle(document.body).getPropertyValue('--primary');
-      document.body.style.setProperty('--primary', localStorage.getItem('primaryColor'));
+      themeSetting(this.theme);
+      let primaryColor = localStorage.getItem('primaryColor');
+      if(primaryColor){
+        document.body.style.setProperty('--primary', primaryColor);
+        document.body.style.setProperty('--primary-hover', lightenDarkenColor('#51CBA8',10));
+        document.body.style.setProperty('--primary-active', lightenDarkenColor(primaryColor,-10));
+        this.primaryColor = primaryColor || getComputedStyle(document.body).getPropertyValue('--primary');
+      }
     }else{
       this.theme = theme.theme;
+      themeSetting(this.theme);
       this.primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
+      console.log(this.primaryColor)
     }
-    themeSetting(this.theme);
+    
   }
   
   @Mutation
