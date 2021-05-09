@@ -7,19 +7,31 @@
 <script lang="ts">
 import { Component, Vue,Prop, Watch } from 'vue-property-decorator';
 import Chart from 'chart.js/auto';
-
+import { AppModule } from '@/store/modules/app'
 @Component({})
 export default class ChartBar extends Vue {
   @Prop({default:"14px"}) size!:string
   $refs!:{
     chartLine:HTMLCanvasElement
   }
+  chartline!:any
+  get themeColor(){
+    return AppModule.primaryColor
+  }
+  @Watch('themeColor')
+  themeColorChanged(nv,ov){
+    this.reRender()
+  }
   created() {
 
   }
-  
+  reRender(){
+    let primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
+    this.chartline.data.datasets[0].backgroundColor[0] = primaryColor;
+    this.chartline.update()
+  }
   mounted(){
-    let chartline = new Chart(this.$refs.chartLine, {
+    this.chartline = new Chart(this.$refs.chartLine, {
       type: "doughnut",
       data: {
         labels: ["Visitor", "Saler", "Viper", "Stranger"],

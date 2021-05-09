@@ -118,9 +118,10 @@ export default class SysSetting extends Vue {
         height: 58px;
         position: relative;
         border-radius: 5px;
+        color: var(--gray-dark);
         background: #f6f6fc;
         border:1px solid transparent;
-        box-shadow:inset 0 0 1px rgba(0,0,0,.1);
+        box-shadow: 0 0 5px rgba(0,0,0,.2);
         &::before,&::after{
           content: ' ';
           display: inline-block;
@@ -135,13 +136,14 @@ export default class SysSetting extends Vue {
           z-index: 1;
         }
         &::after{
+          font-family: element-icons!important;
           width: 44px;
-          content: '文字';
+          content: "\e6da";
           border-radius: 0 4px 0 0;
           left: 18px;
           z-index: 0;
           bottom: 14px;
-          font-size: 12px;
+          font-size: 16px;
           text-align: center;
           height: 14px;
         }
@@ -156,9 +158,7 @@ export default class SysSetting extends Vue {
       }
       .is-checked{
         border-color: var(--success);
-        // &::before{
-          
-        // }
+        font-weight: bold;
       }
       .theme-default{
         &::before{background: #292e40;}
