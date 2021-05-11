@@ -115,7 +115,11 @@ $loginCursorColor: $dark;
   --menuActiveText: #{$pink}; 
   //--mainBG:#f9fcfe;
   --mainBG:#f7f7fc;
+  .right-menu{
+    --menu-color:var(--gray-dark)
+  }
 }
+
 .themeBlue{
   $sideBarBg:#112958;
   $primary:#3546ab;

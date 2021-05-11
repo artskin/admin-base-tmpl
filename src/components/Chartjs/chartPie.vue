@@ -27,7 +27,7 @@ export default class ChartBar extends Vue {
   }
   reRender(){
     let primaryColor = getComputedStyle(document.body).getPropertyValue('--primary');
-    this.chartline.data.datasets[0].backgroundColor[0] = primaryColor;
+    this.chartline.data.datasets[0].backgroundColor[3] = primaryColor;
     this.chartline.update()
   }
   mounted(){
@@ -40,17 +40,12 @@ export default class ChartBar extends Vue {
           fill: true,
           borderWidth:0,
           backgroundColor:[
-            "#4E88F3",
-            "#F9B653",
             "#F7777F",
+            "#F9B653",
+            "#4E88F3",
             "#51CBA8"
           ],
-          data: [
-            40254,
-            22986,
-            9852,
-            21917
-          ]
+          data: [22986,9852,21917,40254]
         }]
       },
       options: {

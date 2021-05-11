@@ -140,7 +140,6 @@ export default class Navbar extends Vue {
       &.hover-effect {
         cursor: pointer;
         transition: background .3s;
-
         &:hover {
           background: rgba(0, 0, 0, .025)
         }
@@ -160,7 +159,6 @@ export default class Navbar extends Vue {
         }
       }
     }
-    
   }
 }
 ::v-deep{
