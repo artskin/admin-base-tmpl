@@ -6,8 +6,8 @@
         <el-card class="box-card total-number">
           <i class="icon-total" :class="'el-icon-'+item.icon"></i>
           <em>{{item.name}}</em>
-          <span class="main-number">{{item.value}}</span>
-          <div><span :class="item.style">{{item.percent}}</span> Since last week</div> 
+          <span class="number-main">{{item.value}}</span>
+          <div class="number-descr"><span :class="item.style">{{item.percent}}</span> Since last week</div> 
         </el-card>
       </el-col>
     </el-row>
@@ -170,7 +170,7 @@ export default class Dashboard extends Vue {
       opacity: .6;
     }
   }
-  span.main-number{
+  span.number-main{
     font-size: 28px;
     display: block;
     padding: 8px 0;
@@ -180,7 +180,11 @@ export default class Dashboard extends Vue {
     font-style: normal;
     font-size: 14px;
   }
-  div{font-size: 14px;white-space:nowrap;color: var(--gray-dark);}
+  .number-descr{
+    font-size: 14px;white-space:nowrap;color: var(--gray-dark);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 .el-progress--line{
   margin-bottom: 15px;

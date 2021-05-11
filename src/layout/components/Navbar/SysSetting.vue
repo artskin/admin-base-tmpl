@@ -45,7 +45,7 @@ export default class SysSetting extends Vue {
   get avatar() { return UserModule.avatar }
   get theme() { return AppModule.theme }
 
-  customPrimaryColor:string |null = "#6610f2"
+  customPrimaryColor:string |null = ""
   drawer:boolean = false
   direction:string = 'rtl'
   currentTheme = ''
@@ -121,7 +121,7 @@ export default class SysSetting extends Vue {
         color: var(--gray-dark);
         background: #f6f6fc;
         border:1px solid transparent;
-        box-shadow: 0 0 5px rgba(0,0,0,.2);
+        box-shadow: 0 0 6px rgba(0,0,0,.16);
         &::before,&::after{
           content: ' ';
           display: inline-block;
