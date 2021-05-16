@@ -101,6 +101,20 @@ export default new Router({
       ]
     },
     {
+      path: '/permission',
+      component: Layout,
+      children: [
+        {
+          path: 'index',
+          component: () => import(/* webpackChunkName: "form" */ '@/views/permission/index.vue'),
+          meta: {
+            title: 'router.permission',
+            icon: 'el-icon-edit'
+          }
+        }
+      ]
+    },
+    {
       path: '/form',
       component: Layout,
       children: [
@@ -149,7 +163,7 @@ export default new Router({
         {
           path: 'menu2',
           component: () => import(/* webpackChunkName: "menu2" */ '@/views/nested/menu2/index.vue'),
-          meta: { title: 'Menu2' }
+          meta: { title: 'Menu2'}
         }
       ]
     },

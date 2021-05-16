@@ -10,5 +10,8 @@ export default {
     "username":"用户名",
     "password":"密码",
     "submitText":"登录"
+  },
+  "router":{
+    "permission":"权限"
   }
 }

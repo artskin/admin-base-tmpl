@@ -10,5 +10,8 @@ export default {
     "username":"UserName",
     "password":"Password",
     "submitText":"Sign in"
+  },
+  "router":{
+    "permission":"permission"
   }
 }

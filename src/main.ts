@@ -15,7 +15,9 @@ if(currentTheme){
 }
 
 import i18n from '@/lang/index'
-
+import permission from '@/utils/directive'
+Vue.prototype.$permission = permission.hasPermission;
+Vue.directive('permission',permission);
 Vue.config.productionTip = false
 
 new Vue({

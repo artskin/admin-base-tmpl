@@ -10,6 +10,7 @@ export interface IUserState {
   avatar: string
   introduction: string
   roles: string[]
+  permissionCodes: string[]
 }
 
 @Module({ dynamic: true, store, name: 'user' })
@@ -20,6 +21,7 @@ class User extends VuexModule implements IUserState {
   public avatar = ''
   public introduction = ''
   public roles: string[] = []
+  public permissionCodes: string[] = []
 
   @Mutation
   private SET_TOKEN(token: string) {
@@ -35,6 +37,12 @@ class User extends VuexModule implements IUserState {
   @Mutation
   private SET_NAME(name: string) {
     this.name = name
+  }
+
+  @Mutation
+  private SET_PermissionCodes(codes:string[]) {
+    this.permissionCodes = codes
+    localStorage.setItem('permissionCodes',codes as any)
   }
 
   @Mutation
@@ -79,7 +87,7 @@ class User extends VuexModule implements IUserState {
     if (!data) {
       throw Error('Verification failed, please Login again.')
     }
-    const { roles, name, avatar, introduction,username } = data
+    const { roles, name, avatar, introduction,username,permissionCodes } = data
     // roles must be a non-empty array
     if (!roles || roles.length <= 0) {
       throw Error('GetUserInfo: roles must be a non-null array!')
@@ -88,6 +96,7 @@ class User extends VuexModule implements IUserState {
     this.SET_NAME(username)
     this.SET_AVATAR(avatar)
     this.SET_INTRODUCTION(introduction)
+    this.SET_PermissionCodes(permissionCodes)
   }
 
   @Action

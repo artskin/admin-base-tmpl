@@ -16,7 +16,7 @@
           <span
             v-if="theOnlyOneChild.meta.title"
             slot="title"
-          >{{ theOnlyOneChild.meta.title }}</span>
+          >{{ theOnlyOneChild.meta.title.includes('.') ? $t(theOnlyOneChild.meta.title) : theOnlyOneChild.meta.title}}</span>
         </el-menu-item>
       </sidebar-item-link>
     </template>
