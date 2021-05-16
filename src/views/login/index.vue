@@ -52,8 +52,8 @@
           {{$t("login.submitText")}}
         </el-button>
         <div class="tips">
-          <span>{{$t("login.username")}}: admin </span>
-          <span>{{$t("login.password")}}: any </span>
+          <span>{{$t("login.username")}}: admin/editor </span>
+          <span>{{$t("login.password")}}: root123 </span>
         </div>
       </div>
       
