@@ -30,7 +30,7 @@
         <span
           v-if="item.meta && item.meta.title"
           slot="title"
-        >{{ item.meta.title }}</span>
+        >{{ item.meta.title.includes('.') ? $t(item.meta.title) : item.meta.title}}</span>
       </template>
       <template v-if="item.children">
         <sidebar-item
@@ -114,8 +114,14 @@ export default class SidebarItem extends Vue {
 .el-submenu.is-active > .el-submenu__title {
   //color: #f4f4f5 !important;
 }
-
+.submenu-title-noDropdown,
+.el-menu-item,
+.el-submenu__title{
+  display: flex;
+  align-items: center;
+}
 .el-menu-item,.el-submenu{
+  
   &,.el-submenu__title{
     color: var(--menu-color);
   }

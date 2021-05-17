@@ -11,7 +11,7 @@
         <span
           v-if="item.redirect === 'noredirect' || index === breadcrumbs.length-1"
           class="no-redirect"
-        >{{ item.meta.title }}</span>
+        >{{ item.meta.title.includes('.') ? $t(item.meta.title) : item.meta.title }}</span>
         <a
           v-else
           @click.prevent="handleLink(item)"

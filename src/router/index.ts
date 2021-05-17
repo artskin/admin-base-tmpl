@@ -109,7 +109,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "form" */ '@/views/permission/index.vue'),
           meta: {
             title: 'router.permission',
-            icon: 'el-icon-edit'
+            icon: 'el-icon-set-up'
           }
         }
       ]

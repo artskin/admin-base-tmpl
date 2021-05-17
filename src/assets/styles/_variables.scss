@@ -118,6 +118,7 @@ $loginCursorColor: $dark;
   .right-menu{
     --menu-color:var(--gray-dark)
   }
+  --side-item-height:44px;
 }
 
 .themeBlue{
@@ -201,7 +202,7 @@ $loginCursorColor: $dark;
   $success:#42a752;
   $danger:#e25334;
   $sideBarBg:#1d1d42;
-  $primaryText:#fff;
+  $primaryText:#a8bcf8;
   @include colorGroup('--sideBarBg',$sideBarBg);
   @include colorGroup('--primary',$primary);
   @include colorGroup('--success',$success);

@@ -1,4 +1,9 @@
+<div align="center">
+<img src="./public/img/logo.svg" alt="logo" >
+
 # ABT：admin base template
+</div>
+
 中文 | [English](./README.md)
 > 你是否还在为启动前端项目的缓慢等待而焦急，为修改代码等代码编译看效果而烦恼……
 > 是时候抛弃Webpack了,拥抱Vite,开发环境秒开，修改代码秒更新不是梦！
@@ -28,7 +33,9 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 ### ToDo 
 
 - [ ] 重写Element UI的样式部分：引入css var，更方便更自由的定制主题
+- [ ] 登录页切换主题
 - [ ] 可配置的布局：菜单支持左右结构，上下结构切换
+- [ ] loading 骨架图
 - [ ] 添加Material Design 风格主题
 ### 安装依赖
 

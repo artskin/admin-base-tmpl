@@ -1,4 +1,9 @@
-# Vue admin base template
+<div align="center">
+<img src="./public/img/logo.svg" alt="logo" >
+
+# ABT：admin base template
+</div>
+
 English | [中文](./README.zh-CN.md)
 
 ## Introduction
