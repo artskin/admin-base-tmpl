@@ -1,6 +1,7 @@
 <div align="center">
-<img src="./public/img/logo.svg" alt="logo" >
-
+<a target="_blank" href="https://admin.senseui.im/">
+    <img height="100" src="./public/img/logo.svg" alt="logo" >
+</a><br>
 # ABT：admin base template
 </div>
 

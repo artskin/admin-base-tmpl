@@ -195,10 +195,24 @@ export let route = {
   overflow: hidden;
   position: relative;
   background-color: var(--gray-light);
+  //background: radial-gradient(ellipse at 5% 5%, #fec833 0%, rgba(254,200,51,0) 75%),radial-gradient(ellipse at 95% 5%, #fdc1a7 0%, rgba(253,193,167,0) 75%),radial-gradient(ellipse at 95% 95%, #e4699a 15%, rgba(228,105,154,0) 75%),radial-gradient(ellipse at 5% 95%, #eb5551 30%, rgba(235,85,81,0) 75%);
+  
   display: flex;
   color: var(--dark);
   justify-content: center;
   align-items: center;
+
+  &::after{
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top:0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5,5,5,.02);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
   .title-container {
     position: relative;
     .title {
@@ -214,6 +228,7 @@ export let route = {
     max-width: 100%;
     padding: 6% 30px 12%;
     overflow: hidden;
+    z-index: 1;
   }
   .el-form-item {
     border: 1px solid var(--gray);
@@ -260,6 +275,7 @@ export let route = {
     position: absolute;
     right: 25px;
     top: 20px;
+    z-index: 1;
   }
   @keyframes slideInDown2{
     0%{
@@ -284,12 +300,12 @@ export let route = {
       }
     }
   }
-    @keyframes dotAnimate{
-        0%,100%{content: "";}
-        25%{content: ".";}
-        50%{content: "..";}
-        75%{content: "...";}
-    }
+  @keyframes dotAnimate{
+      0%,100%{content: "";}
+      25%{content: ".";}
+      50%{content: "..";}
+      75%{content: "...";}
+  }
 }
 
 :root{

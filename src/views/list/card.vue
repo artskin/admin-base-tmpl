@@ -100,7 +100,7 @@ export default class Card extends Vue {
         dt{
           height: auto;
           transition: all .1s ease-in;
-          transform: translateY(1px);
+          transform: translateY(0);
         }
       }
       dt{
@@ -116,14 +116,15 @@ export default class Card extends Vue {
         &::after{
           content: '';
           display: block;
-          width: 101.5%;
-          height: 102%;
+          width: 100%;
+          height: 100%;
           position: absolute;
-          left: -1%;
-          top: -1%;
-          background: rgba(255,255,255,.7);
-          filter:blur(10px);
+          left: 0;
+          bottom: 0;
+          background: rgba(255,255,255,.4);
+          backdrop-filter: blur(20px) saturate(180%);
           z-index: -1;
+          border-radius:0 0 4px 4px;
         }
         strong{
           font-size: 14px;
