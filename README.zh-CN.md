@@ -38,6 +38,7 @@ Mock 数据部分，通过 [vite-plugin-mock](https://github.com/anncwb/vite-plu
 - [ ] 可配置的布局：菜单支持左右结构，上下结构切换
 - [ ] loading 骨架图
 - [ ] 添加Material Design 风格主题
+- [ ] 登录加密web cryptography API：https://github.com/GetStream/encrypted-web-chat
 ### 安装依赖
 
 ```bash
