@@ -12,6 +12,11 @@ export default {
     "submitText":"登录"
   },
   "router":{
-    "permission":"权限"
+    "pages":"页面",
+    "cardlist":"卡片列表",
+    "tablelist":"表格列表",
+    "permission":"权限控制",
+    "nested":"嵌套路由",
+    "form":"表单",
   }
 }

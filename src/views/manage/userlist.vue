@@ -1,6 +1,6 @@
 <template>
   <div class="page-router">
-    <h3 class="page-title">人像库：</h3>
+    <h3 class="page-title">用户列表：</h3>
     <el-table
       v-loading="listLoading"
       :data="list"
@@ -62,7 +62,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { getTasks } from '@/api/tasks'
+import { getUserList } from '@/api/users'
 import { ITaskItem } from '@/api/types'
 
 @Component({
@@ -96,8 +96,7 @@ export default class Table extends Vue {
   private async getList() {
     this.listLoading = true
     //const { data } = await getTasks(this.listQuery)
-    await getTasks(this.listQuery).then((resp:any)=>{
-      
+    await getUserList(this.listQuery).then((resp:any)=>{
       if(resp && resp.data.list){
         this.list = resp.data.list
       }

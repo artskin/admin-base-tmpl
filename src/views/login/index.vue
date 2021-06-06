@@ -108,6 +108,11 @@ export default class Login extends Vue {
   currentLang=''
   animateClass = ''
   animateClassTitle = ''
+  $refs!:{
+    loginForm:ElForm,
+    username:HTMLInputElement,
+    password:HTMLInputElement
+  }
 
   @Watch('$route', { immediate: true })
   private onRouteChange(route: Route) {
@@ -125,9 +130,9 @@ export default class Login extends Vue {
 
   mounted() {
     if (this.loginForm.username === '') {
-      (this.$refs.username as Input).focus()
+      this.$refs.username.focus()
     } else if (this.loginForm.password === '') {
-      (this.$refs.password as Input).focus()
+      this.$refs.password.focus()
     }
     this.changeLanguage(this.language)
   }
@@ -143,12 +148,12 @@ export default class Login extends Vue {
       this.passwordType = 'password'
     }
     this.$nextTick(() => {
-      (this.$refs.password as Input).focus()
+      this.$refs.password.focus()
     })
   }
 
   private handleLogin() {
-    (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
+    this.$refs.loginForm.validate(async(valid: boolean) => {
       if (valid) {
         this.loading = true;
         this.animateClass = 'animate__animated animate__zoomOut'

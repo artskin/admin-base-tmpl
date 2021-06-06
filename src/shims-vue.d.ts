@@ -11,6 +11,7 @@ interface Window {
     api:{
       login:string,
       userInfo:string,
+      userList:string,
       logout:string,
       tasks:string,
       records:string,

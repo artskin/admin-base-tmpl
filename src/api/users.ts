@@ -20,3 +20,10 @@ export const logout = () =>
     url: apipath.logout,
     method: 'post'
   })
+
+export const getUserList = (data: any) =>
+  request({
+    url: apipath.userList,
+    method: 'get',
+    params:data
+  })

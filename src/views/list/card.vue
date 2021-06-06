@@ -1,7 +1,7 @@
 <template>
   <div class="page-router">
     <h3 class="page-title">人像库：</h3>
-    <el-row class="gap-s card-list">
+    <el-row class="gap-s card-list page-content" v-loading="listLoading">
 
       <el-col v-for="(item,index) in list" :key="index" :span="8" :xs="24" :sm="12" :md="8">
         <el-card class="box-card card-item">
@@ -79,6 +79,7 @@ export default class Card extends Vue {
 }
 </script>
 <style lang="scss">
+.page-content{min-height: 800px;}
   .card-item{
     dl,dd{margin: 0;}
     .img-layer{

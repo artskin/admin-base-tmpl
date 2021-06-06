@@ -23,6 +23,9 @@ export interface IAppState {
   theme:string
   primaryColor:string
 }
+interface Itheme{
+  theme:string
+}
 
 @Module({ dynamic: true, store, name: 'app' })
 class App extends VuexModule implements IAppState {
@@ -36,7 +39,7 @@ class App extends VuexModule implements IAppState {
   public primaryColor = getComputedStyle(document.body).getPropertyValue('--primary') || 'blue';
 
   @Mutation
-  SET_THEME(theme:any) {
+  SET_THEME(theme:string | Itheme) {
     if(typeof theme == 'string'){
       this.theme = theme;
       themeSetting(this.theme);

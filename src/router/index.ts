@@ -1,7 +1,12 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import Router,{RawLocation} from 'vue-router'
 import Layout from '../layout/index.vue'
 // import routes from './routes.js'
+// const routerPush = Router.prototype.push;
+// Router.prototype.push = function push(location:RawLocation, onResolve, onReject) {
+// if (onResolve || onReject) return routerPush.call(this, location, onResolve, onReject);
+// return routerPush.call(this, location).catch(error=> error)
+// };
 Vue.use(Router)
 
 /*

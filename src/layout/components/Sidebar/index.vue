@@ -19,6 +19,9 @@
         :is-collapse="isCollapse"
       />
     </el-menu>
+    <code>
+      {{routes}}
+    </code>
 </div>
 </template>
 
@@ -42,6 +45,8 @@ export default class SideBar extends Vue {
   }
 
   get routes() {
+    console.log(this.$router.options)
+    console.log(this.$router.getRoutes())
     return (this.$router as any).options.routes
   }
 
