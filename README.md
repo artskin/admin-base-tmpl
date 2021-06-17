@@ -3,6 +3,9 @@
         <img height="100" src="./public/img/logo.svg" alt="logo" >
     </a><br>
     <p align='center'>
+        <a href='https://github.com/vitejs/vite'>
+            <img src='https://img.shields.io/badge/Vite-^2.0.0-000000?style=flat&labelColor=646cff' alt='vite version'>
+        </a>
         <a href='https://github.com/vitejs/awesome-vite'>
             <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'>
         </a>
