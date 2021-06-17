@@ -1,8 +1,13 @@
 <div align="center">
-<a target="_blank" href="https://admin.senseui.im/">
-    <img height="100" src="./public/img/logo.svg" alt="logo" >
-</a><br>
-# ABT：admin base template
+    <a target="_blank" href="https://admin.senseui.im/">
+        <img height="100" src="./public/img/logo.svg" alt="logo" >
+    </a><br>
+    <p align='center'>
+        <a href='https://github.com/vitejs/awesome-vite'>
+            <img src='https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg' alt='Awesome'>
+        </a>
+    </p>
+    <h1> ABT：admin base template</h1>
 </div>
 
 English | [中文](./README.zh-CN.md)
