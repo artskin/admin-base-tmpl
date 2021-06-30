@@ -1,6 +1,7 @@
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { login, logout, getUserInfo } from '@/api/users'
 import { getToken, setToken, removeToken,setUid,getUid } from '@/utils/cookies'
+import {resetRouter} from '@/router'
 import store from '@/store'
 
 export interface IUserState {
@@ -109,6 +110,7 @@ class User extends VuexModule implements IUserState {
     console.log(await logout())
     await logout()
     removeToken()
+    resetRouter()
     this.SET_TOKEN('')
     this.SET_ROLES([])
   }

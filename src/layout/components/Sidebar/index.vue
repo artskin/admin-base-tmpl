@@ -45,8 +45,8 @@ export default class SideBar extends Vue {
   }
 
   get routes() {
-    console.log(this.$router.options)
-    console.log(this.$router.getRoutes())
+    // console.log(this.$router.options)
+    // console.log(this.$router.getRoutes())
     return (this.$router as any).options.routes
   }
 
