@@ -39,7 +39,7 @@ Demo: [admin-base-template](http://admin.senseui.im/)
 - [ ] add Material Design style
 
 ### Mock Data
-Mock Data Using [vite-plugin-mock](https://github.com/anncwb/vite-plugin-mock)
+Mock Data can Using [~~vite-plugin-mock~~](https://github.com/anncwb/vite-plugin-mock), or you can run [mock-api](https://github.com/artskin/express-for-vercel) in local
 ### Install
 
 ```bash
