@@ -9,7 +9,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "chart.js": "^3.3.2",
     "element-ui": "^2.15.2",
     "js-cookie": "^2.2.1",
