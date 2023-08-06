@@ -1,7 +1,7 @@
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { login, logout, getUserInfo } from '@/api/users'
-import { getToken, setToken, removeToken,setUid,getUid } from '@/utils/cookies'
-import {resetRouter} from '@/router'
+import { getToken, setToken, removeToken, setUid, getUid } from '@/utils/cookies'
+import { resetRouter } from '@/router'
 import store from '@/store'
 
 export interface IUserState {
@@ -25,9 +25,10 @@ class User extends VuexModule implements IUserState {
   public permissionCodes: string[] = []
 
   @Mutation
-  private SET_TOKEN(token: string) {
-    this.token = token;
+  SET_TOKEN(token: string) {
     setToken(token)
+    this.token = token;
+    
   }
   @Mutation
   private SET_UID(uid: string) {

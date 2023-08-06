@@ -65,7 +65,7 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { Route } from 'vue-router'
-import { Dictionary } from 'vue-router/types/router'
+// import { Dictionary } from 'vue-router/types/router'
 import { Form as ElForm, Input } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
 import { isValidUsername } from '@/utils/validate'
@@ -93,18 +93,18 @@ export default class Login extends Vue {
       callback()
     }
   }
-  private loginForm = {
+  loginForm = {
     username: 'admin',
     password: 'root123'
   }
-  private loginRules = {
+  loginRules = {
     username: [{ validator: this.validateUsername, trigger: 'blur' }],
     password: [{ validator: this.validatePassword, trigger: 'blur' }]
   }
-  private passwordType = 'password'
-  private loading = false
-  private redirect?: string
-  private otherQuery: Dictionary<string> = {}
+  passwordType = 'password'
+  loading = false
+  private redirect?: any
+  private otherQuery: any = {}
   currentLang=''
   animateClass = ''
   animateClassTitle = ''
@@ -118,9 +118,9 @@ export default class Login extends Vue {
   private onRouteChange(route: Route) {
     // TODO: remove the "as Dictionary<string>" hack after v4 release for vue-router
     // See https://github.com/vuejs/vue-router/pull/2050 for details
-    const query = route.query as Dictionary<string>
+    const query = route.query
     if (query) {
-      this.redirect = query.redirect
+      this.redirect = query.redirect || '/'
       this.otherQuery = this.getOtherQuery(query)
     }
   }
@@ -141,7 +141,7 @@ export default class Login extends Vue {
     this.currentLang = e.toUpperCase()
   }
 
-  private showPwd() {
+  showPwd() {
     if (this.passwordType === 'password') {
       this.passwordType = ''
     } else {
@@ -152,7 +152,7 @@ export default class Login extends Vue {
     })
   }
 
-  private handleLogin() {
+  handleLogin() {
     this.$refs.loginForm.validate(async(valid: boolean) => {
       if (valid) {
         this.loading = true;
@@ -176,13 +176,13 @@ export default class Login extends Vue {
     })
   }
 
-  private getOtherQuery(query: Dictionary<string>) {
+  private getOtherQuery(query: any) {
     return Object.keys(query).reduce((acc, cur) => {
       if (cur !== 'redirect') {
         acc[cur] = query[cur]
       }
       return acc
-    }, {} as Dictionary<string>)
+    }, {} as any)
   }
 }
 export let route = {

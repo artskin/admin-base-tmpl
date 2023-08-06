@@ -8,6 +8,8 @@
     <el-menu
       :collapse="isCollapse"
       :unique-opened="false"
+      :default-openeds="isActive"
+      :default-active="isActive[0]"
       :collapse-transition="false"
       mode="vertical"
     >
@@ -19,19 +21,20 @@
         :is-collapse="isCollapse"
       />
     </el-menu>
-    <code>
-      {{routes}}
-    </code>
 </div>
 </template>
 
 <script lang="ts">
+// :default-openeds="openedSubMenu"
+// :default-active="openedSubMenu[0]"
 import { Component, Prop, Vue } from 'vue-property-decorator'
 import { AppModule } from '@/store/modules/app'
 import SidebarItem from './SidebarItem.vue'
 import IconSvg from '@/components/IconSvg/index.vue'
 // import variables from '@/assets/styles/_variables.scss'
 // import {styleToObject} from '@/utils/tools'
+
+
 @Component({
   name: 'SideBar',
   components: {
@@ -45,9 +48,16 @@ export default class SideBar extends Vue {
   }
 
   get routes() {
-    // console.log(this.$router.options)
-    // console.log(this.$router.getRoutes())
     return (this.$router as any).options.routes
+  }
+
+  get isActive() {
+    const currentPath = this.$route.path
+    return [currentPath,currentPath.substring(0,currentPath.lastIndexOf('/'))]
+  }
+
+  mounted() {
+    
   }
 
   // get variables() {

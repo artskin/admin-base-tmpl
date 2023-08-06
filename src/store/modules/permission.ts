@@ -1,6 +1,6 @@
 import { VuexModule, Module, Action, Mutation, getModule } from 'vuex-module-decorators'
 import { RouteConfig } from 'vue-router'
-import { asyncRoutes,constantRoutes } from '@/router'
+import { asyncRoutes, constantRoutes } from '@/router'
 import store from '@/store'
 const permissionArr:string[] = []
 const hasPermission = (path,route)=>{
@@ -23,7 +23,7 @@ export const filterAsyncRouters =(path,routes)=>{
 }
 
 
-@Module({ dynamic: true, store, name: 'user' })
+@Module({ dynamic: true, store, name: 'permission' })
 class Permission extends VuexModule {
   public routes:RouteConfig[] = []
   public dynamicRoutes:RouteConfig[] = []

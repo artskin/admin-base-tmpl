@@ -2,8 +2,9 @@ import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
 
+const apipath = 'https://api.senseui.im/'
 const service = axios.create({
-  baseURL: '',
+  baseURL: apipath,
   timeout: 5000
 })
 
