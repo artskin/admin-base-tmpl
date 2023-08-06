@@ -15,7 +15,7 @@ body {
   font-family: var(--font-family-element);
 }
 *,*:before,*:after {box-sizing: border-box;}
-#app {height: 100%;}
+#app,#main-app {height: 100%;}
 a,
 a:focus,
 a:hover {
@@ -72,4 +72,13 @@ div:focus {
 
 @media only screen and (max-width: 768px){
 
+}
+.app-main {
+  overflow: auto;
+  height: calc(100% - 50px);
+  position: relative;
+  top: 50px;
+  &:has(.hidden){
+    overflow: hidden;
+  }
 }

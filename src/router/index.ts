@@ -40,6 +40,32 @@ export const constantRoutes: RouteConfig[] = [
     ]
   },
   {
+    path: '/taskcenter',
+    component: Layout,
+    redirect: '/taskcenter/task-render',
+    meta: {
+      title: 'Task Center',
+      icon: 'el-icon-s-grid'
+    },
+    children: [
+      {
+        path: 'task-render',
+        component: () => import(/* webpackChunkName: "taskcenter" */ '@/views/taskcenter/index.vue'),
+        meta: {
+          title: 'Task Render',
+          icon: 'el-icon-tickets'
+        }
+      },
+      {
+        path: 'http://127.0.0.1:6301/',
+        meta:{
+          title:'Task Generator',
+          icon:'el-icon-s-operation',
+        }
+      }
+    ]
+  },
+  {
     path: '/404',
     component: () => import(/* webpackChunkName: "404" */ '@/views/404.vue'),
     meta: { hidden: true }

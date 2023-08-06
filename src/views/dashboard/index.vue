@@ -35,7 +35,7 @@
             <li v-for="(n,i) in toplist" :key="i" class="text item">
               <img :src="n.portrait" alt="">
               <em>{{n.name}}</em>
-              <el-progress type="line" :color="colors[i]" :percentage="n.progress"></el-progress>
+              <el-progress type="line" :color="colors[i]" :percentage="parseFloat(n.progress)"></el-progress>
               <span>{{n.value}}</span>
             </li>
           </ul>
@@ -212,13 +212,13 @@ export default class Dashboard extends Vue {
     align-items: center;
     justify-content: space-between;
     height: 50px;
-    em{font-style: normal;display: inline-block;padding:0 15px;width: 70px;}
+    em{font-style: normal;display: inline-block;padding:0 15px;width: 80px;}
     i.icon{
       font-size: 26px;
     }
     span{
       display: inline-block;
-      width: 48px;
+      width: 60px;
     }
   }
   .el-progress{

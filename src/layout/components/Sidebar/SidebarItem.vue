@@ -133,7 +133,7 @@ export default class SidebarItem extends Vue {
   &:hover,
   .el-submenu__title:hover{
     color: var(--primary);
-    background-color: var(--sideBarBg-hover) !important;
+    //background-color: var(--sideBarBg-hover) !important;
   }
   &.is-active{
     color: var(--primary);

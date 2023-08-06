@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import '@/assets/styles/index.scss'
+import microApp from '@micro-zoe/micro-app'
+
 //全量引入
 import ElementUI from 'element-ui'
 Vue.use(ElementUI)
@@ -13,6 +15,7 @@ let currentTheme = localStorage.getItem('currentTheme')
 if(currentTheme){
   store.dispatch('SetTheme',currentTheme)
 }
+microApp.start()
 
 import i18n from '@/lang/index'
 import permission from '@/utils/directive'
@@ -25,4 +28,4 @@ new Vue({
   store,
   i18n,
   render: (h) => h(App)
-}).$mount('#app')
+}).$mount('#main-app')

@@ -20,14 +20,13 @@
 <script lang="ts">
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { Tree as ElTree } from 'element-ui'
-import { TreeData } from 'element-ui/types/tree'
 
 @Component({
   name: 'Tree'
 })
 export default class Tree extends Vue {
-  private filterText = '';
-  private data2 = [{
+  filterText = '';
+  data2 = [{
     id: 1,
     label: 'Level one 1',
     children: [{
@@ -62,7 +61,7 @@ export default class Tree extends Vue {
       label: 'Level two 3-2'
     }]
   }];
-  private defaultProps = {
+  defaultProps = {
     children: 'children',
     label: 'label'
   };
@@ -75,7 +74,7 @@ export default class Tree extends Vue {
     this.$refs.tree2.filter(value)
   }
 
-  private filterNode(value: string, data: TreeData) {
+  filterNode(value: string, data: any) {
     if (!value) { return true }
     return data.label && data.label.indexOf(value) !== -1
   }
